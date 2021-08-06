@@ -819,13 +819,13 @@ ace.define('ace/mode/adguard_highlight_rules', [], (require, exports, module) =>
                     next: 'options_domain_app',
                 },
                 {
-                    regex: /(redirect|removeparam|removeheader|cookie)=/,
+                    regex: /(redirect|redirect-rule|removeparam|queryprune|removeheader|cookie)=/,
                     token: 'keyword.control',
                     next: 'options_redirect_removeparam_removeheader_cookie',
                 },
                 // without specified value
                 {
-                    regex: /redirect|removeparam|removeheader|cookie/,
+                    regex: /redirect|redirect-rule|removeparam|queryprune|removeheader|cookie/,
                     token: 'keyword.control',
                 },
                 {
@@ -839,15 +839,15 @@ ace.define('ace/mode/adguard_highlight_rules', [], (require, exports, module) =>
                     next: 'csp-start',
                 },
                 {
-                    regex: /document|elemhide|specifichide|content|urlblock|generichide|genericblock|jsinject|stealth/,
+                    regex: /document|doc|elemhide|ehide|specifichide|shide|generichide|ghide|genericblock|content|urlblock|jsinject|stealth/,
                     token: 'keyword.control',
                 },
                 {
-                    regex: /third-party/,
+                    regex: /third-party|3p|1p|first-party/,
                     token: 'keyword.control',
                 },
                 {
-                    regex: /stylesheet|subdocument|xmlhttprequest|font|image|media|object-subrequest|object|script|other|websocket/,
+                    regex: /stylesheet|css|subdocument|frame|xmlhttprequest|xhr|font|image|media|object-subrequest|object|script|other|websocket/,
                     token: 'keyword.control',
                 },
                 {

@@ -205,8 +205,12 @@
             background-color: var(--gray300)!important;
 
             @media (prefers-color-scheme: dark) {
-                background-color: var(--grayDark)!important;
+                background-color: var(--darkBlue-editor)!important;
             }
+        }
+
+        & .ace_selected-word {
+            background: none!important;
         }
     }
 }
@@ -377,7 +381,7 @@
             }
 
             & .ace_selection {
-                background-color: var(--grayDark)!important;
+                background-color: var(--darkBlue-editor)!important;
             }
         }
     }
