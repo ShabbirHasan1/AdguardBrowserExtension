@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "All"
     },
-    "filtering_type_image": {
-        "message": "Image"
-    },
-    "filtering_type_media": {
-        "message": "Media"
-    },
     "filtering_type_other": {
         "message": "Other"
     },
@@ -572,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Copied"
     },
-    "filtering_log_filter_processed": {
-        "message": "Processed"
-    },
     "filtering_log_filter_regular": {
         "message": "Regular"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Allowed"
     },
     "filtering_log_filter_blocked": {
@@ -587,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Modified"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "User filter"
+    "filtering_log_filter_user_rules": {
+        "message": "User rules"
+    },
+    "filtering_log_status_processed": {
+        "message": "Processed"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Allowed"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Blocked"
+    },
+    "filtering_log_status_modified": {
+        "message": "Modified"
     },
     "options_settings": {
         "message": "AdGuard Settings"
@@ -906,7 +909,7 @@
         "message": "Open editor in fullscreen mode"
     },
     "options_editor_close_fullscreen_button_tooltip": {
-        "message": "Close editor fullscreen mode"
+        "message": "Close editor's fullscreen mode"
     },
     "options_clear_stats_confirm_modal_title": {
         "message": "Clear statistics?"
@@ -932,17 +935,56 @@
     "filtering_log_details_modal_try_again": {
         "message": "Try again"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "First-party requests"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Only first-party requests"
     },
-    "filtering_log_tooltip_third_party": {
-        "message": "Third-party requests"
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Only third-party requests"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Hold Cmd to select multiple filters"
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Only requests processed without filtering"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Hold Ctrl to select multiple filters"
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Only unblocked requests"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Only blocked requests"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Only modified requests"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Only requests altered by user rules"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Documents and subdocuments"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Stylesheets"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Scripts"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests and fetch requests"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Images"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Media"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Other"
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Third-party request"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP request method"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP status code"
     },
     "options_stealth_general_title": {
         "message": "General"

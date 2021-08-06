@@ -12,7 +12,7 @@ import { nanoid } from 'nanoid';
 import { reactTranslator } from '../../../../common/translators/reactTranslator';
 import { Tooltip } from '../ui/Tooltip';
 import { copyToClipboardStore } from './copyToClipboardStore';
-import { Portal } from '../Portal';
+import { AttachmentPortal } from '../AttachmentPortal';
 
 import './copy-to-clipboard.pcss';
 
@@ -66,12 +66,9 @@ export const CopyToClipboard = observer(forwardRef(({
     return (
         <div className={cn('copy-to-clipboard-wrapper', wrapperClassName)}>
             {(containerRef.current === currentContainerId) && (
-                <Portal id="root-portal">
-                    <Tooltip
-                        text={reactTranslator.getMessage('filtering_modal_copied')}
-                        position={tooltipPosition}
-                    />
-                </Portal>
+                <AttachmentPortal rootId="root-portal" position={tooltipPosition}>
+                    <Tooltip text={reactTranslator.getMessage('filtering_modal_copied')} />
+                </AttachmentPortal>
             )}
             <div
                 ref={ref}
