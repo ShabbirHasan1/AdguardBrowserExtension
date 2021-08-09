@@ -1,6 +1,7 @@
 import { utils } from '../../../../../Extension/src/background/utils/common';
 import safebrowsing from '../../../../../Extension/src/background/filter/services/safebrowsing/safebrowsing.browsers';
 import { backend } from '../../../../../Extension/src/background/filter/filters/service-client';
+import { log } from '../../../../../Extension/src/common/log';
 
 describe('safebrowsing', () => {
     it('Calculate hash', () => {
@@ -88,5 +89,51 @@ describe('safebrowsing', () => {
         // All hashes have been checked already - so there was no request to backend
         expect(counter).toBe(2);
         expect(hashesChecked.length).toBe(0);
+    });
+
+    it('Handle lookup server network errors', async () => {
+        const logSpy = jest.spyOn(log, 'error');
+
+        // request error handling
+
+        jest.spyOn(backend, 'lookupSafebrowsing').mockImplementation(() => {
+            // eslint-disable-next-line prefer-promise-reject-errors
+            return Promise.reject({
+                status: 500,
+            });
+        });
+
+        await safebrowsing.lookupUrl('https://example.org');
+
+        // eslint-disable-next-line max-len
+        expect(logSpy).toHaveBeenCalledWith(
+            'Error response from safebrowsing lookup server for {0}',
+            'example.org',
+        );
+
+        // 5xx status code
+
+        jest.spyOn(backend, 'lookupSafebrowsing').mockImplementation(() => {
+            return Promise.resolve({
+                status: 500,
+            });
+        });
+
+        await safebrowsing.lookupUrl('https://example.com');
+
+        expect(logSpy).toHaveBeenCalledWith(
+            'Error response status {0} received from safebrowsing lookup server.',
+            500,
+        );
+
+        // request resolve without response
+
+        jest.spyOn(backend, 'lookupSafebrowsing').mockImplementation(() => {
+            return Promise.resolve();
+        });
+
+        await safebrowsing.lookupUrl('https://npmjs.com');
+
+        expect(logSpy).toHaveBeenCalledWith('Can`t read response from the server');
     });
 });

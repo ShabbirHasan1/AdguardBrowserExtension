@@ -268,15 +268,22 @@ const safebrowsing = (function () {
         } catch (e) {
             log.error('Error response from safebrowsing lookup server for {0}', host);
             suspendSafebrowsing();
+            return;
         }
 
-        if (response.status >= 500) {
+        if (response && response.status >= 500) {
             // Error on server side, suspend request
             // eslint-disable-next-line max-len
             log.error('Error response status {0} received from safebrowsing lookup server.', response.status);
             suspendSafebrowsing();
             return;
         }
+
+        if (!response) {
+            log.error('Can`t read response from the server');
+            return;
+        }
+
         resumeSafebrowsing();
 
         shortHashes.forEach((x) => {
