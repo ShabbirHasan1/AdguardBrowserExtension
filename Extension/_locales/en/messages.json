@@ -994,5 +994,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Miscellaneous"
+    },
+    "blocking_pages_malware": {
+        "message": "This web page at <strong>%host%</strong> has been reported as a malware page and has been blocked based on your security preferences."
+    },
+    "blocking_pages_phishing": {
+        "message": "This web page at <strong>%host%</strong> has been reported as a phishing page and has been blocked based on your security preferences."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Advanced"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "More information"
+    },
+    "blocking_pages_page_title": {
+        "message": "Access denied"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard has blocked access to this page"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blocked by AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard has prevented this page from loading due to the following filter rule"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Go back"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Proceed anyway"
     }
 }

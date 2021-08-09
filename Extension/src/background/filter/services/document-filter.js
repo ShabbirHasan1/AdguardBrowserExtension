@@ -37,7 +37,7 @@ export const documentFilterService = (function () {
 
     function documentFilterService() {
         const TRUSTED_TTL_MS = 1000 * 60 * 40; // 40 minutes
-        const DOCUMENT_BLOCKED_URL = 'pages/blocking-pages/adBlockedPage.html';
+        const DOCUMENT_BLOCKED_URL = 'pages/ad-blocked.html';
 
         /**
          * Checks if url is trusted
@@ -99,7 +99,7 @@ export const documentFilterService = (function () {
             // Chrome doesn't allow to show extension pages in incognito mode
             if (incognitoTab && browserUtils.isChromium()) {
                 // Closing tab before opening a new one may lead to browser crash (Chromium)
-                uiService.openTab(url, {}, async () => {
+                uiService.openTab(url).then(() => {
                     tabsApi.remove(tabId);
                 });
             } else {

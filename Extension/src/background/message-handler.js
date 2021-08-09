@@ -369,10 +369,11 @@ const createMessageHandler = () => {
                 };
             }
             case MESSAGE_TYPES.OPEN_SAFEBROWSING_TRUSTED: {
-                safebrowsing.addToSafebrowsingTrusted(message.url);
+                const { url } = data;
+                safebrowsing.addToSafebrowsingTrusted(url);
                 const tab = await tabsApi.getActive();
                 if (tab) {
-                    tabsApi.reload(tab.tabId, message.url);
+                    tabsApi.reload(tab.tabId, url);
                 }
                 break;
             }
@@ -584,9 +585,11 @@ const createMessageHandler = () => {
                 const { json } = data;
                 return settingsProvider.applySettingsBackup(json);
             }
-            case MESSAGE_TYPES.ADD_URL_TO_TRUSTED:
-                await documentFilterService.addToTrusted(message.url);
+            case MESSAGE_TYPES.ADD_URL_TO_TRUSTED: {
+                const { url } = data;
+                await documentFilterService.addToTrusted(url);
                 break;
+            }
             case MESSAGE_TYPES.RESET_CUSTOM_RULES_FOR_PAGE: {
                 const { url, tabId } = data;
                 await userrules.removeRulesByUrl(url);

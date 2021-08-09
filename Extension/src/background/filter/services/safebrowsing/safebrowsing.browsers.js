@@ -209,7 +209,7 @@ const safebrowsing = (function () {
     const getErrorPageURL = function (requestUrl, referrerUrl, sbList) {
         const listName = sbList || 'malware';
         const isMalware = utils.strings.contains(listName, 'malware');
-        let url = 'pages/blocking-pages/safebrowsing.html';
+        let url = 'pages/safebrowsing.html';
         url += `?malware=${isMalware}`;
         url += `&host=${encodeURIComponent(utils.url.getHost(requestUrl))}`;
         url += `&url=${encodeURIComponent(requestUrl)}`;
