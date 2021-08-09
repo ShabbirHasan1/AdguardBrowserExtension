@@ -975,7 +975,7 @@
         "message": "Media"
     },
     "filtering_log_tag_tooltip_other": {
-        "message": "Other"
+        "message": "Fonts, pings, WebRTC, WebSocket, etc."
     },
     "filtering_log_badge_tooltip_third_party": {
         "message": "Third-party request"
