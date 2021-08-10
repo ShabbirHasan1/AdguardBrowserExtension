@@ -63,7 +63,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "form-data": "^2.5.0",
     "fs-extra": "^9.0.1",
-    "html-webpack-plugin": "^4.5.2",
+    "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.1",
     "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
@@ -79,8 +79,8 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "4.2.3",
     "web-ext": "^4.3.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.5.0",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
     "webpack-merge": "^5.7.3",
     "zip-webpack-plugin": "^4.0.1"
   },
@@ -96,6 +96,7 @@
     "ajv": "^8.6.2",
     "c3": "0.4.15",
     "classnames": "^2.2.6",
+    "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.0.0",
     "date-fns": "^2.22.1",
     "js-beautify": "^1.13.13",
@@ -115,6 +116,8 @@
     "react-router-dom": "^5.2.0",
     "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0",
     "webextension-polyfill": "^0.7.0",
     "xstate": "^4.16.2"
   }

@@ -23,8 +23,14 @@ const ASSISTANT_PATH = path.resolve(__dirname, '../../Extension/pages/assistant'
 const FULLSCREEN_USER_RULES_PATH = path.resolve(__dirname, '../../Extension/pages/fullscreen-user-rules');
 const SAFEBROWSING_PATH = path.resolve(__dirname, '../../Extension/pages/safebrowsing');
 const AD_BLOCKED_PATH = path.resolve(__dirname, '../../Extension/pages/ad-blocked');
+const EDITOR_PATH = path.resolve(__dirname, '../../Extension/src/pages/common/components/Editor');
 
 const OUTPUT_PATH = config.outputPath;
+
+const htmlTemplatePluginCommonOptions = {
+    cache: false,
+    scriptLoading: 'blocking',
+};
 
 export const genCommonConfig = (browserConfig) => {
     return {
@@ -45,21 +51,70 @@ export const genCommonConfig = (browserConfig) => {
                     },
                 }),
             ],
+            runtimeChunk: 'single',
         },
         devtool: process.env.BUILD_ENV === ENVS.DEV ? 'eval-source-map' : false,
         entry: {
             'pages/background': BACKGROUND_PATH,
-            'pages/options': OPTIONS_PATH,
-            'pages/popup': POPUP_PATH,
-            'pages/filtering-log': FILTERING_LOG_PATH,
+            'pages/options': {
+                import: OPTIONS_PATH,
+                dependOn: [
+                    'vendors/react',
+                    'vendors/mobx',
+                    'vendors/xstate',
+                    'shared/editor',
+                ],
+            },
+            'pages/popup': {
+                import: POPUP_PATH,
+                dependOn: [
+                    'vendors/react',
+                    'vendors/mobx',
+                ],
+            },
+            'pages/filtering-log': {
+                import: FILTERING_LOG_PATH,
+                dependOn: [
+                    'vendors/react',
+                    'vendors/mobx',
+                    'vendors/xstate',
+                ],
+            },
             'pages/filter-download': FILTER_DOWNLOAD_PATH,
             'pages/content-script-start': CONTENT_SCRIPT_START_PATH,
             'pages/content-script-end': CONTENT_SCRIPT_END_PATH,
             'pages/thankyou': THANKYOU_PATH,
             'pages/assistant': ASSISTANT_PATH,
-            'pages/fullscreen-user-rules': FULLSCREEN_USER_RULES_PATH,
-            'pages/safebrowsing': SAFEBROWSING_PATH,
-            'pages/ad-blocked': AD_BLOCKED_PATH,
+            'pages/fullscreen-user-rules': {
+                import: FULLSCREEN_USER_RULES_PATH,
+                dependOn: [
+                    'vendors/react',
+                    'vendors/mobx',
+                    'vendors/xstate',
+                    'shared/editor',
+                ],
+            },
+            'pages/safebrowsing': {
+                import: SAFEBROWSING_PATH,
+                dependOn: [
+                    'vendors/react',
+                ],
+            },
+            'pages/ad-blocked': {
+                import: AD_BLOCKED_PATH,
+                dependOn: [
+                    'vendors/react',
+                ],
+            },
+            'shared/editor': {
+                import: EDITOR_PATH,
+                dependOn: [
+                    'vendors/react',
+                ],
+            },
+            'vendors/react': ['react', 'react-dom'],
+            'vendors/mobx': ['mobx'],
+            'vendors/xstate': ['xstate'],
         },
         output: {
             path: path.join(BUILD_PATH, OUTPUT_PATH),
@@ -67,6 +122,12 @@ export const genCommonConfig = (browserConfig) => {
         },
         resolve: {
             extensions: ['*', '.js', '.jsx'],
+            // Node modules polyfills
+            fallback: {
+                url: require.resolve('url'),
+                crypto: require.resolve('crypto-browserify'),
+                stream: require.resolve('stream-browserify'),
+            },
         },
         module: {
             rules: [
@@ -128,49 +189,49 @@ export const genCommonConfig = (browserConfig) => {
                 },
                 filename: 'pages/background.html',
                 chunks: ['pages/background'],
-                cache: false,
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(OPTIONS_PATH, 'index.html'),
                 filename: 'pages/options.html',
-                chunks: ['pages/options'],
-                cache: false,
+                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(POPUP_PATH, 'index.html'),
                 filename: 'pages/popup.html',
-                chunks: ['pages/popup'],
-                cache: false,
+                chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(FILTERING_LOG_PATH, 'index.html'),
                 filename: 'pages/filtering-log.html',
-                chunks: ['pages/filtering-log'],
-                cache: false,
+                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'pages/filtering-log'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(FILTER_DOWNLOAD_PATH, 'index.html'),
                 filename: 'pages/filter-download.html',
                 chunks: ['pages/filter-download'],
-                cache: false,
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(FULLSCREEN_USER_RULES_PATH, 'index.html'),
                 filename: 'pages/fullscreen-user-rules.html',
-                chunks: ['pages/fullscreen-user-rules'],
-                cache: false,
+                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/fullscreen-user-rules'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(AD_BLOCKED_PATH, 'index.html'),
                 filename: 'pages/ad-blocked.html',
-                chunks: ['pages/ad-blocked'],
-                cache: false,
+                chunks: ['vendors/react', 'pages/ad-blocked'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
                 template: path.join(SAFEBROWSING_PATH, 'index.html'),
                 filename: 'pages/safebrowsing.html',
-                chunks: ['pages/safebrowsing'],
-                cache: false,
+                chunks: ['vendors/react', 'pages/safebrowsing'],
+                ...htmlTemplatePluginCommonOptions,
             }),
             new CopyWebpackPlugin({
                 patterns: [
