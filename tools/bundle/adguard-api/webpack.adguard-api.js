@@ -58,7 +58,7 @@ export const genSampleApiConfig = (browserConfig) => {
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
-                    use: ['cache-loader', {
+                    use: [{
                         loader: 'babel-loader',
                         options: { babelrc: true },
                     }],

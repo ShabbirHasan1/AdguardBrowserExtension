@@ -150,7 +150,7 @@ export const genCommonConfig = (browserConfig) => {
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
-                    use: ['cache-loader', {
+                    use: [{
                         loader: 'babel-loader',
                         options: { babelrc: true },
                     }],
@@ -161,20 +161,17 @@ export const genCommonConfig = (browserConfig) => {
                         'style-loader',
                         {
                             loader: 'css-loader',
-                            options: { importLoaders: 1 },
+                            options: {
+                                importLoaders: 1,
+                                url: false,
+                            },
                         },
                         'postcss-loader',
                     ],
                 },
                 {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
-                    exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: { outputPath: 'assets' },
-                        },
-                    ],
+                    type: 'asset/resource',
                 },
             ],
         },
@@ -183,55 +180,55 @@ export const genCommonConfig = (browserConfig) => {
             new CleanWebpackPlugin(),
             ...getModuleReplacements(browserConfig),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(BACKGROUND_PATH, 'index.html'),
                 templateParameters: {
                     browser: process.env.BROWSER,
                 },
                 filename: 'pages/background.html',
                 chunks: ['pages/background'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(OPTIONS_PATH, 'index.html'),
                 filename: 'pages/options.html',
                 chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(POPUP_PATH, 'index.html'),
                 filename: 'pages/popup.html',
                 chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(FILTERING_LOG_PATH, 'index.html'),
                 filename: 'pages/filtering-log.html',
                 chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'pages/filtering-log'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(FILTER_DOWNLOAD_PATH, 'index.html'),
                 filename: 'pages/filter-download.html',
                 chunks: ['pages/filter-download'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(FULLSCREEN_USER_RULES_PATH, 'index.html'),
                 filename: 'pages/fullscreen-user-rules.html',
                 chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/fullscreen-user-rules'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(AD_BLOCKED_PATH, 'index.html'),
                 filename: 'pages/ad-blocked.html',
                 chunks: ['vendors/react', 'pages/ad-blocked'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new HtmlWebpackPlugin({
+                ...htmlTemplatePluginCommonOptions,
                 template: path.join(SAFEBROWSING_PATH, 'index.html'),
                 filename: 'pages/safebrowsing.html',
                 chunks: ['vendors/react', 'pages/safebrowsing'],
-                ...htmlTemplatePluginCommonOptions,
             }),
             new CopyWebpackPlugin({
                 patterns: [
