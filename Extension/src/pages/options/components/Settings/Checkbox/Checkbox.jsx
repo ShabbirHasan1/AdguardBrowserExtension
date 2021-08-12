@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 import './checkbox.pcss';
 
@@ -10,6 +11,7 @@ const Checkbox = (props) => {
         inverted,
         label,
         value,
+        className,
     } = props;
 
     const computedValue = inverted ? !value : value;
@@ -40,7 +42,7 @@ const Checkbox = (props) => {
             />
             <label
                 htmlFor={id}
-                className="checkbox__label"
+                className={cn('checkbox__label', className)}
             >
                 {label}
             </label>

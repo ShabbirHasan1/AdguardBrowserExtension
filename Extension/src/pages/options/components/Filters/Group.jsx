@@ -73,7 +73,7 @@ const Group = ({
                 <div
                     role="button"
                     tabIndex={0}
-                    className="setting__area"
+                    className="setting__area setting__area_group"
                     onKeyUp={groupClickHandler}
                     onClick={groupClickHandler}
                 >
@@ -90,13 +90,14 @@ const Group = ({
                         </div>
                     </div>
                 </div>
-                <div className="setting__inline-control">
+                <div className="setting__inline-control setting__inline-control_group">
                     <Setting
                         id={groupId}
                         type={SETTINGS_TYPES.CHECKBOX}
                         label={groupName}
                         value={checkboxValue}
                         handler={checkboxHandler}
+                        className="group__checkbox"
                     />
                 </div>
             </div>

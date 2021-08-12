@@ -18,7 +18,12 @@ export const Setting = (props) => {
     switch (type) {
         case SETTINGS_TYPES.CHECKBOX: {
             const {
-                id, handler, inverted, value, label,
+                id,
+                handler,
+                inverted,
+                value,
+                label,
+                className,
             } = props;
             return (
                 <Checkbox
@@ -27,12 +32,18 @@ export const Setting = (props) => {
                     inverted={inverted}
                     value={value}
                     label={label}
+                    className={className}
                 />
             );
         }
         case SETTINGS_TYPES.SELECT: {
             const {
-                id, handler, options, value, selectDropdown, hideSelectDropdown,
+                id,
+                handler,
+                options,
+                value,
+                selectDropdown,
+                hideSelectDropdown,
             } = props;
             const changeHandler = (currentValue) => {
                 let dataValue = parseInt(currentValue, 10);
@@ -69,7 +80,11 @@ export const Setting = (props) => {
         }
         case SETTINGS_TYPES.TEXTAREA: {
             const {
-                id, value, handler, placeholder, disabled,
+                id,
+                value,
+                handler,
+                placeholder,
+                disabled,
             } = props;
             return (
                 <Textarea

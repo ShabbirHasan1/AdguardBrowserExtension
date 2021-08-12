@@ -10,6 +10,7 @@
         padding: 16px;
 
         @media (min-width: 640px) {
+            justify-content: flex-start;
             padding: 0;
         }
     }
@@ -34,9 +35,15 @@
         text-align: left;
         background-color: transparent;
         transition: 0.3s ease background-color;
+    
 
         @media (min-width: 640px) {
             padding: 15px 0 15px 16px;
+
+            &_group {
+                flex-grow: 1;
+                border-radius: 8px 0 0 8px;
+            }
         }
 
         &:hover {
@@ -51,6 +58,12 @@
     &__inline-control {
         margin-left: 22px;
         height: auto;
+
+        @media (min-width: 640px) {
+            &_group {
+                margin-left: 0;
+            }
+        }
     }
 
     &__container {
