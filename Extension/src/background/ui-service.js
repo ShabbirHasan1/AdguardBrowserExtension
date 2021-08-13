@@ -594,6 +594,15 @@ export const uiService = (function () {
     };
 
     /**
+     * Generates query string with browsing security information
+     * @returns {string}
+     */
+    const getBrowserSecurityString = () => {
+        const isEnabled = !settings.getProperty(settings.DISABLE_SAFEBROWSING);
+        return `&browsing_security.enabled=${isEnabled}`;
+    };
+
+    /**
      * Appends hash parameters if they exists
      * @param rowUrl
      * @param hashParameters
@@ -699,7 +708,8 @@ export const uiService = (function () {
         }${browserDetails ? `&browser_detail=${encodeURIComponent(browserDetails)}` : ''
         }&url=${encodeURIComponent(url)
         }&filters=${encodeURIComponent(filterIds.join('.'))
-        }${getStealthString()}`);
+        }${getStealthString()
+        }${getBrowserSecurityString()}`);
     };
 
     const openFilteringLog = async function (tabId) {
