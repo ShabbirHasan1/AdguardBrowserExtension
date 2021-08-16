@@ -55,7 +55,10 @@ export const genCommonConfig = (browserConfig) => {
         },
         devtool: process.env.BUILD_ENV === ENVS.DEV ? 'eval-source-map' : false,
         entry: {
-            'pages/background': BACKGROUND_PATH,
+            'pages/background': {
+                import: BACKGROUND_PATH,
+                runtime: false,
+            },
             'pages/options': {
                 import: OPTIONS_PATH,
                 dependOn: [
@@ -80,11 +83,26 @@ export const genCommonConfig = (browserConfig) => {
                     'vendors/xstate',
                 ],
             },
-            'pages/filter-download': FILTER_DOWNLOAD_PATH,
-            'pages/content-script-start': CONTENT_SCRIPT_START_PATH,
-            'pages/content-script-end': CONTENT_SCRIPT_END_PATH,
-            'pages/thankyou': THANKYOU_PATH,
-            'pages/assistant': ASSISTANT_PATH,
+            'pages/filter-download': {
+                import: FILTER_DOWNLOAD_PATH,
+                runtime: false,
+            },
+            'pages/content-script-start': {
+                import: CONTENT_SCRIPT_START_PATH,
+                runtime: false,
+            },
+            'pages/content-script-end': {
+                import: CONTENT_SCRIPT_END_PATH,
+                runtime: false,
+            },
+            'pages/thankyou': {
+                import: THANKYOU_PATH,
+                runtime: false,
+            },
+            'pages/assistant': {
+                import: ASSISTANT_PATH,
+                runtime: false,
+            },
             'pages/fullscreen-user-rules': {
                 import: FULLSCREEN_USER_RULES_PATH,
                 dependOn: [
