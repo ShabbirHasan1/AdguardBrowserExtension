@@ -32,21 +32,14 @@
 
         & .tbody .tr {
             border-top: 1px solid var(--borderColor);
+
             &:hover {
                 cursor: pointer;
-                background: var(--gray100);
-
-                @media (prefers-color-scheme: dark) {
-                    background: var(--gray900);
-                }
+                background: var(--regular-row-hover);
             }
 
             &:active {
-                background: var(--gray300);
-
-                @media (prefers-color-scheme: dark) {
-                    background: var(--grayDark);
-                }
+                background: var(--regular-row-active);
             }
 
             &.red {
@@ -265,13 +258,49 @@
             background-color: var(--white);
         }
 
-        &__inner .tr {
+        &__inner .tbody .tr {
             &:hover {
-                background: var(--gray100);
+                background: var(--regular-row-hover);
             }
 
             &:active {
-                background: var(--gray300);
+                background: var(--regular-row-active);
+            }
+
+            &.red {
+                background-color: var(--red-row);
+
+                &:hover {
+                    background-color: var(--red-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--red-row-active);
+                }
+            }
+
+            &.green {
+                background-color: var(--green-row);
+
+                &:hover {
+                    background-color: var(--green-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--green-row-active);
+                }
+            }
+
+            &.yellow {
+                background-color: var(--orange-row);
+
+                &:hover {
+                    background-color: var(--orange-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--orange-row-active);
+                }
             }
         }
 
@@ -301,13 +330,49 @@
             background-color: var(--bgColor);
         }
 
-        &__inner .tr {
+        &__inner .tbody .tr {
             &:hover {
-                background: var(--gray900);
+                background: var(--regular-row-hover);
             }
 
             &:active {
-                background: var(--grayDark);
+                background: var(--regular-row-active);
+            }
+
+            &.red {
+                background-color: var(--red-row);
+
+                &:hover {
+                    background-color: var(--red-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--red-row-active);
+                }
+            }
+
+            &.green {
+                background-color: var(--green-row);
+
+                &:hover {
+                    background-color: var(--green-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--green-row-active);
+                }
+            }
+
+            &.yellow {
+                background-color: var(--orange-row);
+
+                &:hover {
+                    background-color: var(--orange-row-hover);
+                }
+
+                &:active {
+                    background-color: var(--orange-row-active);
+                }
             }
         }
 
