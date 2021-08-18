@@ -383,7 +383,9 @@ export const antiBannerService = (() => {
 
             // We push user filter list in the end in order to make possible script rules to work
             // AG-9443
-            lists.push(userFilterList);
+            if (userFilterList) {
+                lists.push(userFilterList);
+            }
 
             // append stealth mode rules
             const stealthModeList = stealthService.getStealthModeRuleList();
