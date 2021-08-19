@@ -221,12 +221,6 @@ export const allowlist = (() => {
     const allowlistUrl = function (url) {
         const domain = utils.url.getDomainName(url);
 
-        const allowlistEnabled = settings.getAllowlistEnabledState();
-
-        if (!allowlistEnabled) {
-            settings.setAllowlistEnabledState(true);
-        }
-
         if (isDefaultAllowlistMode()) {
             addToAllowlist(domain);
         } else {
