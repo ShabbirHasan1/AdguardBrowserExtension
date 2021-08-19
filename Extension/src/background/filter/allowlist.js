@@ -220,7 +220,6 @@ export const allowlist = (() => {
      */
     const allowlistUrl = function (url) {
         const domain = utils.url.getDomainName(url);
-
         if (isDefaultAllowlistMode()) {
             addToAllowlist(domain);
         } else {
