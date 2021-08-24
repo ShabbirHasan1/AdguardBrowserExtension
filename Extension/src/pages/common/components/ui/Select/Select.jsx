@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+    useState, useRef, useEffect, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '../../../hooks/useOutsideClick';
 import { Icon } from '../Icon';
@@ -29,12 +31,14 @@ const Select = (props) => {
         );
     });
 
-    useOutsideClick(ref, () => {
+    const useOutsideClickCallback = useCallback(() => {
         setHidden(true);
         if (selectDropdown === id) {
             hideSelectDropdown();
         }
-    });
+    }, [selectDropdown, id, hideSelectDropdown]);
+
+    useOutsideClick(ref, useOutsideClickCallback);
 
     useEffect(() => {
         if (selectDropdown === id) {
@@ -43,9 +47,7 @@ const Select = (props) => {
     }, [id, selectDropdown]);
 
     const handleSelectClick = () => {
-        if (hidden) {
-            setHidden(false);
-        }
+        setHidden(!hidden);
     };
 
     const currentValue = options.find((i) => i.value === value);
@@ -61,7 +63,10 @@ const Select = (props) => {
             >
                 {currentTitle}
             </button>
-            <Icon id="#select" classname="icon--select select__ico" />
+            <Icon
+                id="#select"
+                classname="icon--select select__ico"
+            />
             <div
                 hidden={hidden}
                 className="select__list"
