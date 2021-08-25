@@ -42,8 +42,6 @@ export const Setting = (props) => {
                 handler,
                 options,
                 value,
-                selectDropdown,
-                hideSelectDropdown,
             } = props;
             const changeHandler = (currentValue) => {
                 let dataValue = parseInt(currentValue, 10);
@@ -59,8 +57,6 @@ export const Setting = (props) => {
                     handler={changeHandler}
                     options={options}
                     value={value}
-                    selectDropdown={selectDropdown}
-                    hideSelectDropdown={hideSelectDropdown}
                 />
             );
         }

@@ -1,28 +1,35 @@
-import React, {
-    useState, useRef, useEffect, useCallback,
-} from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '../../../hooks/useOutsideClick';
+import { useSelect } from './SelectProvider';
 import { Icon } from '../Icon';
 
 import './select.pcss';
 
-const Select = (props) => {
+export const Select = ({
+    id,
+    handler,
+    options,
+    value,
+}) => {
     const ref = useRef(null);
-    const {
-        id, handler, options, value, selectDropdown, hideSelectDropdown,
-    } = props;
 
-    const [hidden, setHidden] = useState(true);
+    const [hidden, setHidden] = useSelect(id);
 
     const renderItems = () => options.map((option) => {
         const { value: currentValue, title } = option;
+
+        const handleOptionClick = (e) => {
+            e.stopPropagation();
+            handler(currentValue);
+            setHidden(true);
+        };
 
         return (
             <button
                 type="button"
                 className="select__item"
-                onClick={() => handler(currentValue)}
+                onClick={handleOptionClick}
                 key={currentValue}
                 value={currentValue}
             >
@@ -31,22 +38,12 @@ const Select = (props) => {
         );
     });
 
-    const useOutsideClickCallback = useCallback(() => {
+    useOutsideClick(ref, () => {
         setHidden(true);
-        if (selectDropdown === id) {
-            hideSelectDropdown();
-        }
-    }, [selectDropdown, id, hideSelectDropdown]);
+    });
 
-    useOutsideClick(ref, useOutsideClickCallback);
-
-    useEffect(() => {
-        if (selectDropdown === id) {
-            setHidden(false);
-        }
-    }, [id, selectDropdown]);
-
-    const handleSelectClick = () => {
+    const handleSelectClick = (e) => {
+        e.stopPropagation();
         setHidden(!hidden);
     };
 
@@ -54,9 +51,8 @@ const Select = (props) => {
     const currentTitle = currentValue.title;
 
     return (
-        <div id={id} className="select">
+        <div id={id} className="select" ref={ref}>
             <button
-                ref={ref}
                 type="button"
                 className="select__value"
                 onClick={handleSelectClick}
@@ -77,18 +73,9 @@ const Select = (props) => {
     );
 };
 
-Select.defaultProps = {
-    selectDropdown: null,
-    hideSelectDropdown: null,
-};
-
 Select.propTypes = {
     id: PropTypes.string.isRequired,
     handler: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.object).isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    selectDropdown: PropTypes.string,
-    hideSelectDropdown: PropTypes.func,
 };
-
-export { Select };

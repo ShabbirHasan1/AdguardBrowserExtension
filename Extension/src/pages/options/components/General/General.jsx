@@ -1,10 +1,10 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import { observer } from 'mobx-react';
 
 import { SettingsSection } from '../Settings/SettingsSection';
-import { SettingsSet } from '../Settings/SettingsSet';
 import { SettingsSetCheckbox } from '../Settings/SettingsSetCheckbox';
-import { Setting, SETTINGS_TYPES } from '../Settings/Setting';
+import { SettingSetSelect } from '../Settings/SettingSetSelect';
+import { SETTINGS_TYPES } from '../Settings/Setting';
 import { rootStore } from '../../stores/RootStore';
 import { messenger } from '../../../services/messenger';
 import { hoursToMs, uploadFile } from '../../../helpers';
@@ -65,8 +65,6 @@ const General = observer(() => {
         settingsStore,
         uiStore,
     } = useContext(rootStore);
-
-    const [selectDropdown, setSelectDropdown] = useState(null);
 
     const { settings, allowAcceptableAds } = settingsStore;
 
@@ -132,29 +130,13 @@ const General = observer(() => {
     return (
         <>
             <SettingsSection title={reactTranslator.getMessage('context_general_settings')}>
-                <div
-                    className="setting-checkbox"
-                    onClick={() => { setSelectDropdown(APPEARANCE_THEME); }}
-                    onKeyUp={() => { setSelectDropdown(APPEARANCE_THEME); }}
-                    role="button"
-                    tabIndex="0"
-                >
-                    <SettingsSet
-                        title={reactTranslator.getMessage('options_select_theme')}
-                        inlineControl={(
-                            <Setting
-                                id={APPEARANCE_THEME}
-                                type={SETTINGS_TYPES.SELECT}
-                                label={reactTranslator.getMessage('options_select_theme')}
-                                options={APPEARANCE_THEMES_OPTIONS}
-                                value={settings.values[APPEARANCE_THEME]}
-                                handler={settingChangeHandler}
-                                selectDropdown={selectDropdown}
-                                hideSelectDropdown={() => { setSelectDropdown(null); }}
-                            />
-                        )}
-                    />
-                </div>
+                <SettingSetSelect
+                    title={reactTranslator.getMessage('options_select_theme')}
+                    id={APPEARANCE_THEME}
+                    options={APPEARANCE_THEMES_OPTIONS}
+                    value={settings.values[APPEARANCE_THEME]}
+                    handler={settingChangeHandler}
+                />
                 <SettingsSetCheckbox
                     title={reactTranslator.getMessage('options_block_acceptable_ads')}
                     description={reactTranslator.getMessage('options_block_acceptable_ads_desc', {
@@ -207,30 +189,14 @@ const General = observer(() => {
                     handler={settingChangeHandler}
                     value={settings.values[DISABLE_DETECT_FILTERS]}
                 />
-                <div
-                    className="setting-checkbox"
-                    onClick={() => { setSelectDropdown(FILTERS_UPDATE_PERIOD); }}
-                    onKeyUp={() => { setSelectDropdown(FILTERS_UPDATE_PERIOD); }}
-                    role="button"
-                    tabIndex="0"
-                >
-                    <SettingsSet
-                        title={reactTranslator.getMessage('options_set_update_interval')}
-                        description={reactTranslator.getMessage('options_set_update_interval_desc')}
-                        inlineControl={(
-                            <Setting
-                                id={FILTERS_UPDATE_PERIOD}
-                                type={SETTINGS_TYPES.SELECT}
-                                label={reactTranslator.getMessage('options_set_update_interval')}
-                                options={filtersUpdatePeriodOptions}
-                                value={settings.values[FILTERS_UPDATE_PERIOD]}
-                                handler={settingChangeHandler}
-                                selectDropdown={selectDropdown}
-                                hideSelectDropdown={() => { setSelectDropdown(null); }}
-                            />
-                        )}
-                    />
-                </div>
+                <SettingSetSelect
+                    title={reactTranslator.getMessage('options_set_update_interval')}
+                    description={reactTranslator.getMessage('options_set_update_interval_desc')}
+                    id={FILTERS_UPDATE_PERIOD}
+                    options={filtersUpdatePeriodOptions}
+                    value={settings.values[FILTERS_UPDATE_PERIOD]}
+                    handler={settingChangeHandler}
+                />
             </SettingsSection>
             <div className="actions">
                 <button
