@@ -19,6 +19,7 @@ import * as TSUrlFilter from '@adguard/tsurlfilter';
 import { log } from '../../common/log';
 import { backgroundPage } from '../extension-api/background-page';
 import { RequestTypes } from '../utils/request-types';
+import { FrameStorage } from './frameStorage';
 
 /**
  * TSUrlFilter Engine wrapper
@@ -27,6 +28,8 @@ export const engine = (function () {
     const ASYNC_LOAD_CHUNK_SIZE = 5000;
 
     let engine;
+
+    let frameStorage;
 
     const startEngine = async (lists) => {
         log.info('Starting url filter engine');
@@ -43,6 +46,8 @@ export const engine = (function () {
         TSUrlFilter.setConfiguration(config);
 
         engine = new TSUrlFilter.Engine(ruleStorage, true);
+
+        frameStorage = new FrameStorage(engine);
 
         /*
          * UI thread becomes blocked on the options page while request filter is created
@@ -81,7 +86,12 @@ export const engine = (function () {
             return null;
         }
 
-        const result = engine.matchRequest(request);
+        if (request.requestType === TSUrlFilter.RequestType.Document) {
+            frameStorage.recordFrame(request);
+        }
+
+        const frameRule = frameStorage.getFrameRule(request);
+        const result = engine.matchRequest(request, frameRule);
         log.debug(
             'Result {0} found for url: {1}, document: {2}, requestType: {3}',
             result.getBasicResult(),
@@ -122,5 +132,7 @@ export const engine = (function () {
 
         createMatchingResult,
         getCosmeticResult,
+
+        frameStorage,
     };
 })();
