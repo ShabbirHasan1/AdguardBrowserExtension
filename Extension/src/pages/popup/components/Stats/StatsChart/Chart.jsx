@@ -227,7 +227,7 @@ export const Chart = ({ stats, range, type }) => {
                 this.svg[0][0].getElementsByTagName('defs')[0].innerHTML += grad1;
             },
         });
-    }, [range, type]);
+    }, [range, type, stats]);
 
     return <div className="chart" id="chart" />;
 };

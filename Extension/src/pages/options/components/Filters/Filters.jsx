@@ -1,4 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, {
+    useContext,
+    useState,
+    useEffect,
+    useMemo,
+    useCallback,
+} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import sortBy from 'lodash/sortBy';
@@ -31,7 +37,7 @@ const Filters = observer(() => {
     const history = useHistory();
 
     const location = useLocation();
-    const query = new URLSearchParams(location.search);
+    const query = useMemo(() => new URLSearchParams(location.search), [location.search]);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [urlToSubscribe, setUrlToSubscribe] = useState(decodeURIComponent(query.get(QUERY_PARAM_NAMES.SUBSCRIBE) || ''));
@@ -62,7 +68,7 @@ const Filters = observer(() => {
         setGroupDetermined(true);
         settingsStore.setSearchInput('');
         settingsStore.setSearchSelect(SEARCH_FILTERS.ALL);
-    }, [location.search]);
+    }, [location.search, query, settingsStore]);
 
     const handleGroupSwitch = async ({ id, data }) => {
         await settingsStore.updateGroupSetting(id, data);
@@ -143,14 +149,14 @@ const Filters = observer(() => {
         });
     };
 
-    const openModalHandler = () => {
+    const openModalHandler = useCallback(() => {
         setModalIsOpen(true);
         if (query.has(QUERY_PARAM_NAMES.TITLE) || query.has(QUERY_PARAM_NAMES.SUBSCRIBE)) {
             query.delete(QUERY_PARAM_NAMES.TITLE);
             query.delete(QUERY_PARAM_NAMES.SUBSCRIBE);
             history.push(`${history.location.pathname}?${decodeURIComponent(query.toString())}`);
         }
-    };
+    }, [history, query]);
 
     const closeModalHandler = () => {
         setModalIsOpen(false);
@@ -162,7 +168,7 @@ const Filters = observer(() => {
         if (urlToSubscribe) {
             openModalHandler();
         }
-    }, [urlToSubscribe]);
+    }, [urlToSubscribe, openModalHandler]);
 
     const renderAddFilterBtn = (isEmpty) => {
         const buttonClass = classNames('button button--m button--green', {

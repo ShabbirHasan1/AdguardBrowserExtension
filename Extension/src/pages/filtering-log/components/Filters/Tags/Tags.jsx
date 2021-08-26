@@ -98,7 +98,12 @@ export const Tags = ({
 
     const renderTypes = () => {
         return filters.map((tag) => {
-            const { id, title, enabled, tooltip } = tag;
+            const {
+                id,
+                title,
+                enabled,
+                tooltip,
+            } = tag;
             const button = (
                 <button
                     className={classNames(`tag tag--${id}`, type && `tag--${type}`, { active: !allButtonEnabled && enabled })}
@@ -111,9 +116,11 @@ export const Tags = ({
                 </button>
             );
             return tooltip
-                ? <Popover text={tooltip} key={id}>
-                    {button}
-                </Popover>
+                ? (
+                    <Popover text={tooltip} key={id}>
+                        {button}
+                    </Popover>
+                )
                 : button;
         });
     };

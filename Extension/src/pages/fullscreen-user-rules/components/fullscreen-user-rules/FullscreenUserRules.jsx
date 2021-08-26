@@ -13,13 +13,16 @@ import '../../../options/styles/styles.pcss';
 import '../../../options/components/UserRules/styles.pcss';
 
 export const FullscreenUserRules = observer(() => {
-    const store = useContext(fullscreenUserRulesStore);
+    const {
+        appearanceTheme,
+        getFullscreenUserRulesData,
+    } = useContext(fullscreenUserRulesStore);
 
-    useAppearanceTheme(store.appearanceTheme);
+    useAppearanceTheme(appearanceTheme);
 
     // append message listeners
     useEffect(() => {
-        store.getFullscreenUserRulesData();
+        getFullscreenUserRulesData();
 
         let removeListenerCallback = async () => {};
 
@@ -36,7 +39,7 @@ export const FullscreenUserRules = observer(() => {
 
                     switch (type) {
                         case NOTIFIER_TYPES.SETTING_UPDATED: {
-                            await store.getFullscreenUserRulesData();
+                            await getFullscreenUserRulesData();
                             break;
                         }
                         default: {
@@ -51,7 +54,7 @@ export const FullscreenUserRules = observer(() => {
         return () => {
             removeListenerCallback();
         };
-    }, []);
+    }, [getFullscreenUserRulesData]);
 
     return (
         <>

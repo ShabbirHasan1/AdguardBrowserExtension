@@ -15,16 +15,20 @@ import '../../styles/main.pcss';
 import './popup.pcss';
 
 export const Popup = observer(() => {
-    const store = useContext(popupStore);
+    const {
+        appearanceTheme,
+        getPopupData,
+        updateBlockedStats,
+    } = useContext(popupStore);
 
-    useAppearanceTheme(store.appearanceTheme);
+    useAppearanceTheme(appearanceTheme);
 
     // retrieve init data
     useEffect(() => {
         (async () => {
-            await store.getPopupData();
+            await getPopupData();
         })();
-    }, []);
+    }, [getPopupData]);
 
     // subscribe to stats change
     useEffect(() => {
@@ -32,7 +36,7 @@ export const Popup = observer(() => {
             switch (message.type) {
                 case 'updateTotalBlocked': {
                     const { tabInfo } = message;
-                    store.updateBlockedStats(tabInfo);
+                    updateBlockedStats(tabInfo);
                     break;
                 }
                 default:
@@ -45,7 +49,7 @@ export const Popup = observer(() => {
         return () => {
             messenger.onMessage.removeListener(messageHandler);
         };
-    }, []);
+    }, [updateBlockedStats]);
 
     return (
         <div className="popup">

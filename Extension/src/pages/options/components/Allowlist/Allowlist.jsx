@@ -24,14 +24,14 @@ const Allowlist = observer(() => {
         (async () => {
             await settingsStore.getAllowlist();
         })();
-    }, []);
+    }, [settingsStore]);
 
     useEffect(() => {
         if (prevAllowlist === '') {
             // reset undo manager, otherwise ctrl+z after initial load removes all content
             editorRef.current.editor.session.getUndoManager().reset();
         }
-    }, [settingsStore.allowlist]);
+    }, [settingsStore.allowlist, prevAllowlist]);
 
     const { settings } = settingsStore;
 

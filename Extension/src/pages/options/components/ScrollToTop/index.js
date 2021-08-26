@@ -1,1 +1,0 @@
-export { scrollToTop } from './ScrollToTop';

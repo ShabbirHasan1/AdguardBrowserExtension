@@ -62,8 +62,9 @@ const Search = observer(() => {
 
     return (
         <div className="search">
-            <label className="search__label">
+            <label className="search__label" htmlFor="search__input">
                 <input
+                    id="search__input"
                     autoFocus
                     className="search__input"
                     type="text"

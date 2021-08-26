@@ -21,7 +21,15 @@ const Sidebar = () => {
     return (
         <>
             {isOpen
-                ? <div onClick={closeSidebar} className="sidebar__overlay" />
+                ? (
+                    <div
+                        role="menu"
+                        tabIndex={0}
+                        onClick={closeSidebar}
+                        onKeyUp={closeSidebar}
+                        className="sidebar__overlay"
+                    />
+                )
                 : (
                     <div className="sidebar__menu" role="menu">
                         <button onClick={openSidebar} className="sidebar__open-button" type="button">

@@ -10,18 +10,22 @@ import { Icon } from '../../../common/components/ui/Icon';
 import './promo-notification.pcss';
 
 export const PromoNotification = observer(() => {
-    const store = useContext(popupStore);
+    const {
+        promoNotification,
+        closePromoNotification,
+        openPromoNotificationUrl,
+    } = useContext(popupStore);
 
     const [notificationOnClose, setNotificationOnClose] = useState(false);
 
     // schedule notification removal
     useEffect(() => {
-        if (store.promoNotification) {
+        if (promoNotification) {
             messenger.sendMessage(MESSAGE_TYPES.SET_NOTIFICATION_VIEWED, { withDelay: true });
         }
-    }, []);
+    }, [promoNotification]);
 
-    if (!store.promoNotification) {
+    if (!promoNotification) {
         return null;
     }
 
@@ -31,16 +35,16 @@ export const PromoNotification = observer(() => {
         setNotificationOnClose(true);
         setTimeout(() => {
             e.preventDefault();
-            store.closePromoNotification();
+            closePromoNotification();
         }, closeTimeoutMs);
     };
 
     const handleNotificationClick = (e) => {
         e.preventDefault();
-        store.openPromoNotificationUrl();
+        openPromoNotificationUrl();
     };
 
-    const { text } = store.promoNotification;
+    const { text } = promoNotification;
 
     const notificationClassnames = classnames('promo-notification', {
         'promo-notification--close': notificationOnClose,

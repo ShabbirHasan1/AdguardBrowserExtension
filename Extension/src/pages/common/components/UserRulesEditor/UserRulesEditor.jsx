@@ -1,4 +1,9 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, {
+    useContext,
+    useEffect,
+    useRef,
+    useCallback,
+} from 'react';
 import { observer } from 'mobx-react';
 import { Range } from 'ace-builds';
 import { SimpleRegex } from '@adguard/tsurlfilter/dist/es/simple-regex';
@@ -56,14 +61,14 @@ export const UserRulesEditor = observer(({ fullscreen, uiStore }) => {
                 store.setUserRulesExportAvailableState(false);
             }
         })();
-    }, []);
+    }, [store]);
 
     /**
      * One of the reasons for request filter to update
      * may be adding user rules from other places like assistant and others
      * @return {Promise<void>}
      */
-    const handleUserFilterUpdated = async () => {
+    const handleUserFilterUpdated = useCallback(async () => {
         const { userRules } = await messenger.sendMessage(
             MESSAGE_TYPES.GET_USER_RULES_EDITOR_DATA,
         );
@@ -80,7 +85,7 @@ export const UserRulesEditor = observer(({ fullscreen, uiStore }) => {
         } else {
             store.setUserRulesExportAvailableState(false);
         }
-    };
+    }, [store]);
 
     // Append listeners
     useEffect(() => {
@@ -115,7 +120,7 @@ export const UserRulesEditor = observer(({ fullscreen, uiStore }) => {
         return () => {
             removeListenerCallback();
         };
-    }, []);
+    }, [handleUserFilterUpdated]);
 
     // save editor content to the storage after close of fullscreen
     useEffect(() => {
@@ -129,7 +134,7 @@ export const UserRulesEditor = observer(({ fullscreen, uiStore }) => {
             };
             window.addEventListener('beforeunload', beforeUnloadListener);
         }
-    }, [store.userRulesEditorContentChanged]);
+    }, [store.userRulesEditorContentChanged, fullscreen]);
 
     // subscribe to editor changes, to update editor storage content
     useEffect(() => {
@@ -138,12 +143,12 @@ export const UserRulesEditor = observer(({ fullscreen, uiStore }) => {
         };
 
         editorRef.current.editor.session.on('change', changeHandler);
-    }, []);
+    }, [store]);
 
     // set initial wrap mode
     useEffect(() => {
         editorRef.current.editor.session.setUseWrapMode(store.userRulesEditorWrapState);
-    }, []);
+    }, [store]);
 
     const inputChangeHandler = async (event) => {
         event.persist();

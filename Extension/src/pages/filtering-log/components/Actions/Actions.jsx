@@ -69,7 +69,7 @@ const Actions = observer(() => {
                             defaultChecked={false}
                         />
                         <Popover text={preserveLogToolpitText}>
-                            <div className={preserveLogClassName}></div>
+                            <div className={preserveLogClassName} />
                         </Popover>
                     </label>
                 </div>

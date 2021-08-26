@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
 

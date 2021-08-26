@@ -40,8 +40,7 @@ const EventsSearch = observer(() => {
                         <Icon id="#cross" classname="events-search__cross" />
                     </button>
                 )
-                : <Icon id="#magnifying" classname="events-search__ico" />
-            }
+                : <Icon id="#magnifying" classname="events-search__ico" />}
             <input
                 type="text"
                 id="events-search"

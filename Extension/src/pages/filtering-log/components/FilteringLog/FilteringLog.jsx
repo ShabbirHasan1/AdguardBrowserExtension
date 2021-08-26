@@ -26,7 +26,7 @@ const FilteringLog = observer(() => {
                 logStore.getFilteringLogData(),
             ]);
         })();
-    }, []);
+    }, [logStore]);
 
     useEffect(() => {
         const FETCH_EVENTS_TIMEOUT_MS = 1500;
@@ -37,7 +37,7 @@ const FilteringLog = observer(() => {
         return () => {
             clearInterval(intervalId);
         };
-    }, []);
+    }, [logStore]);
 
     // listen for hash change
     useEffect(() => {
@@ -54,7 +54,7 @@ const FilteringLog = observer(() => {
         return function onUnmount() {
             window.removeEventListener('hashchange', handleHashChange);
         };
-    }, []);
+    }, [logStore]);
 
     // append message listeners
     useEffect(() => {
@@ -109,7 +109,7 @@ const FilteringLog = observer(() => {
         return () => {
             removeListenerCallback();
         };
-    }, []);
+    }, [logStore]);
 
     return (
         <>

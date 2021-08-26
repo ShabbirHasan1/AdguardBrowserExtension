@@ -28,7 +28,7 @@ export const Notification = (props) => {
             clearTimeout(displayTimeoutAnimationId);
             clearTimeout(displayTimeout);
         };
-    }, []);
+    }, [id, uiStore]);
 
     const notificationClassnames = classnames('notification', {
         'notification--close': notificationOnClose,
