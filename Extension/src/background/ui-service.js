@@ -471,7 +471,7 @@ export const uiService = (function () {
                         }
                         return a.groupId === b.groupId;
                     })
-                    .map(filter => `"${filter.name}"`)
+                    .map(filter => `${filter.name}`)
                     .join(', ');
                 if (updatedFilters.length > 1) {
                     text += ` ${translator.getMessage('options_popup_update_filters')}`;
@@ -963,7 +963,7 @@ export const uiService = (function () {
             switch (event) {
                 case listeners.FILTER_ENABLE_DISABLE:
                     if (payload.enabled) {
-                        checkFiltersUpdates([payload], true);
+                        checkFiltersUpdates([payload], false);
                     }
                     break;
                 case listeners.FILTER_GROUP_ENABLE_DISABLE:
