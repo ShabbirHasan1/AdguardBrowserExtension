@@ -25,6 +25,15 @@ import { cssService } from './services/css-service';
 import { webRequestService } from './request-blocking';
 import { browserUtils } from '../utils/browser-utils';
 
+/**
+ * @typedef {object} MatchQuery - Request Match Query
+ *
+ * @property {string} requestUrl    Request URL
+ * @property {string} referrer      Document URL
+ * @property {any} requestType      Request content type (one of UrlFilterRule.contentTypes)
+ * @property {any} frameRule        Frame rule
+*/
+
 export const RequestFilter = (() => {
     /**
      * Simple request cache
@@ -268,17 +277,20 @@ export const RequestFilter = (() => {
         /**
          * Gets or creates matching result
          *
-         * @param requestUrl
-         * @param referrer
-         * @param requestType
-         * @return {null}
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
          */
-        getMatchingResult(requestUrl, referrer, requestType) {
+        getMatchingResult(matchQuery) {
+            const {
+                requestUrl,
+                referrer,
+                requestType,
+            } = matchQuery;
+
             const refHost = utils.url.getDomainName(referrer);
 
             let result = this.matchingResultsCache.searchRequestCache(requestUrl, refHost, requestType);
             if (!result) {
-                result = engine.createMatchingResult(requestUrl, referrer, requestType);
+                result = engine.createMatchingResult(matchQuery);
 
                 if (!result) {
                     return new TSUrlFilter.MatchingResult([], []);
@@ -293,13 +305,12 @@ export const RequestFilter = (() => {
         /**
          * Searches for the whitelist rule for the specified pair (url/referrer)
          *
-         * @param requestUrl  Request URL
-         * @param referrer    Referrer
-         * @param requestType Request type
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
          * @returns Filter rule found or null
          */
-        findWhitelistRule(requestUrl, referrer, requestType) {
-            const result = this.getMatchingResult(requestUrl, referrer, requestType);
+        findWhitelistRule(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
 
             const basicResult = result.getBasicResult();
             if (basicResult && basicResult.isWhitelist()) {
@@ -309,29 +320,31 @@ export const RequestFilter = (() => {
             return null;
         },
 
+        findDocumentRule(documentUrl) {
+            return engine.getDocumentResult(documentUrl);
+        },
+
         /**
          * Searches for stealth whitelist rule for the specified pair (url/referrer)
          *
-         * @param requestUrl  Request URL
-         * @param referrer    Referrer
-         * @param requestType Request type
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
          * @returns Filter rule found or null
          */
-        findStealthWhitelistRule(requestUrl, referrer, requestType) {
-            const result = this.getMatchingResult(requestUrl, referrer, requestType);
+        findStealthWhitelistRule(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.stealthRule;
         },
 
         /**
          * Searches for the filter rule for the specified request.
          *
-         * @param requestUrl            Request URL
-         * @param documentUrl           Document URL
-         * @param requestType           Request content type (one of UrlFilterRule.contentTypes)
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
          * @returns Rule found or null
          */
-        findRuleForRequest(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findRuleForRequest(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getBasicResult();
         },
 
@@ -351,39 +364,36 @@ export const RequestFilter = (() => {
         /**
          * Searches for CSP rules for the specified request
          *
-         * @param requestUrl Request URL
-         * @param documentUrl Document URL
-         * @param requestType Request Type (DOCUMENT or SUBDOCUMENT)
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
          * @returns Collection of CSP rules for applying to the request or null
          */
-        findCspRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findCspRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getCspRules();
         },
 
         /**
          * Searches for replace modifier rules
          *
-         * @param requestUrl
-         * @param documentUrl
-         * @param requestType
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
          * @return {[]|*}
          */
-        findReplaceRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findReplaceRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getReplaceRules();
         },
 
         /**
          * Searches for cookie rules matching specified request.
          *
-         * @param requestUrl Request URL
-         * @param documentUrl Document URL
-         * @param requestType   Request content type
-         * @returns             Matching rules
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
+         * @returns Matching rules
          */
-        findCookieRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findCookieRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getCookieRules();
         },
     };

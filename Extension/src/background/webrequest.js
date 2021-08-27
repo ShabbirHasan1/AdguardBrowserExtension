@@ -299,7 +299,7 @@ const webrequestInit = function () {
             requestHeadersModified = true;
         }
 
-        if (headersService.onBeforeSendHeaders(requestDetails, getRemoveHeaderRules(requestUrl, getReferrerUrl(requestDetails)))) {
+        if (headersService.onBeforeSendHeaders(requestDetails, getRemoveHeaderRules(tab, requestUrl, getReferrerUrl(requestDetails)))) {
             requestHeadersModified = true;
         }
 
@@ -414,7 +414,7 @@ const webrequestInit = function () {
 
         cookieService.onHeadersReceived(requestDetails);
 
-        if (headersService.onHeadersReceived(requestDetails, getRemoveHeaderRules(requestUrl, referrerUrl))) {
+        if (headersService.onHeadersReceived(requestDetails, getRemoveHeaderRules(tab, requestUrl, referrerUrl))) {
             responseHeadersModified = true;
         }
 

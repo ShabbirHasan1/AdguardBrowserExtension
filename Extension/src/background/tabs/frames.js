@@ -199,7 +199,7 @@ export const frames = (function () {
                 const { url } = frame;
                 frameAllowlistRule = allowlist.findAllowlistRule(url);
                 if (!frameAllowlistRule) {
-                    frameAllowlistRule = filteringApi.findWhitelistRule(url, url, RequestTypes.DOCUMENT);
+                    frameAllowlistRule = filteringApi.findDocumentRule(url);
                 }
             }
             tabsApi.updateTabMetadata(tab.tabId, {

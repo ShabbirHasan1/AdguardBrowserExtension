@@ -107,7 +107,7 @@ export const stealthService = (() => {
             return false;
         }
 
-        return canApplyStealthActions(requestUrl, mainFrameUrl, requestType);
+        return canApplyStealthActions(tab, requestUrl, mainFrameUrl, requestType);
     };
 
     /**
@@ -118,13 +118,19 @@ export const stealthService = (() => {
      * @param requestType
      * @return {boolean}
      */
-    const canApplyStealthActions = (requestUrl, referrerUrl, requestType) => {
+    const canApplyStealthActions = (tab, requestUrl, referrerUrl, requestType) => {
         // if stealth mode is disabled
         if (isStealthModeDisabled()) {
             return false;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, requestType);
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType,
+            frameRule: frames.getFrameWhitelistRule(tab),
+        });
+
         if (whitelistRule && whitelistRule.isDocumentWhitelistRule()) {
             log.debug(`Whitelist rule found: ${whitelistRule.getText()}`);
             return false;
@@ -150,16 +156,23 @@ export const stealthService = (() => {
      */
     const findStealthWhitelistRule = function (requestUrl, referrerUrl, requestType) {
         if (referrerUrl) {
-            const stealthDocumentWhitelistRule = filteringApi.findStealthWhitelistRule(
-                referrerUrl, referrerUrl, requestType,
-            );
+            const stealthDocumentWhitelistRule = filteringApi.findStealthWhitelistRule({
+                requestUrl: referrerUrl,
+                referrer: referrerUrl,
+                requestType,
+            });
             if (stealthDocumentWhitelistRule && stealthDocumentWhitelistRule.isDocumentWhitelistRule()) {
                 log.debug('Stealth document whitelist rule found.');
                 return stealthDocumentWhitelistRule;
             }
         }
 
-        const stealthWhitelistRule = filteringApi.findStealthWhitelistRule(requestUrl, referrerUrl, requestType);
+        const stealthWhitelistRule = filteringApi.findStealthWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType,
+        });
+
         if (stealthWhitelistRule) {
             log.debug('Stealth whitelist rule found.');
             return stealthWhitelistRule;

@@ -19,6 +19,7 @@ import * as TSUrlFilter from '@adguard/tsurlfilter';
 import { filteringLog } from '../filtering-log';
 import { filteringApi } from '../filtering-api';
 import { RequestTypes } from '../../utils/request-types';
+import { frames } from '../../tabs/frames';
 
 /**
  * Returns $removeheader rules matching request details
@@ -27,8 +28,13 @@ import { RequestTypes } from '../../utils/request-types';
  * @param referrer
  * @return {NetworkRule[]}
  */
-export const getRemoveHeaderRules = (url, referrer) => {
-    return filteringApi.getRemoveHeaderRules(url, referrer, RequestTypes.DOCUMENT);
+export const getRemoveHeaderRules = (tab, url, referrer) => {
+    return filteringApi.getRemoveHeaderRules({
+        requestUrl: url,
+        referrer,
+        requestType: RequestTypes.DOCUMENT,
+        frameRule: frames.getFrameWhitelistRule(tab),
+    });
 };
 
 /**

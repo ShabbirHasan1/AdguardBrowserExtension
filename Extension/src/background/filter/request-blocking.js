@@ -108,9 +108,12 @@ export const webRequestService = (function () {
             return result;
         }
 
-        const cosmeticOptions = filteringApi.getCosmeticOption(
-            documentUrl, documentUrl, RequestTypes.DOCUMENT,
-        );
+        const cosmeticOptions = filteringApi.getCosmeticOption({
+            requestUrl: documentUrl,
+            referrer: documentUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule: frames.getFrameWhitelistRule(tab),
+        });
 
         if (force || !prefs.features.canUseInsertCSSAndExecuteScript) {
             // Retrieve ExtendedCss selectors only if canUseInsertCSSAndExecuteScript in unavailable
@@ -317,10 +320,19 @@ export const webRequestService = (function () {
 
         if (!allowlistRule) {
             // If whitelist rule is not found for the main frame, we check it for referrer
-            allowlistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
+            allowlistRule = filteringApi.findWhitelistRule({
+                requestUrl,
+                referrer: referrerUrl,
+                requestType: RequestTypes.DOCUMENT,
+            });
         }
 
-        return filteringApi.findRuleForRequest(requestUrl, referrerUrl, requestType, allowlistRule);
+        return filteringApi.findRuleForRequest({
+            requestUrl,
+            referrerUrl,
+            requestType,
+            frameRule: allowlistRule,
+        });
     };
 
     /**
@@ -335,7 +347,13 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(documentUrl, documentUrl, RequestTypes.DOCUMENT);
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl: documentUrl,
+            referrer: documentUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule: frames.getFrameWhitelistRule(tab),
+        });
+
         if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
             return null;
         }
@@ -357,15 +375,28 @@ export const webRequestService = (function () {
             return null;
         }
 
+        const frameRule = frames.getFrameWhitelistRule(tab);
+
         // @@||example.org^$document or @@||example.org^$urlblock —
         // disables all the $csp rules on all the pages matching the rule pattern.
         // eslint-disable-next-line max-len
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
         if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Urlblock)) {
             return null;
         }
 
-        return filteringApi.getCspRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getCspRules({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -382,14 +413,27 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
+        const frameRule = frames.getFrameWhitelistRule(tab);
+
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
         if (whitelistRule && whitelistRule.isDocumentWhitelistRule()) {
             // $cookie rules are not affected by regular exception rules (@@) unless it's a $document exception.
             return null;
         }
 
         // Get all $cookie rules matching the specified request
-        return filteringApi.getCookieRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getCookieRules({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -406,12 +450,25 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
+        const frameRule = frames.getFrameWhitelistRule(tab);
+
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
         if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
             return null;
         }
 
-        return filteringApi.getReplaceRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getReplaceRules({
+            requestUrl,
+            referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -435,14 +492,25 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(
-            requestUrl, referrerUrl, RequestTypes.DOCUMENT,
-        );
+        const frameRule = frames.getFrameWhitelistRule(tab);
+
+        const whitelistRule = filteringApi.findWhitelistRule({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
         if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.RemoveParam)) {
             return null;
         }
 
-        const rules = filteringApi.getRemoveParamRules(requestUrl, referrerUrl, requestType);
+        const rules = filteringApi.getRemoveParamRules({
+            requestUrl,
+            referrer: referrerUrl,
+            requestType,
+            frameRule,
+        });
 
         let result = requestUrl;
         rules.forEach((r) => {

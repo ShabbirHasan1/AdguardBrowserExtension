@@ -19,7 +19,6 @@ import * as TSUrlFilter from '@adguard/tsurlfilter';
 import { log } from '../../common/log';
 import { backgroundPage } from '../extension-api/background-page';
 import { RequestTypes } from '../utils/request-types';
-import { FrameStorage } from './frameStorage';
 
 /**
  * TSUrlFilter Engine wrapper
@@ -28,8 +27,6 @@ export const engine = (function () {
     const ASYNC_LOAD_CHUNK_SIZE = 5000;
 
     let engine;
-
-    let frameStorage;
 
     const startEngine = async (lists) => {
         log.info('Starting url filter engine');
@@ -47,8 +44,6 @@ export const engine = (function () {
 
         engine = new TSUrlFilter.Engine(ruleStorage, true);
 
-        frameStorage = new FrameStorage(engine);
-
         /*
          * UI thread becomes blocked on the options page while request filter is created
          * that's why we create filter rules using chunks of the specified length
@@ -65,19 +60,33 @@ export const engine = (function () {
     /**
      * Gets matching result for request.
      *
-     * @param requestUrl    Request URL
-     * @param documentUrl   Document URL
-     * @param requestType   Request content type (one of UrlFilterRule.contentTypes)
+     * @param {object} matchQuery               Request Match Query
+     * @param {string} matchQuery.requestUrl    Request URL
+     * @param {string} matchQuery.referrer      Document URL
+     * @param {any} matchQuery.requestType   Request content type (one of UrlFilterRule.contentTypes)
+     * @param {any} matchQuery.frameRule     Frame rule
+     *
      * @returns matching result or null
-     * @private
      */
-    const createMatchingResult = (requestUrl, documentUrl, requestType) => {
-        // eslint-disable-next-line max-len
-        log.debug('Filtering http request for url: {0}, document: {1}, requestType: {2}', requestUrl, documentUrl, requestType);
+    const createMatchingResult = (matchQuery) => {
+        const {
+            requestUrl,
+            referrer,
+            requestType,
+        } = matchQuery;
+
+        let { frameRule } = matchQuery;
+
+        log.debug(
+            'Filtering http request for url: {0}, document: {1}, requestType: {2}',
+            requestUrl,
+            referrer,
+            requestType,
+        );
 
         const request = new TSUrlFilter.Request(
             requestUrl,
-            documentUrl,
+            referrer,
             RequestTypes.transformRequestType(requestType),
         );
 
@@ -86,21 +95,36 @@ export const engine = (function () {
             return null;
         }
 
-        if (request.requestType === TSUrlFilter.RequestType.Document) {
-            frameStorage.recordFrame(request);
+        if (!frameRule) {
+            frameRule = null;
         }
 
-        const frameRule = frameStorage.getFrameRule(request);
         const result = engine.matchRequest(request, frameRule);
+
         log.debug(
             'Result {0} found for url: {1}, document: {2}, requestType: {3}',
             result.getBasicResult(),
             requestUrl,
-            documentUrl,
+            referrer,
             requestType,
         );
 
         return result;
+    };
+
+    /**
+     * Gets matching result for document request.
+     *
+     * @param documentUrl    Document URL
+     * @returns matching result or null
+     */
+    const getDocumentResult = (documentUrl) => {
+        if (!engine) {
+            log.warn('Filtering engine is not ready');
+            return null;
+        }
+
+        return engine.matchFrame(documentUrl);
     };
 
     /**
@@ -132,7 +156,6 @@ export const engine = (function () {
 
         createMatchingResult,
         getCosmeticResult,
-
-        frameStorage,
+        getDocumentResult,
     };
 })();
