@@ -25,15 +25,6 @@ import { cssService } from './services/css-service';
 import { webRequestService } from './request-blocking';
 import { browserUtils } from '../utils/browser-utils';
 
-/**
- * @typedef {object} MatchQuery - Request Match Query
- *
- * @property {string} requestUrl    Request URL
- * @property {string} referrer      Document URL
- * @property {any} requestType      Request content type (one of UrlFilterRule.contentTypes)
- * @property {any} frameRule        Frame rule
-*/
-
 export const RequestFilter = (() => {
     /**
      * Simple request cache
@@ -282,11 +273,11 @@ export const RequestFilter = (() => {
         getMatchingResult(matchQuery) {
             const {
                 requestUrl,
-                referrer,
+                frameUrl,
                 requestType,
             } = matchQuery;
 
-            const refHost = utils.url.getDomainName(referrer);
+            const refHost = utils.url.getDomainName(frameUrl);
 
             let result = this.matchingResultsCache.searchRequestCache(requestUrl, refHost, requestType);
             if (!result) {

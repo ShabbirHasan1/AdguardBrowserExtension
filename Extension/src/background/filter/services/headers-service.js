@@ -31,9 +31,9 @@ import { frames } from '../../tabs/frames';
 export const getRemoveHeaderRules = (tab, url, referrer) => {
     return filteringApi.getRemoveHeaderRules({
         requestUrl: url,
-        referrer,
+        frameUrl: referrer,
         requestType: RequestTypes.DOCUMENT,
-        frameRule: frames.getFrameWhitelistRule(tab),
+        frameRule: frames.getFrameRule(tab),
     });
 };
 

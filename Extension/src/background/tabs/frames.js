@@ -134,8 +134,8 @@ export const frames = (function () {
      * @returns true if Tab have white list rule
      */
     const isTabWhitelisted = function (tab) {
-        const frameWhitelistRule = tabsApi.getTabMetadata(tab.tabId, 'frameWhitelistRule');
-        return frameWhitelistRule && frameWhitelistRule.isDocumentWhitelistRule();
+        const frameRule = tabsApi.getTabMetadata(tab.tabId, 'frameRule');
+        return frameRule && frameRule.isDocumentWhitelistRule();
     };
 
     /**
@@ -181,8 +181,8 @@ export const frames = (function () {
      * @param tab Tab to check
      * @returns allowlist rule applied to that tab (if any)
      */
-    const getFrameWhitelistRule = function (tab) {
-        return tabsApi.getTabMetadata(tab.tabId, 'frameWhitelistRule');
+    const getFrameRule = function (tab) {
+        return tabsApi.getTabMetadata(tab.tabId, 'frameRule');
     };
 
     /**
@@ -194,16 +194,16 @@ export const frames = (function () {
         const frame = tabsApi.getTabFrame(tab.tabId, 0);
         if (frame) {
             const applicationFilteringDisabled = settings.isFilteringDisabled();
-            let frameAllowlistRule = null;
+            let frameRule = null;
             if (!applicationFilteringDisabled) {
                 const { url } = frame;
-                frameAllowlistRule = allowlist.findAllowlistRule(url);
-                if (!frameAllowlistRule) {
-                    frameAllowlistRule = filteringApi.findDocumentRule(url);
+                frameRule = allowlist.findAllowlistRule(url);
+                if (!frameRule) {
+                    frameRule = filteringApi.findDocumentRule(url);
                 }
             }
             tabsApi.updateTabMetadata(tab.tabId, {
-                frameWhitelistRule: frameAllowlistRule,
+                frameRule,
                 applicationFilteringDisabled,
             });
         }
@@ -255,7 +255,7 @@ export const frames = (function () {
         if (applicationAvailable) {
             documentAllowlisted = isTabWhitelisted(tab);
             if (documentAllowlisted) {
-                const rule = getFrameWhitelistRule(tab);
+                const rule = getFrameRule(tab);
                 userAllowlisted = utils.filters.isWhitelistFilterRule(rule)
                         || utils.filters.isUserFilterRule(rule);
                 frameRule = {
@@ -347,7 +347,7 @@ export const frames = (function () {
         isTabProtectionDisabled,
         isTabAdguardWhitelisted,
         getTabAdguardUserWhitelistRule,
-        getFrameWhitelistRule,
+        getFrameRule,
         reloadFrameData,
         recordFrameReferrerHeader,
         getFrameInfo,

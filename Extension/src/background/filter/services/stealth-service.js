@@ -126,9 +126,9 @@ export const stealthService = (() => {
 
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
-            frameRule: frames.getFrameWhitelistRule(tab),
+            frameRule: frames.getFrameRule(tab),
         });
 
         if (whitelistRule && whitelistRule.isDocumentWhitelistRule()) {
@@ -158,7 +158,7 @@ export const stealthService = (() => {
         if (referrerUrl) {
             const stealthDocumentWhitelistRule = filteringApi.findStealthWhitelistRule({
                 requestUrl: referrerUrl,
-                referrer: referrerUrl,
+                frameUrl: referrerUrl,
                 requestType,
             });
             if (stealthDocumentWhitelistRule && stealthDocumentWhitelistRule.isDocumentWhitelistRule()) {
@@ -169,7 +169,7 @@ export const stealthService = (() => {
 
         const stealthWhitelistRule = filteringApi.findStealthWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
         });
 

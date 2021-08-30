@@ -115,7 +115,7 @@ const webrequestInit = function () {
              * Binds rule to the main_frame request
              * In integration mode, rule from the headers will override this value
              */
-            const tabRequestRule = frames.getFrameWhitelistRule(tab);
+            const tabRequestRule = frames.getFrameRule(tab);
             if (tabRequestRule) {
                 requestContextStorage.update(requestId, { requestRule: tabRequestRule });
             }

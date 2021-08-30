@@ -58,20 +58,25 @@ export const engine = (function () {
     };
 
     /**
+     * @typedef {object} MatchQuery - Request Match Query
+     *
+     * @property {string} requestUrl    Request URL
+     * @property {string} frameUrl      Document URL
+     * @property {any} requestType      Request content type (one of UrlFilterRule.contentTypes)
+     * @property {any} frameRule        Frame rule
+    */
+
+    /**
      * Gets matching result for request.
      *
-     * @param {object} matchQuery               Request Match Query
-     * @param {string} matchQuery.requestUrl    Request URL
-     * @param {string} matchQuery.referrer      Document URL
-     * @param {any} matchQuery.requestType   Request content type (one of UrlFilterRule.contentTypes)
-     * @param {any} matchQuery.frameRule     Frame rule
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
      *
      * @returns matching result or null
      */
     const createMatchingResult = (matchQuery) => {
         const {
             requestUrl,
-            referrer,
+            frameUrl,
             requestType,
         } = matchQuery;
 
@@ -80,13 +85,13 @@ export const engine = (function () {
         log.debug(
             'Filtering http request for url: {0}, document: {1}, requestType: {2}',
             requestUrl,
-            referrer,
+            frameUrl,
             requestType,
         );
 
         const request = new TSUrlFilter.Request(
             requestUrl,
-            referrer,
+            frameUrl,
             RequestTypes.transformRequestType(requestType),
         );
 
@@ -105,7 +110,7 @@ export const engine = (function () {
             'Result {0} found for url: {1}, document: {2}, requestType: {3}',
             result.getBasicResult(),
             requestUrl,
-            referrer,
+            frameUrl,
             requestType,
         );
 
@@ -115,16 +120,16 @@ export const engine = (function () {
     /**
      * Gets matching result for document request.
      *
-     * @param documentUrl    Document URL
+     * @param frameUrl    Frame URL
      * @returns matching result or null
      */
-    const getDocumentResult = (documentUrl) => {
+    const getDocumentResult = (frameUrl) => {
         if (!engine) {
             log.warn('Filtering engine is not ready');
             return null;
         }
 
-        return engine.matchFrame(documentUrl);
+        return engine.matchFrame(frameUrl);
     };
 
     /**

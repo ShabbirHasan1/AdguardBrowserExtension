@@ -110,9 +110,9 @@ export const webRequestService = (function () {
 
         const cosmeticOptions = filteringApi.getCosmeticOption({
             requestUrl: documentUrl,
-            referrer: documentUrl,
+            frameUrl: documentUrl,
             requestType: RequestTypes.DOCUMENT,
-            frameRule: frames.getFrameWhitelistRule(tab),
+            frameRule: frames.getFrameRule(tab),
         });
 
         if (force || !prefs.features.canUseInsertCSSAndExecuteScript) {
@@ -309,7 +309,7 @@ export const webRequestService = (function () {
         if (tab.tabId === BACKGROUND_TAB_ID) {
             allowlistRule = allowlist.findAllowlistRule(referrerUrl);
         } else {
-            allowlistRule = frames.getFrameWhitelistRule(tab);
+            allowlistRule = frames.getFrameRule(tab);
         }
 
         if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
@@ -322,14 +322,14 @@ export const webRequestService = (function () {
             // If whitelist rule is not found for the main frame, we check it for referrer
             allowlistRule = filteringApi.findWhitelistRule({
                 requestUrl,
-                referrer: referrerUrl,
+                frameUrl: referrerUrl,
                 requestType: RequestTypes.DOCUMENT,
             });
         }
 
         return filteringApi.findRuleForRequest({
             requestUrl,
-            referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
             frameRule: allowlistRule,
         });
@@ -349,9 +349,9 @@ export const webRequestService = (function () {
 
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl: documentUrl,
-            referrer: documentUrl,
+            frameUrl: documentUrl,
             requestType: RequestTypes.DOCUMENT,
-            frameRule: frames.getFrameWhitelistRule(tab),
+            frameRule: frames.getFrameRule(tab),
         });
 
         if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
@@ -375,14 +375,14 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const frameRule = frames.getFrameWhitelistRule(tab);
+        const frameRule = frames.getFrameRule(tab);
 
         // @@||example.org^$document or @@||example.org^$urlblock —
         // disables all the $csp rules on all the pages matching the rule pattern.
         // eslint-disable-next-line max-len
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType: RequestTypes.DOCUMENT,
             frameRule,
         });
@@ -393,7 +393,7 @@ export const webRequestService = (function () {
 
         return filteringApi.getCspRules({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
             frameRule,
         });
@@ -413,11 +413,11 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const frameRule = frames.getFrameWhitelistRule(tab);
+        const frameRule = frames.getFrameRule(tab);
 
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType: RequestTypes.DOCUMENT,
             frameRule,
         });
@@ -430,7 +430,7 @@ export const webRequestService = (function () {
         // Get all $cookie rules matching the specified request
         return filteringApi.getCookieRules({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
             frameRule,
         });
@@ -450,11 +450,11 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const frameRule = frames.getFrameWhitelistRule(tab);
+        const frameRule = frames.getFrameRule(tab);
 
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType: RequestTypes.DOCUMENT,
             frameRule,
         });
@@ -465,7 +465,7 @@ export const webRequestService = (function () {
 
         return filteringApi.getReplaceRules({
             requestUrl,
-            referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
             frameRule,
         });
@@ -492,11 +492,11 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const frameRule = frames.getFrameWhitelistRule(tab);
+        const frameRule = frames.getFrameRule(tab);
 
         const whitelistRule = filteringApi.findWhitelistRule({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType: RequestTypes.DOCUMENT,
             frameRule,
         });
@@ -507,7 +507,7 @@ export const webRequestService = (function () {
 
         const rules = filteringApi.getRemoveParamRules({
             requestUrl,
-            referrer: referrerUrl,
+            frameUrl: referrerUrl,
             requestType,
             frameRule,
         });
