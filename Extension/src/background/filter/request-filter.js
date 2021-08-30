@@ -27,85 +27,13 @@ import { browserUtils } from '../utils/browser-utils';
 
 export const RequestFilter = (() => {
     /**
-     * Simple request cache
-     * @param requestCacheMaxSize Max cache size
-     */
-    const RequestCache = function (requestCacheMaxSize) {
-        this.requestCache = Object.create(null);
-        this.requestCacheSize = 0;
-        this.requestCacheMaxSize = requestCacheMaxSize;
-
-        /**
-         * Searches for cached matching result
-         *
-         * @param requestUrl Request url
-         * @param refHost Referrer host
-         * @param requestType Request type
-         */
-        this.searchRequestCache = function (requestUrl, refHost, requestType) {
-            const cacheItem = this.requestCache[requestUrl];
-            if (!cacheItem) {
-                return null;
-            }
-
-            const c = cacheItem[requestType];
-            if (c && c[1] === refHost) {
-                return c[0];
-            }
-
-            return null;
-        };
-
-        /**
-         * Saves matching result to requestCache
-         *
-         * @param requestUrl Request url
-         * @param matchingResult Request result
-         * @param refHost Referrer host
-         * @param requestType Request type
-         */
-        this.saveResultToCache = function (requestUrl, matchingResult, refHost, requestType) {
-            if (this.requestCacheSize > this.requestCacheMaxSize) {
-                this.clearRequestCache();
-            }
-            if (!this.requestCache[requestUrl]) {
-                this.requestCache[requestUrl] = Object.create(null);
-                this.requestCacheSize += 1;
-            }
-
-            // Two-levels gives us an ability to not to override cached item for
-            // different request types with the same url
-            this.requestCache[requestUrl][requestType] = [matchingResult, refHost];
-        };
-
-        /**
-         * Clears request cache
-         */
-        this.clearRequestCache = function () {
-            if (this.requestCacheSize === 0) {
-                return;
-            }
-            this.requestCache = Object.create(null);
-            this.requestCacheSize = 0;
-        };
-    };
-
-    /**
      * Request filter is main class which applies filter rules.
      *
      * @type {Function}
      */
-    const RequestFilter = function () {
-        // Init small caches for url filtering rules
-        this.matchingResultsCache = new RequestCache(this.requestCacheMaxSize);
-    };
+    const RequestFilter = function () {};
 
     RequestFilter.prototype = {
-
-        /**
-         * Cache capacity
-         */
-        requestCacheMaxSize: 1000,
 
         getRulesCount() {
             return engine.getRulesCount();
@@ -271,23 +199,10 @@ export const RequestFilter = (() => {
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          */
         getMatchingResult(matchQuery) {
-            const {
-                requestUrl,
-                frameUrl,
-                requestType,
-            } = matchQuery;
+            const result = engine.createMatchingResult(matchQuery);
 
-            const refHost = utils.url.getDomainName(frameUrl);
-
-            let result = this.matchingResultsCache.searchRequestCache(requestUrl, refHost, requestType);
             if (!result) {
-                result = engine.createMatchingResult(matchQuery);
-
-                if (!result) {
-                    return new TSUrlFilter.MatchingResult([], []);
-                }
-
-                this.matchingResultsCache.saveResultToCache(requestUrl, result, refHost, requestType);
+                return new TSUrlFilter.MatchingResult([], []);
             }
 
             return result;
