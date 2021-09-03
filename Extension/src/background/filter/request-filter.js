@@ -101,7 +101,7 @@ export const RequestFilter = (() => {
          *
          * @param url Page URL
          * @param cosmeticOptions bitmask
-         * @returns {{scriptSource: string, rule: string}[]} Javascript for the specified URL
+         * @returns {CosmeticRule[]} Javascript for the specified URL
          */
         getScriptsForUrl(url, cosmeticOptions) {
             const hostname = utils.url.getHost(url);
@@ -213,7 +213,7 @@ export const RequestFilter = (() => {
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          *
-         * @returns Filter rule found or null
+         * @returns NetworkRule found or null
          */
         findWhitelistRule(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
@@ -235,7 +235,7 @@ export const RequestFilter = (() => {
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          *
-         * @returns Filter rule found or null
+         * @returns NetworkRule found or null
          */
         findStealthWhitelistRule(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
@@ -246,8 +246,7 @@ export const RequestFilter = (() => {
          * Searches for the filter rule for the specified request.
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
-         *
-         * @returns Rule found or null
+         * @returns NetworkRule found or null
          */
         findRuleForRequest(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
@@ -256,8 +255,9 @@ export const RequestFilter = (() => {
 
         /**
          * Searches for content rules for the specified domain
+         *
          * @param documentUrl Document URL
-         * @returns Collection of content rules
+         * @returns CosmeticRule[] of content rules
          */
         getContentRulesForUrl(documentUrl) {
             const hostname = utils.url.getDomainName(documentUrl);
@@ -271,8 +271,7 @@ export const RequestFilter = (() => {
          * Searches for CSP rules for the specified request
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
-         *
-         * @returns Collection of CSP rules for applying to the request or null
+         * @returns NetworkRule[] of CSP rules for applying to the request or null
          */
         findCspRules(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
@@ -283,8 +282,7 @@ export const RequestFilter = (() => {
          * Searches for replace modifier rules
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
-         *
-         * @return {[]|*}
+         * @returns NetworkRule[] matching
          */
         findReplaceRules(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
@@ -295,8 +293,7 @@ export const RequestFilter = (() => {
          * Searches for cookie rules matching specified request.
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
-         *
-         * @returns Matching rules
+         * @returns NetworkRule[] matching
          */
         findCookieRules(matchQuery) {
             const result = this.getMatchingResult(matchQuery);

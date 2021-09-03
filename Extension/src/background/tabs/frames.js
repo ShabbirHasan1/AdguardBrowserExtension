@@ -224,7 +224,7 @@ export const frames = (function () {
      * Gets main frame data
      *
      * @param tab Tab
-     * @returns frame data
+     * @returns {*} frame data
      */
     const getFrameInfo = function (tab) {
         const { tabId } = tab;

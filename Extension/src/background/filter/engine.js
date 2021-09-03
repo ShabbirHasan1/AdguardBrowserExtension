@@ -137,7 +137,7 @@ export const engine = (function () {
      *
      * @param hostname
      * @param option
-     * @returns cosmetic result
+     * @returns CosmeticResult result
      */
     const getCosmeticResult = (hostname, option) => {
         if (!engine) {

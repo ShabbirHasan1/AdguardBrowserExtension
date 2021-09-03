@@ -959,13 +959,13 @@ describe('RequestFilter', () => {
             expect(rule.getText()).toBe(urlRuleText);
 
             // Will match request url host
-            // rule = requestFilter.findRuleForRequest({
-            //     requestUrl: 'http://www.example.org/url',
-            //     frameUrl: 'http://test.com/',
-            //     requestType: RequestTypes.DOCUMENT
-            // });
-            //
-            // expect(rule.getText(), urlRuleText);
+            rule = requestFilter.findRuleForRequest({
+                requestUrl: 'http://www.example.org/url',
+                frameUrl: 'http://test.com/',
+                requestType: RequestTypes.DOCUMENT,
+            });
+
+            expect(rule.getText()).toBe(urlRuleText);
 
             // Request type DOCUMENT is required
             rule = requestFilter.findRuleForRequest({

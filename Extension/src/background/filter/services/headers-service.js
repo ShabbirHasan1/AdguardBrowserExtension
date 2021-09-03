@@ -24,6 +24,7 @@ import { frames } from '../../tabs/frames';
 /**
  * Returns $removeheader rules matching request details
  *
+ * @param tab
  * @param url
  * @param referrer
  * @return {NetworkRule[]}

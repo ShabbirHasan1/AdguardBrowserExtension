@@ -113,6 +113,7 @@ export const stealthService = (() => {
     /**
      * Checks if stealth actions are available for provided request with parameters
      *
+     * @param tab
      * @param requestUrl
      * @param referrerUrl
      * @param requestType

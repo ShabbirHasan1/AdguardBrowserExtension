@@ -222,7 +222,7 @@ export const webRequestService = (function () {
     /**
      * Checks if popup is blocked by rule
      * @param requestRule
-     * @returns {*|boolean|true}
+     * @returns {boolean}
      */
     const isPopupBlockedByRule = (requestRule) => {
         return requestRule && !requestRule.isWhitelist()
@@ -232,7 +232,7 @@ export const webRequestService = (function () {
     /**
      * Check if document is blocked by rule
      * @param requestRule
-     * @return {*|boolean|true}
+     * @return {boolean}
      */
     const isDocumentBlockingRule = (requestRule) => {
         return requestRule && !requestRule.isWhitelist()
