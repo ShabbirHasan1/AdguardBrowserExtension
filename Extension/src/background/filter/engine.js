@@ -70,10 +70,9 @@ export const engine = (function () {
      * Gets matching result for request.
      *
      * @param {MatchQuery} matchQuery - {@link MatchQuery}
-     *
      * @returns matching result or null
      */
-    const createMatchingResult = (matchQuery) => {
+    const matchRequest = (matchQuery) => {
         const {
             requestUrl,
             frameUrl,
@@ -118,12 +117,12 @@ export const engine = (function () {
     };
 
     /**
-     * Gets matching result for document request.
+     * Matches current frame url and returns document-level rule if found.
      *
      * @param frameUrl    Frame URL
      * @returns matching result or null
      */
-    const getDocumentResult = (frameUrl) => {
+    const matchFrame = (frameUrl) => {
         if (!engine) {
             log.warn('Filtering engine is not ready');
             return null;
@@ -159,8 +158,8 @@ export const engine = (function () {
         startEngine,
         getRulesCount,
 
-        createMatchingResult,
+        matchRequest,
+        matchFrame,
         getCosmeticResult,
-        getDocumentResult,
     };
 })();

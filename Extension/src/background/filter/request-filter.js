@@ -199,7 +199,7 @@ export const RequestFilter = (() => {
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          */
         getMatchingResult(matchQuery) {
-            const result = engine.createMatchingResult(matchQuery);
+            const result = engine.matchRequest(matchQuery);
 
             if (!result) {
                 return new TSUrlFilter.MatchingResult([], []);
@@ -227,7 +227,7 @@ export const RequestFilter = (() => {
         },
 
         findDocumentRule(documentUrl) {
-            return engine.getDocumentResult(documentUrl);
+            return engine.matchFrame(documentUrl);
         },
 
         /**
