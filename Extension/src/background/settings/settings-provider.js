@@ -82,7 +82,7 @@ export const settingsProvider = (function () {
         // Collect allowlist/blacklist domains, allowlist inverted mode and allowlist enabled state
         const allowlistDomains = allowlist.getAllowlistedDomains() || [];
         const blockListDomains = allowlist.getBlocklistedDomains() || [];
-        const defaultWhitelistMode = !!allowlist.isDefaultMode();
+        const defaultAllowlistMode = !!allowlist.isDefaultMode();
         const allowlistEnabled = settings.getAllowlistEnabledState();
 
         // Collect user rules
@@ -99,7 +99,7 @@ export const settingsProvider = (function () {
                     enabled: userFilterEnabled,
                 },
                 'whitelist': {
-                    'inverted': !defaultWhitelistMode,
+                    'inverted': !defaultAllowlistMode,
                     'domains': allowlistDomains,
                     'inverted-domains': blockListDomains,
                     'enabled': allowlistEnabled,

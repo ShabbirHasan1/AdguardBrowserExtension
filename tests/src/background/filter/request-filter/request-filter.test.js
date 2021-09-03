@@ -81,12 +81,12 @@ describe('RequestFilter', () => {
         TSUrlFilter.setLogger(console);
     });
 
-    it('Whitelist rules selecting', async () => {
+    it('Allowlist rules selecting', async () => {
         const requestUrl = 'https://test.com/';
         const frameUrl = 'http://example.org';
 
         const rule = '||test.com^';
-        const whitelist = '@@||test.com^';
+        const allowlist = '@@||test.com^';
         const documentRule = '@@||test.com^$document';
         const genericHideRule = '@@||test.com^$generichide';
 
@@ -102,14 +102,14 @@ describe('RequestFilter', () => {
         expect(result).toBeTruthy();
         expect(result.getText()).toBe(rule);
 
-        requestFilter = await createRequestFilterWithRules([rule, whitelist]);
+        requestFilter = await createRequestFilterWithRules([rule, allowlist]);
         result = requestFilter.findRuleForRequest({
             requestUrl,
             frameUrl,
             requestType: RequestTypes.SUBDOCUMENT,
         });
         expect(result).toBeTruthy();
-        expect(result.getText()).toBe(whitelist);
+        expect(result.getText()).toBe(allowlist);
 
         requestFilter = await createRequestFilterWithRules([rule, documentRule]);
         result = requestFilter.findRuleForRequest({
@@ -120,7 +120,7 @@ describe('RequestFilter', () => {
         expect(result).toBeTruthy();
         expect(result.ruleText).toBe(documentRule);
 
-        requestFilter = await createRequestFilterWithRules([rule, whitelist, genericHideRule]);
+        requestFilter = await createRequestFilterWithRules([rule, allowlist, genericHideRule]);
         result = requestFilter.findRuleForRequest({
             requestUrl,
             frameUrl,
@@ -135,7 +135,7 @@ describe('RequestFilter', () => {
         const frameUrl = 'http://example.org';
 
         const rule = '||test.com^';
-        const whitelist = '@@||test.com^';
+        const allowlist = '@@||test.com^';
         const important = '||test.com^$important';
 
         let requestFilter;
@@ -150,16 +150,16 @@ describe('RequestFilter', () => {
         expect(result).toBeTruthy();
         expect(result.getText()).toBe(rule);
 
-        requestFilter = await createRequestFilterWithRules([rule, whitelist]);
+        requestFilter = await createRequestFilterWithRules([rule, allowlist]);
         result = requestFilter.findRuleForRequest({
             requestUrl,
             frameUrl,
             requestType: RequestTypes.SUBDOCUMENT,
         });
         expect(result).toBeTruthy();
-        expect(result.getText()).toBe(whitelist);
+        expect(result.getText()).toBe(allowlist);
 
-        requestFilter = await createRequestFilterWithRules([rule, whitelist, important]);
+        requestFilter = await createRequestFilterWithRules([rule, allowlist, important]);
         result = requestFilter.findRuleForRequest({
             requestUrl,
             frameUrl,
@@ -322,12 +322,12 @@ describe('RequestFilter', () => {
             })).toBeTruthy();
         });
 
-        it('BadFilter option whitelist', async () => {
+        it('BadFilter option allowlist', async () => {
             const requestUrl = 'https://test.com/';
             const frameUrl = 'http://example.org';
 
             const rule = '||test.com^';
-            const whitelist = '@@||test.com^';
+            const allowlist = '@@||test.com^';
             const badFilterRule = '@@||test.com^$badfilter';
 
             let requestFilter;
@@ -346,16 +346,16 @@ describe('RequestFilter', () => {
             expect(result.getText()).toEqual(rule);
 
             requestFilter = await createRequestFilterWithRules([
-                rule, whitelist,
+                rule, allowlist,
             ]);
 
-            result = requestFilter.findWhitelistRule({
+            result = requestFilter.findAllowlistRule({
                 requestUrl,
                 frameUrl,
                 requestType: RequestTypes.SUBDOCUMENT,
             });
             expect(result).toBeTruthy();
-            expect(result.getText()).toEqual(whitelist);
+            expect(result.getText()).toEqual(allowlist);
 
             result = requestFilter.findRuleForRequest({
                 requestUrl,
@@ -363,13 +363,13 @@ describe('RequestFilter', () => {
                 requestType: RequestTypes.SUBDOCUMENT,
             });
             expect(result).toBeTruthy();
-            expect(result.getText()).toEqual(whitelist);
+            expect(result.getText()).toEqual(allowlist);
 
             requestFilter = await createRequestFilterWithRules([
-                rule, whitelist, badFilterRule,
+                rule, allowlist, badFilterRule,
             ]);
 
-            result = requestFilter.findWhitelistRule({
+            result = requestFilter.findAllowlistRule({
                 requestUrl,
                 frameUrl,
                 requestType: RequestTypes.SUBDOCUMENT,
@@ -551,33 +551,33 @@ describe('RequestFilter', () => {
             });
             expect(!result || result.length === 0).toBeTruthy();
 
-            // Add matching directive whitelist rule
-            const directiveWhitelistRule = '@@||xpanama.net^$csp=connect-src \'none\'';
-            requestFilter = await createRequestFilterWithRules([cspRule, directiveWhitelistRule]);
+            // Add matching directive allowlist rule
+            const directiveAllowlistRule = '@@||xpanama.net^$csp=connect-src \'none\'';
+            requestFilter = await createRequestFilterWithRules([cspRule, directiveAllowlistRule]);
             result = requestFilter.findCspRules({
                 requestUrl: 'https://xpanama.net',
                 frameUrl: 'https://www.merriam-webster.com/',
                 requestType: RequestTypes.DOCUMENT,
             });
-            // Specific whitelist rule should be returned
+            // Specific allowlist rule should be returned
             expect(result).toHaveLength(1);
-            expect(result[0].getText()).toBe(directiveWhitelistRule);
+            expect(result[0].getText()).toBe(directiveAllowlistRule);
 
-            // Add global whitelist rule
-            const globalWhitelistRule = '@@||xpanama.net^$csp';
-            requestFilter = await createRequestFilterWithRules([cspRule, directiveWhitelistRule, globalWhitelistRule]);
+            // Add global allowlist rule
+            const globalAllowlistRule = '@@||xpanama.net^$csp';
+            requestFilter = await createRequestFilterWithRules([cspRule, directiveAllowlistRule, globalAllowlistRule]);
             result = requestFilter.findCspRules({
                 requestUrl: 'https://xpanama.net',
                 frameUrl: 'https://www.merriam-webster.com/',
                 requestType: RequestTypes.DOCUMENT,
             });
-            // Global whitelist rule should be returned
+            // Global allowlist rule should be returned
             expect(result).toHaveLength(1);
-            expect(result[0].getText()).toBe(globalWhitelistRule);
+            expect(result[0].getText()).toBe(globalAllowlistRule);
 
-            // Add whitelist rule, but with not matched directive
-            const directiveMissWhitelistRule = '@@||xpanama.net^$csp=frame-src \'none\'';
-            requestFilter = await createRequestFilterWithRules([cspRule, directiveMissWhitelistRule]);
+            // Add allowlist rule, but with not matched directive
+            const directiveMissAllowlistRule = '@@||xpanama.net^$csp=frame-src \'none\'';
+            requestFilter = await createRequestFilterWithRules([cspRule, directiveMissAllowlistRule]);
             result = requestFilter.findCspRules({
                 requestUrl: 'https://xpanama.net',
                 frameUrl: 'https://www.merriam-webster.com/',
@@ -588,7 +588,7 @@ describe('RequestFilter', () => {
 
             // Add CSP rule with duplicated directive
             const duplicateCspRule = '||xpanama.net^$third-party,csp=connect-src \'none\'';
-            requestFilter = await createRequestFilterWithRules([cspRule, directiveMissWhitelistRule, duplicateCspRule]);
+            requestFilter = await createRequestFilterWithRules([cspRule, directiveMissAllowlistRule, duplicateCspRule]);
             result = requestFilter.findCspRules({
                 requestUrl: 'https://xpanama.net',
                 frameUrl: 'https://www.merriam-webster.com/',
@@ -627,10 +627,10 @@ describe('RequestFilter', () => {
             let rules;
 
             // Test important rules
-            const globalWhitelistRule = '@@||xpanama.net^$csp,domain=merriam-webster.com';
-            const directiveWhitelistRule = '@@||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com';
+            const globalAllowlistRule = '@@||xpanama.net^$csp,domain=merriam-webster.com';
+            const directiveAllowlistRule = '@@||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com';
             // eslint-disable-next-line max-len
-            const importantDirectiveWhitelistRule = '@@||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com,important';
+            const importantDirectiveAllowlistRule = '@@||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com,important';
             const defaultCspRule = '||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com';
             const importantCspRule = '||xpanama.net^$csp=frame-src \'none\',domain=merriam-webster.com,important';
 
@@ -645,35 +645,35 @@ describe('RequestFilter', () => {
             }
 
             requestFilter = await createRequestFilterWithRules([
-                globalWhitelistRule,
-                directiveWhitelistRule,
-                importantDirectiveWhitelistRule,
+                globalAllowlistRule,
+                directiveAllowlistRule,
+                importantDirectiveAllowlistRule,
                 defaultCspRule,
                 importantCspRule,
             ]);
 
-            checkCspRules(globalWhitelistRule);
+            checkCspRules(globalAllowlistRule);
 
             requestFilter = await createRequestFilterWithRules([
-                directiveWhitelistRule,
-                importantDirectiveWhitelistRule,
+                directiveAllowlistRule,
+                importantDirectiveAllowlistRule,
                 defaultCspRule,
                 importantCspRule,
             ]);
-            checkCspRules(importantDirectiveWhitelistRule);
+            checkCspRules(importantDirectiveAllowlistRule);
 
             requestFilter = await createRequestFilterWithRules([
-                directiveWhitelistRule,
+                directiveAllowlistRule,
                 defaultCspRule,
                 importantCspRule,
             ]);
             checkCspRules(importantCspRule);
 
             requestFilter = await createRequestFilterWithRules([
-                directiveWhitelistRule,
+                directiveAllowlistRule,
                 defaultCspRule,
             ]);
-            checkCspRules(directiveWhitelistRule);
+            checkCspRules(directiveAllowlistRule);
 
             requestFilter = await createRequestFilterWithRules([
                 defaultCspRule,

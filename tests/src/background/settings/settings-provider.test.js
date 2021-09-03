@@ -129,7 +129,7 @@ describe('settingsProvider', () => {
         expect(settings.getDisableStealthMode()).toBeTruthy();
     });
 
-    it('handles settings with whitelist section', async () => {
+    it('handles settings with allowlist section', async () => {
         const obj = JSON.parse(adgSettings);
         const ALLOWLIST_ENABLED_PATH = 'filters.whitelist.enabled';
 

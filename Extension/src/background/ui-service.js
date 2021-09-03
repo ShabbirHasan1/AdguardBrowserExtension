@@ -88,7 +88,7 @@ export const uiService = (function () {
             openSettingsTab('safebrowsing');
         },
         'context_allowlist': function () {
-            openSettingsTab('whitelist');
+            openSettingsTab('allowlist');
         },
         'context_userfilter': function () {
             openSettingsTab('userfilter');

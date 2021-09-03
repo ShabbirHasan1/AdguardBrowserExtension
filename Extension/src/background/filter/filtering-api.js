@@ -58,8 +58,8 @@ export const filteringApi = (function () {
     /**
      * @param {MatchQuery} matchQuery - {@link MatchQuery}
      */
-    const findWhitelistRule = function (matchQuery) {
-        return getRequestFilter().findWhitelistRule(matchQuery);
+    const findAllowlistRule = function (matchQuery) {
+        return getRequestFilter().findAllowlistRule(matchQuery);
     };
 
     const findDocumentRule = function (documentUrl) {
@@ -69,8 +69,8 @@ export const filteringApi = (function () {
     /**
      * @param {MatchQuery} matchQuery - {@link MatchQuery}
      */
-    const findStealthWhitelistRule = function (matchQuery) {
-        return getRequestFilter().findStealthWhitelistRule(matchQuery);
+    const findStealthAllowlistRule = function (matchQuery) {
+        return getRequestFilter().findStealthAllowlistRule(matchQuery);
     };
 
     const getSelectorsForUrl = function (documentUrl, cosmeticOptions, traditionalCss, extCss) {
@@ -137,7 +137,7 @@ export const filteringApi = (function () {
         shouldCollapseAllElements,
 
         findRuleForRequest,
-        findWhitelistRule,
+        findAllowlistRule,
         findDocumentRule,
 
         getSelectorsForUrl,
@@ -148,7 +148,7 @@ export const filteringApi = (function () {
         getReplaceRules,
         getRemoveParamRules,
         getRemoveHeaderRules,
-        findStealthWhitelistRule,
+        findStealthAllowlistRule,
         getCosmeticOption,
 
         getRequestFilterInfo,

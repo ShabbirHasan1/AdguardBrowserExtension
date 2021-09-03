@@ -82,7 +82,7 @@ class WizardStore {
         } = selectedEvent;
 
         const isImportant = requestRule
-            && (requestRule.whitelistRule || requestRule.isImportant)
+            && (requestRule.allowlistRule || requestRule.isImportant)
             && !requestRule.documentLevelRule;
 
         this.ruleOptions = {

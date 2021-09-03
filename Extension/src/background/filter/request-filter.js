@@ -209,13 +209,13 @@ export const RequestFilter = (() => {
         },
 
         /**
-         * Searches for the whitelist rule for the specified pair (url/referrer)
+         * Searches for the allowlist rule for the specified pair (url/referrer)
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          *
          * @returns NetworkRule found or null
          */
-        findWhitelistRule(matchQuery) {
+        findAllowlistRule(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
 
             const basicResult = result.getBasicResult();
@@ -231,13 +231,13 @@ export const RequestFilter = (() => {
         },
 
         /**
-         * Searches for stealth whitelist rule for the specified pair (url/referrer)
+         * Searches for stealth allowlist rule for the specified pair (url/referrer)
          *
          * @param {MatchQuery} matchQuery - {@link MatchQuery}
          *
          * @returns NetworkRule found or null
          */
-        findStealthWhitelistRule(matchQuery) {
+        findStealthAllowlistRule(matchQuery) {
             const result = this.getMatchingResult(matchQuery);
             return result.stealthRule;
         },

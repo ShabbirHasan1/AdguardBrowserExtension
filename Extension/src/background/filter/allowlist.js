@@ -29,7 +29,7 @@ export const allowlist = (() => {
     const BLOCKLIST_DOMAINS_LS_PROP = 'block-list-domains';
 
     const allowAllAllowlistRule = new TSUrlFilter.NetworkRule(
-        '@@whitelist-all$document',
+        '@@allowlist-all$document',
         utils.filters.ALLOWLIST_FILTER_ID,
     );
 

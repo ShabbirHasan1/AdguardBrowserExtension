@@ -53,7 +53,7 @@ const safebrowsing = (function () {
      */
     const SUSPEND_TTL = 40 * 60 * 1000;
 
-    const SB_WHITE_LIST = 'whitelist';
+    const SB_ALLOW_LIST = 'allowlist';
 
     /**
      * Domain hash length
@@ -101,11 +101,11 @@ const safebrowsing = (function () {
     /**
      * Creates lookup callback parameter
      * @param sbList    Safebrowsing list we've detected or null
-     * @returns Safebrowsing list or null if this list is SB_WHITE_LIST (means that site was whitelisted).
+     * @returns Safebrowsing list or null if this list is SB_ALLOW_LIST (means that site was allowlisted).
      * @private
      */
     function createResponse(sbList) {
-        return (sbList === SB_WHITE_LIST) ? null : sbList;
+        return (sbList === SB_ALLOW_LIST) ? null : sbList;
     }
 
     /**
@@ -258,8 +258,8 @@ const safebrowsing = (function () {
         if (shortHashes.length === 0) {
             // In case we have not found anything in safebrowsingCache and all short hashes have been checked in
             // safebrowsingRequestsCache - means that there is no need to request backend again
-            safebrowsingCache.cache.saveValue(createHash(host), SB_WHITE_LIST);
-            return createResponse(SB_WHITE_LIST);
+            safebrowsingCache.cache.saveValue(createHash(host), SB_ALLOW_LIST);
+            return createResponse(SB_ALLOW_LIST);
         }
 
         let response;
@@ -290,9 +290,9 @@ const safebrowsing = (function () {
             safebrowsingRequestsCache.set(x, true);
         });
 
-        sbList = SB_WHITE_LIST;
+        sbList = SB_ALLOW_LIST;
         if (response.status !== 204) {
-            sbList = processSbResponse(response.responseText, hashesMap) || SB_WHITE_LIST;
+            sbList = processSbResponse(response.responseText, hashesMap) || SB_ALLOW_LIST;
         }
 
         safebrowsingCache.cache.saveValue(createHash(host), sbList);
@@ -325,7 +325,7 @@ const safebrowsing = (function () {
     };
 
     /**
-     * Temporarily whitelist URL
+     * Temporarily allowlist URL
      * Adds URL to trusted sites (this URL will be ignored by safebrowsing filter)
      *
      * @param url URL
@@ -336,7 +336,7 @@ const safebrowsing = (function () {
             return;
         }
 
-        safebrowsingCache.cache.saveValue(createHash(host), SB_WHITE_LIST);
+        safebrowsingCache.cache.saveValue(createHash(host), SB_ALLOW_LIST);
     };
 
     return {

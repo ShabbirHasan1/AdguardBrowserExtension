@@ -133,7 +133,7 @@ export const frames = (function () {
      * @param tab Tab
      * @returns true if Tab have white list rule
      */
-    const isTabWhitelisted = function (tab) {
+    const isTabAllowlisted = function (tab) {
         const frameRule = tabsApi.getTabMetadata(tab.tabId, 'frameRule');
         return frameRule && frameRule.isDocumentWhitelistRule();
     };
@@ -142,8 +142,8 @@ export const frames = (function () {
      * @param tab Tab
      * @returns true if Tab have white list rule and white list isn't invert
      */
-    const isTabWhitelistedForSafebrowsing = function (tab) {
-        return isTabWhitelisted(tab) && allowlist.isDefaultMode();
+    const isTabAllowlistedForSafebrowsing = function (tab) {
+        return isTabAllowlisted(tab) && allowlist.isDefaultMode();
     };
 
     /**
@@ -160,24 +160,24 @@ export const frames = (function () {
      * @param tab Tab
      * @returns true if Adguard for Windows/Android/Mac is detected and tab in white list
      */
-    const isTabAdguardWhitelisted = function (tab) {
-        return tabsApi.getTabMetadata(tab.tabId, 'adguardDocumentWhitelisted');
+    const isTabAdguardAllowlisted = function (tab) {
+        return tabsApi.getTabMetadata(tab.tabId, 'adguardDocumentAllowlisted');
     };
 
     /**
      * @param tab   Tab
-     * @returns Adguard whitelist rule in user filter associated with this tab
+     * @returns Adguard allowlist rule in user filter associated with this tab
      */
-    const getTabAdguardUserWhitelistRule = function (tab) {
-        const adguardUserWhitelisted = tabsApi.getTabMetadata(tab.tabId, 'adguardUserWhitelisted');
-        if (adguardUserWhitelisted) {
-            return tabsApi.getTabMetadata(tab.tabId, 'adguardWhitelistRule');
+    const getTabAdguardUserAllowlistRule = function (tab) {
+        const adguardUserAllowlisted = tabsApi.getTabMetadata(tab.tabId, 'adguardUserAllowlisted');
+        if (adguardUserAllowlisted) {
+            return tabsApi.getTabMetadata(tab.tabId, 'adguardAllowlistRule');
         }
         return null;
     };
 
     /**
-     * Gets whitelist rule for the specified tab
+     * Gets allowlist rule for the specified tab
      * @param tab Tab to check
      * @returns allowlist rule applied to that tab (if any)
      */
@@ -186,7 +186,7 @@ export const frames = (function () {
     };
 
     /**
-     * Reloads tab data (checks whitelist and filtering status)
+     * Reloads tab data (checks allowlist and filtering status)
      *
      * @param tab Tab to reload
      */
@@ -253,10 +253,10 @@ export const frames = (function () {
         const applicationFilteringDisabled = settings.isFilteringDisabled();
 
         if (applicationAvailable) {
-            documentAllowlisted = isTabWhitelisted(tab);
+            documentAllowlisted = isTabAllowlisted(tab);
             if (documentAllowlisted) {
                 const rule = getFrameRule(tab);
-                userAllowlisted = utils.filters.isWhitelistFilterRule(rule)
+                userAllowlisted = utils.filters.isAllowlistFilterRule(rule)
                         || utils.filters.isUserFilterRule(rule);
                 frameRule = {
                     filterId: rule.getFilterListId(),
@@ -326,7 +326,7 @@ export const frames = (function () {
      * @param {object} tab
      * @returns {boolean}
      */
-    const shouldStopRequestProcess = tab => isTabProtectionDisabled(tab) || isTabWhitelisted(tab);
+    const shouldStopRequestProcess = tab => isTabProtectionDisabled(tab) || isTabAllowlisted(tab);
 
     // Records frames on application initialization
     listeners.addListener((event) => {
@@ -342,11 +342,11 @@ export const frames = (function () {
         getFrameUrl,
         getMainFrameUrl,
         getFrameDomain,
-        isTabWhitelisted,
-        isTabWhitelistedForSafebrowsing,
+        isTabAllowlisted,
+        isTabAllowlistedForSafebrowsing,
         isTabProtectionDisabled,
-        isTabAdguardWhitelisted,
-        getTabAdguardUserWhitelistRule,
+        isTabAdguardAllowlisted,
+        getTabAdguardUserAllowlistRule,
         getFrameRule,
         reloadFrameData,
         recordFrameReferrerHeader,

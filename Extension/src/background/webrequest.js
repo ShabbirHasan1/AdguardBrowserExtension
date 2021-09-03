@@ -319,7 +319,7 @@ const webrequestInit = function () {
      */
     async function filterSafebrowsing(tab, mainFrameUrl) {
         if (frames.isTabProtectionDisabled(tab)
-            || frames.isTabWhitelistedForSafebrowsing(tab)) {
+            || frames.isTabAllowlistedForSafebrowsing(tab)) {
             return;
         }
 

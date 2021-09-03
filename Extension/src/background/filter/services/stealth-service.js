@@ -96,7 +96,7 @@ export const stealthService = (() => {
         const { requestUrl, requestType, tab } = context;
 
         if (frames.shouldStopRequestProcess(tab)) {
-            log.debug('Tab whitelisted or protection disabled');
+            log.debug('Tab allowlisted or protection disabled');
             return false;
         }
 
@@ -125,22 +125,22 @@ export const stealthService = (() => {
             return false;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule({
+        const allowlistRule = filteringApi.findAllowlistRule({
             requestUrl,
             frameUrl: referrerUrl,
             requestType,
             frameRule: frames.getFrameRule(tab),
         });
 
-        if (whitelistRule && whitelistRule.isDocumentWhitelistRule()) {
-            log.debug(`Whitelist rule found: ${whitelistRule.getText()}`);
+        if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
+            log.debug(`Allowlist rule found: ${allowlistRule.getText()}`);
             return false;
         }
 
-        // If stealth is whitelisted
-        const stealthWhitelistRule = findStealthWhitelistRule(requestUrl, referrerUrl, requestType);
-        if (stealthWhitelistRule) {
-            log.debug(`Whitelist stealth rule found: ${stealthWhitelistRule.getText()}`);
+        // If stealth is allowlisted
+        const stealthAllowlistRule = findStealthAllowlistRule(requestUrl, referrerUrl, requestType);
+        if (stealthAllowlistRule) {
+            log.debug(`Allowlist stealth rule found: ${stealthAllowlistRule.getText()}`);
             return false;
         }
 
@@ -148,35 +148,35 @@ export const stealthService = (() => {
     };
 
     /**
-     * Checks if tab is whitelisted for stealth
+     * Checks if tab is allowlisted for stealth
      *
      * @param requestUrl
      * @param referrerUrl
      * @param requestType
-     * @returns whitelist rule if found
+     * @returns allowlist rule if found
      */
-    const findStealthWhitelistRule = function (requestUrl, referrerUrl, requestType) {
+    const findStealthAllowlistRule = function (requestUrl, referrerUrl, requestType) {
         if (referrerUrl) {
-            const stealthDocumentWhitelistRule = filteringApi.findStealthWhitelistRule({
+            const stealthDocumentAllowlistRule = filteringApi.findStealthAllowlistRule({
                 requestUrl: referrerUrl,
                 frameUrl: referrerUrl,
                 requestType,
             });
-            if (stealthDocumentWhitelistRule && stealthDocumentWhitelistRule.isDocumentWhitelistRule()) {
-                log.debug('Stealth document whitelist rule found.');
-                return stealthDocumentWhitelistRule;
+            if (stealthDocumentAllowlistRule && stealthDocumentAllowlistRule.isDocumentWhitelistRule()) {
+                log.debug('Stealth document allowlist rule found.');
+                return stealthDocumentAllowlistRule;
             }
         }
 
-        const stealthWhitelistRule = filteringApi.findStealthWhitelistRule({
+        const stealthAllowlistRule = filteringApi.findStealthAllowlistRule({
             requestUrl,
             frameUrl: referrerUrl,
             requestType,
         });
 
-        if (stealthWhitelistRule) {
-            log.debug('Stealth whitelist rule found.');
-            return stealthWhitelistRule;
+        if (stealthAllowlistRule) {
+            log.debug('Stealth allowlist rule found.');
+            return stealthAllowlistRule;
         }
 
         return null;
