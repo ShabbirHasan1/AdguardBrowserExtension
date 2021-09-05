@@ -131,7 +131,7 @@ export const frames = (function () {
 
     /**
      * @param tab Tab
-     * @returns true if Tab have white list rule
+     * @returns true if Tab have allowlist rule
      */
     const isTabAllowlisted = function (tab) {
         const frameRule = tabsApi.getTabMetadata(tab.tabId, 'frameRule');
@@ -140,7 +140,7 @@ export const frames = (function () {
 
     /**
      * @param tab Tab
-     * @returns true if Tab have white list rule and white list isn't invert
+     * @returns true if Tab have allowlist rule and allowlist isn't invert
      */
     const isTabAllowlistedForSafebrowsing = function (tab) {
         return isTabAllowlisted(tab) && allowlist.isDefaultMode();
@@ -155,10 +155,10 @@ export const frames = (function () {
     };
 
     /**
-     * Returns true if tab is in white list
+     * Returns true if tab is in allowlist
      *
      * @param tab Tab
-     * @returns true if Adguard for Windows/Android/Mac is detected and tab in white list
+     * @returns true if Adguard for Windows/Android/Mac is detected and tab in allowlist
      */
     const isTabAdguardAllowlisted = function (tab) {
         return tabsApi.getTabMetadata(tab.tabId, 'adguardDocumentAllowlisted');
