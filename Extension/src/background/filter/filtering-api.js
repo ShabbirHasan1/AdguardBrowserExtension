@@ -19,6 +19,8 @@ import { antiBannerService } from './antibanner';
 
 /**
  * Api for filtering and elements hiding.
+ *
+ * TODO: Delete this service
  */
 export const filteringApi = (function () {
     function getRequestFilter() {

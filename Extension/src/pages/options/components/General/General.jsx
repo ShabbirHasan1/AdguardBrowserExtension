@@ -129,7 +129,7 @@ const General = observer(() => {
 
     return (
         <>
-            <SettingsSection title={reactTranslator.getMessage('context_general_settings')}>
+            <SettingsSection title={reactTranslator.getMessage('options_general_settings')}>
                 <SettingSetSelect
                     title={reactTranslator.getMessage('options_select_theme')}
                     id={APPEARANCE_THEME}
