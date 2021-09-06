@@ -70,7 +70,7 @@ export const application = (() => {
 
     /**
      * List of enabled filters.
-     * User filter and whitelist filter are always enabled so they are excluded.
+     * User filter and allowlist filter are always enabled so they are excluded.
      *
      * @returns {Array} List of enabled filters
      */

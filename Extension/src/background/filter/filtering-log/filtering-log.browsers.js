@@ -170,14 +170,14 @@ const browsersFilteringLog = (function () {
             if (sourceRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Important)) {
                 destinationRuleDTO.isImportant = true;
             }
-            if (sourceRule.isDocumentWhitelistRule()) {
+            if (sourceRule.isDocumentAllowlistRule()) {
                 destinationRuleDTO.documentLevelRule = true;
             }
             if (sourceRule.getFilterListId() === ANTIBANNER_FILTERS_ID.STEALTH_MODE_FILTER_ID) {
                 destinationRuleDTO.isStealthModeRule = true;
             }
 
-            destinationRuleDTO.whitelistRule = sourceRule.isWhitelist();
+            destinationRuleDTO.allowlistRule = sourceRule.isWhitelist();
             destinationRuleDTO.cspRule = sourceRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Csp);
             destinationRuleDTO.modifierValue = sourceRule.getAdvancedModifierValue();
             destinationRuleDTO.cookieRule = sourceRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Cookie);

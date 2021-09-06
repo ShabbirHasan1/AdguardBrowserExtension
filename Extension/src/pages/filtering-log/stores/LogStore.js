@@ -370,9 +370,9 @@ class LogStore {
                 return false;
             }
 
-            const isAllowlisted = filteringEvent.requestRule?.whitelistRule;
+            const isAllowlisted = filteringEvent.requestRule?.allowlistRule;
             const isBlocked = filteringEvent.requestRule
-                && !filteringEvent.requestRule.whitelistRule
+                && !filteringEvent.requestRule.allowlistRule
                 && !filteringEvent.requestRule.cssRule
                 && !filteringEvent.requestRule.scriptRule
                 && !filteringEvent.requestRule.cspRule

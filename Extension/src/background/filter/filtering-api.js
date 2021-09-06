@@ -19,6 +19,8 @@ import { antiBannerService } from './antibanner';
 
 /**
  * Api for filtering and elements hiding.
+ *
+ * TODO: Delete this service
  */
 export const filteringApi = (function () {
     function getRequestFilter() {
@@ -48,16 +50,29 @@ export const filteringApi = (function () {
         return (requestFilterInitTime > 0) && (requestFilterInitTime + 5000 > new Date().getTime());
     };
 
-    const findRuleForRequest = function (requestUrl, documentUrl, requestType, documentWhitelistRule) {
-        return getRequestFilter().findRuleForRequest(requestUrl, documentUrl, requestType, documentWhitelistRule);
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const findRuleForRequest = function (matchQuery) {
+        return getRequestFilter().findRuleForRequest(matchQuery);
     };
 
-    const findWhitelistRule = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().findWhitelistRule(requestUrl, referrer, requestType);
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const findAllowlistRule = function (matchQuery) {
+        return getRequestFilter().findAllowlistRule(matchQuery);
     };
 
-    const findStealthWhitelistRule = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().findStealthWhitelistRule(requestUrl, referrer, requestType);
+    const findDocumentRule = function (documentUrl) {
+        return getRequestFilter().findDocumentRule(documentUrl);
+    };
+
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const findStealthAllowlistRule = function (matchQuery) {
+        return getRequestFilter().findStealthAllowlistRule(matchQuery);
     };
 
     const getSelectorsForUrl = function (documentUrl, cosmeticOptions, traditionalCss, extCss) {
@@ -72,28 +87,46 @@ export const filteringApi = (function () {
         return getRequestFilter().getContentRulesForUrl(documentUrl);
     };
 
-    const getCspRules = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().findCspRules(requestUrl, referrer, requestType);
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getCspRules = function (matchQuery) {
+        return getRequestFilter().findCspRules(matchQuery);
     };
 
-    const getCookieRules = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().findCookieRules(requestUrl, referrer, requestType);
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getCookieRules = function (matchQuery) {
+        return getRequestFilter().findCookieRules(matchQuery);
     };
 
-    const getReplaceRules = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().findReplaceRules(requestUrl, referrer, requestType);
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getReplaceRules = function (matchQuery) {
+        return getRequestFilter().findReplaceRules(matchQuery);
     };
 
-    const getCosmeticOption = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().getMatchingResult(requestUrl, referrer, requestType).getCosmeticOption();
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getCosmeticOption = function (matchQuery) {
+        return getRequestFilter().getMatchingResult(matchQuery).getCosmeticOption();
     };
 
-    const getRemoveParamRules = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().getMatchingResult(requestUrl, referrer, requestType).getRemoveParamRules();
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getRemoveParamRules = function (matchQuery) {
+        return getRequestFilter().getMatchingResult(matchQuery).getRemoveParamRules();
     };
 
-    const getRemoveHeaderRules = function (requestUrl, referrer, requestType) {
-        return getRequestFilter().getMatchingResult(requestUrl, referrer, requestType).getRemoveHeaderRules();
+    /**
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
+     */
+    const getRemoveHeaderRules = function (matchQuery) {
+        return getRequestFilter().getMatchingResult(matchQuery).getRemoveHeaderRules();
     };
 
     const getRequestFilterInfo = function () {
@@ -106,7 +139,8 @@ export const filteringApi = (function () {
         shouldCollapseAllElements,
 
         findRuleForRequest,
-        findWhitelistRule,
+        findAllowlistRule,
+        findDocumentRule,
 
         getSelectorsForUrl,
         getScriptsStringForUrl,
@@ -116,7 +150,7 @@ export const filteringApi = (function () {
         getReplaceRules,
         getRemoveParamRules,
         getRemoveHeaderRules,
-        findStealthWhitelistRule,
+        findStealthAllowlistRule,
         getCosmeticOption,
 
         getRequestFilterInfo,

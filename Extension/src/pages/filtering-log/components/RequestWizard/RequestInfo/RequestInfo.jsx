@@ -79,7 +79,7 @@ const getRule = (selectedEvent) => {
 
     const requestRule = selectedEvent?.requestRule;
     if (
-        requestRule?.whitelistRule
+        requestRule?.allowlistRule
         && requestRule?.documentLevelRule
         && requestRule?.filterId === ANTIBANNER_FILTERS_ID.ALLOWLIST_FILTER_ID
     ) {
@@ -410,7 +410,7 @@ const RequestInfo = observer(() => {
             if (requestRule.isStealthModeRule) {
                 buttonProps = BUTTON_MAP.UNBLOCK;
             }
-            if (requestRule.whitelistRule) {
+            if (requestRule.allowlistRule) {
                 return (
                     <>
                         {renderButton(BUTTON_MAP.BLOCK)}
@@ -421,9 +421,9 @@ const RequestInfo = observer(() => {
             }
         } else if (requestRule.filterId === ANTIBANNER_FILTERS_ID.ALLOWLIST_FILTER_ID) {
             buttonProps = BUTTON_MAP.ALLOWLIST;
-        } else if (!requestRule.whitelistRule) {
+        } else if (!requestRule.allowlistRule) {
             buttonProps = BUTTON_MAP.UNBLOCK;
-        } else if (requestRule.whitelistRule) {
+        } else if (requestRule.allowlistRule) {
             buttonProps = BUTTON_MAP.BLOCK;
         }
 

@@ -57,7 +57,7 @@ export const adguardApi = (function () {
     /**
      * Validate domains
      * @param domains Array
-     * @param prop Property name (whitelist or blacklist)
+     * @param prop Property name (allowlist or blacklist)
      */
     function validateDomains(domains, prop) {
         if (!domains || domains.length === 0) {

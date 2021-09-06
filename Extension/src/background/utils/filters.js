@@ -10,7 +10,7 @@ export const filters = (() => {
             return rule.getFilterListId() === ANTIBANNER_FILTERS_ID.USER_FILTER_ID;
         },
 
-        isWhitelistFilterRule(rule) {
+        isAllowlistFilterRule(rule) {
             return rule.getFilterListId() === ANTIBANNER_FILTERS_ID.ALLOWLIST_FILTER_ID;
         },
     };

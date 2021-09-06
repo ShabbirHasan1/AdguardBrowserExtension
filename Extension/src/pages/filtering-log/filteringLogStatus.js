@@ -38,7 +38,7 @@ export const getStatusMode = (event) => {
     }
 
     if (requestRule && !replaceRules) {
-        if (requestRule.whitelistRule) {
+        if (requestRule.allowlistRule) {
             mode = StatusMode.ALLOWED;
             // eslint-disable-next-line max-len
         } else if (requestRule.cssRule || requestRule.scriptRule || removeParam || removeHeader) {

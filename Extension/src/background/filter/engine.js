@@ -58,21 +58,39 @@ export const engine = (function () {
     };
 
     /**
+     * @typedef {object} MatchQuery - Request Match Query
+     *
+     * @property {string} requestUrl    Request URL
+     * @property {string} frameUrl      Document URL
+     * @property {any} requestType      Request content type (one of UrlFilterRule.contentTypes)
+     * @property {any} frameRule        Frame rule
+    */
+
+    /**
      * Gets matching result for request.
      *
-     * @param requestUrl    Request URL
-     * @param documentUrl   Document URL
-     * @param requestType   Request content type (one of UrlFilterRule.contentTypes)
+     * @param {MatchQuery} matchQuery - {@link MatchQuery}
      * @returns matching result or null
-     * @private
      */
-    const createMatchingResult = (requestUrl, documentUrl, requestType) => {
-        // eslint-disable-next-line max-len
-        log.debug('Filtering http request for url: {0}, document: {1}, requestType: {2}', requestUrl, documentUrl, requestType);
+    const matchRequest = (matchQuery) => {
+        const {
+            requestUrl,
+            frameUrl,
+            requestType,
+        } = matchQuery;
+
+        let { frameRule } = matchQuery;
+
+        log.debug(
+            'Filtering http request for url: {0}, document: {1}, requestType: {2}',
+            requestUrl,
+            frameUrl,
+            requestType,
+        );
 
         const request = new TSUrlFilter.Request(
             requestUrl,
-            documentUrl,
+            frameUrl,
             RequestTypes.transformRequestType(requestType),
         );
 
@@ -81,12 +99,17 @@ export const engine = (function () {
             return null;
         }
 
-        const result = engine.matchRequest(request);
+        if (!frameRule) {
+            frameRule = null;
+        }
+
+        const result = engine.matchRequest(request, frameRule);
+
         log.debug(
             'Result {0} found for url: {1}, document: {2}, requestType: {3}',
             result.getBasicResult(),
             requestUrl,
-            documentUrl,
+            frameUrl,
             requestType,
         );
 
@@ -94,11 +117,26 @@ export const engine = (function () {
     };
 
     /**
+     * Matches current frame url and returns document-level rule if found.
+     *
+     * @param frameUrl    Frame URL
+     * @returns matching result or null
+     */
+    const matchFrame = (frameUrl) => {
+        if (!engine) {
+            log.warn('Filtering engine is not ready');
+            return null;
+        }
+
+        return engine.matchFrame(frameUrl);
+    };
+
+    /**
      * Gets cosmetic result for the specified hostname and cosmetic options
      *
      * @param hostname
      * @param option
-     * @returns cosmetic result
+     * @returns CosmeticResult result
      */
     const getCosmeticResult = (hostname, option) => {
         if (!engine) {
@@ -120,7 +158,8 @@ export const engine = (function () {
         startEngine,
         getRulesCount,
 
-        createMatchingResult,
+        matchRequest,
+        matchFrame,
         getCosmeticResult,
     };
 })();

@@ -35,6 +35,9 @@ import { runtimeImpl } from '../common/common-script';
 import { MESSAGE_TYPES } from '../common/constants';
 import { translator } from '../common/translators/translator';
 
+/**
+ * UI service
+ */
 export const uiService = (function () {
     const browserActionTitle = translator.getMessage('name');
 
@@ -77,24 +80,6 @@ export const uiService = (function () {
         },
         'context_open_settings': function () {
             openSettingsTab();
-        },
-        'context_general_settings': function () {
-            openSettingsTab('general-settings');
-        },
-        'context_antibanner': function () {
-            openSettingsTab('antibanner');
-        },
-        'context_safebrowsing': function () {
-            openSettingsTab('safebrowsing');
-        },
-        'context_allowlist': function () {
-            openSettingsTab('whitelist');
-        },
-        'context_userfilter': function () {
-            openSettingsTab('userfilter');
-        },
-        'context_miscellaneous_settings': function () {
-            openSettingsTab('miscellaneous-settings');
         },
         'context_open_log': function () {
             openFilteringLog();

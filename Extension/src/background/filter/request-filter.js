@@ -27,85 +27,13 @@ import { browserUtils } from '../utils/browser-utils';
 
 export const RequestFilter = (() => {
     /**
-     * Simple request cache
-     * @param requestCacheMaxSize Max cache size
-     */
-    const RequestCache = function (requestCacheMaxSize) {
-        this.requestCache = Object.create(null);
-        this.requestCacheSize = 0;
-        this.requestCacheMaxSize = requestCacheMaxSize;
-
-        /**
-         * Searches for cached matching result
-         *
-         * @param requestUrl Request url
-         * @param refHost Referrer host
-         * @param requestType Request type
-         */
-        this.searchRequestCache = function (requestUrl, refHost, requestType) {
-            const cacheItem = this.requestCache[requestUrl];
-            if (!cacheItem) {
-                return null;
-            }
-
-            const c = cacheItem[requestType];
-            if (c && c[1] === refHost) {
-                return c[0];
-            }
-
-            return null;
-        };
-
-        /**
-         * Saves matching result to requestCache
-         *
-         * @param requestUrl Request url
-         * @param matchingResult Request result
-         * @param refHost Referrer host
-         * @param requestType Request type
-         */
-        this.saveResultToCache = function (requestUrl, matchingResult, refHost, requestType) {
-            if (this.requestCacheSize > this.requestCacheMaxSize) {
-                this.clearRequestCache();
-            }
-            if (!this.requestCache[requestUrl]) {
-                this.requestCache[requestUrl] = Object.create(null);
-                this.requestCacheSize += 1;
-            }
-
-            // Two-levels gives us an ability to not to override cached item for
-            // different request types with the same url
-            this.requestCache[requestUrl][requestType] = [matchingResult, refHost];
-        };
-
-        /**
-         * Clears request cache
-         */
-        this.clearRequestCache = function () {
-            if (this.requestCacheSize === 0) {
-                return;
-            }
-            this.requestCache = Object.create(null);
-            this.requestCacheSize = 0;
-        };
-    };
-
-    /**
      * Request filter is main class which applies filter rules.
      *
      * @type {Function}
      */
-    const RequestFilter = function () {
-        // Init small caches for url filtering rules
-        this.matchingResultsCache = new RequestCache(this.requestCacheMaxSize);
-    };
+    const RequestFilter = function () {};
 
     RequestFilter.prototype = {
-
-        /**
-         * Cache capacity
-         */
-        requestCacheMaxSize: 1000,
 
         getRulesCount() {
             return engine.getRulesCount();
@@ -173,7 +101,7 @@ export const RequestFilter = (() => {
          *
          * @param url Page URL
          * @param cosmeticOptions bitmask
-         * @returns {{scriptSource: string, rule: string}[]} Javascript for the specified URL
+         * @returns {CosmeticRule[]} Javascript for the specified URL
          */
         getScriptsForUrl(url, cosmeticOptions) {
             const hostname = utils.url.getHost(url);
@@ -268,38 +196,27 @@ export const RequestFilter = (() => {
         /**
          * Gets or creates matching result
          *
-         * @param requestUrl
-         * @param referrer
-         * @param requestType
-         * @return {null}
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
          */
-        getMatchingResult(requestUrl, referrer, requestType) {
-            const refHost = utils.url.getDomainName(referrer);
+        getMatchingResult(matchQuery) {
+            const result = engine.matchRequest(matchQuery);
 
-            let result = this.matchingResultsCache.searchRequestCache(requestUrl, refHost, requestType);
             if (!result) {
-                result = engine.createMatchingResult(requestUrl, referrer, requestType);
-
-                if (!result) {
-                    return new TSUrlFilter.MatchingResult([], []);
-                }
-
-                this.matchingResultsCache.saveResultToCache(requestUrl, result, refHost, requestType);
+                return new TSUrlFilter.MatchingResult([], []);
             }
 
             return result;
         },
 
         /**
-         * Searches for the whitelist rule for the specified pair (url/referrer)
+         * Searches for the allowlist rule for the specified pair (url/referrer)
          *
-         * @param requestUrl  Request URL
-         * @param referrer    Referrer
-         * @param requestType Request type
-         * @returns Filter rule found or null
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
+         * @returns NetworkRule found or null
          */
-        findWhitelistRule(requestUrl, referrer, requestType) {
-            const result = this.getMatchingResult(requestUrl, referrer, requestType);
+        findAllowlistRule(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
 
             const basicResult = result.getBasicResult();
             if (basicResult && basicResult.isWhitelist()) {
@@ -309,36 +226,38 @@ export const RequestFilter = (() => {
             return null;
         },
 
+        findDocumentRule(documentUrl) {
+            return engine.matchFrame(documentUrl);
+        },
+
         /**
-         * Searches for stealth whitelist rule for the specified pair (url/referrer)
+         * Searches for stealth allowlist rule for the specified pair (url/referrer)
          *
-         * @param requestUrl  Request URL
-         * @param referrer    Referrer
-         * @param requestType Request type
-         * @returns Filter rule found or null
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         *
+         * @returns NetworkRule found or null
          */
-        findStealthWhitelistRule(requestUrl, referrer, requestType) {
-            const result = this.getMatchingResult(requestUrl, referrer, requestType);
+        findStealthAllowlistRule(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.stealthRule;
         },
 
         /**
          * Searches for the filter rule for the specified request.
          *
-         * @param requestUrl            Request URL
-         * @param documentUrl           Document URL
-         * @param requestType           Request content type (one of UrlFilterRule.contentTypes)
-         * @returns Rule found or null
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         * @returns NetworkRule found or null
          */
-        findRuleForRequest(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findRuleForRequest(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getBasicResult();
         },
 
         /**
          * Searches for content rules for the specified domain
+         *
          * @param documentUrl Document URL
-         * @returns Collection of content rules
+         * @returns CosmeticRule[] of content rules
          */
         getContentRulesForUrl(documentUrl) {
             const hostname = utils.url.getDomainName(documentUrl);
@@ -351,39 +270,33 @@ export const RequestFilter = (() => {
         /**
          * Searches for CSP rules for the specified request
          *
-         * @param requestUrl Request URL
-         * @param documentUrl Document URL
-         * @param requestType Request Type (DOCUMENT or SUBDOCUMENT)
-         * @returns Collection of CSP rules for applying to the request or null
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         * @returns NetworkRule[] of CSP rules for applying to the request or null
          */
-        findCspRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findCspRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getCspRules();
         },
 
         /**
          * Searches for replace modifier rules
          *
-         * @param requestUrl
-         * @param documentUrl
-         * @param requestType
-         * @return {[]|*}
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         * @returns NetworkRule[] matching
          */
-        findReplaceRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findReplaceRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getReplaceRules();
         },
 
         /**
          * Searches for cookie rules matching specified request.
          *
-         * @param requestUrl Request URL
-         * @param documentUrl Document URL
-         * @param requestType   Request content type
-         * @returns             Matching rules
+         * @param {MatchQuery} matchQuery - {@link MatchQuery}
+         * @returns NetworkRule[] matching
          */
-        findCookieRules(requestUrl, documentUrl, requestType) {
-            const result = this.getMatchingResult(requestUrl, documentUrl, requestType);
+        findCookieRules(matchQuery) {
+            const result = this.getMatchingResult(matchQuery);
             return result.getCookieRules();
         },
     };

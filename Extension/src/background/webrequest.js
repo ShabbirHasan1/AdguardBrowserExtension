@@ -115,7 +115,7 @@ const webrequestInit = function () {
              * Binds rule to the main_frame request
              * In integration mode, rule from the headers will override this value
              */
-            const tabRequestRule = frames.getFrameWhitelistRule(tab);
+            const tabRequestRule = frames.getFrameRule(tab);
             if (tabRequestRule) {
                 requestContextStorage.update(requestId, { requestRule: tabRequestRule });
             }
@@ -299,7 +299,7 @@ const webrequestInit = function () {
             requestHeadersModified = true;
         }
 
-        if (headersService.onBeforeSendHeaders(requestDetails, getRemoveHeaderRules(requestUrl, getReferrerUrl(requestDetails)))) {
+        if (headersService.onBeforeSendHeaders(requestDetails, getRemoveHeaderRules(tab, requestUrl, getReferrerUrl(requestDetails)))) {
             requestHeadersModified = true;
         }
 
@@ -319,7 +319,7 @@ const webrequestInit = function () {
      */
     async function filterSafebrowsing(tab, mainFrameUrl) {
         if (frames.isTabProtectionDisabled(tab)
-            || frames.isTabWhitelistedForSafebrowsing(tab)) {
+            || frames.isTabAllowlistedForSafebrowsing(tab)) {
             return;
         }
 
@@ -414,7 +414,7 @@ const webrequestInit = function () {
 
         cookieService.onHeadersReceived(requestDetails);
 
-        if (headersService.onHeadersReceived(requestDetails, getRemoveHeaderRules(requestUrl, referrerUrl))) {
+        if (headersService.onHeadersReceived(requestDetails, getRemoveHeaderRules(tab, requestUrl, referrerUrl))) {
             responseHeadersModified = true;
         }
 

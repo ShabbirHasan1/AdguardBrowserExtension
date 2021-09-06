@@ -60,7 +60,7 @@ export const webRequestService = (function () {
     const recordRuleHit = function (tab, requestRule, requestUrl) {
         if (requestRule
             && !utils.filters.isUserFilterRule(requestRule)
-            && !utils.filters.isWhitelistFilterRule(requestRule)
+            && !utils.filters.isAllowlistFilterRule(requestRule)
             && canCollectHitStatsForTab(tab)) {
             const domain = frames.getFrameDomain(tab);
             hitStats.addRuleHit(domain, requestRule.getText(), requestRule.getFilterListId(), requestUrl);
@@ -104,13 +104,16 @@ export const webRequestService = (function () {
             return result;
         }
 
-        if (frames.isTabWhitelisted(tab)) {
+        if (frames.isTabAllowlisted(tab)) {
             return result;
         }
 
-        const cosmeticOptions = filteringApi.getCosmeticOption(
-            documentUrl, documentUrl, RequestTypes.DOCUMENT,
-        );
+        const cosmeticOptions = filteringApi.getCosmeticOption({
+            requestUrl: documentUrl,
+            frameUrl: documentUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule: frames.getFrameRule(tab),
+        });
 
         if (force || !prefs.features.canUseInsertCSSAndExecuteScript) {
             // Retrieve ExtendedCss selectors only if canUseInsertCSSAndExecuteScript in unavailable
@@ -219,7 +222,7 @@ export const webRequestService = (function () {
     /**
      * Checks if popup is blocked by rule
      * @param requestRule
-     * @returns {*|boolean|true}
+     * @returns {boolean}
      */
     const isPopupBlockedByRule = (requestRule) => {
         return requestRule && !requestRule.isWhitelist()
@@ -229,7 +232,7 @@ export const webRequestService = (function () {
     /**
      * Check if document is blocked by rule
      * @param requestRule
-     * @return {*|boolean|true}
+     * @return {boolean}
      */
     const isDocumentBlockingRule = (requestRule) => {
         return requestRule && !requestRule.isWhitelist()
@@ -299,28 +302,37 @@ export const webRequestService = (function () {
 
         let allowlistRule;
         /**
-         * Background requests will be whitelisted if their referrer
-         * url will match with user whitelist rule
+         * Background requests will be allowlisted if their referrer
+         * url will match with user allowlist rule
          * https://github.com/AdguardTeam/AdguardBrowserExtension/issues/1032
          */
         if (tab.tabId === BACKGROUND_TAB_ID) {
             allowlistRule = allowlist.findAllowlistRule(referrerUrl);
         } else {
-            allowlistRule = frames.getFrameWhitelistRule(tab);
+            allowlistRule = frames.getFrameRule(tab);
         }
 
         if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
-            // Frame is whitelisted by the main frame's $document rule
+            // Frame is allowlisted by the main frame's $document rule
             // We do nothing more in this case - return the rule.
             return allowlistRule;
         }
 
         if (!allowlistRule) {
-            // If whitelist rule is not found for the main frame, we check it for referrer
-            allowlistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
+            // If allowlist rule is not found for the main frame, we check it for referrer
+            allowlistRule = filteringApi.findAllowlistRule({
+                requestUrl,
+                frameUrl: referrerUrl,
+                requestType: RequestTypes.DOCUMENT,
+            });
         }
 
-        return filteringApi.findRuleForRequest(requestUrl, referrerUrl, requestType, allowlistRule);
+        return filteringApi.findRuleForRequest({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType,
+            frameRule: allowlistRule,
+        });
     };
 
     /**
@@ -335,8 +347,14 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(documentUrl, documentUrl, RequestTypes.DOCUMENT);
-        if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
+        const allowlistRule = filteringApi.findAllowlistRule({
+            requestUrl: documentUrl,
+            frameUrl: documentUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule: frames.getFrameRule(tab),
+        });
+
+        if (allowlistRule && allowlistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
             return null;
         }
 
@@ -357,15 +375,28 @@ export const webRequestService = (function () {
             return null;
         }
 
+        const frameRule = frames.getFrameRule(tab);
+
         // @@||example.org^$document or @@||example.org^$urlblock —
         // disables all the $csp rules on all the pages matching the rule pattern.
         // eslint-disable-next-line max-len
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
-        if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Urlblock)) {
+        const allowlistRule = filteringApi.findAllowlistRule({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
+        if (allowlistRule && allowlistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Urlblock)) {
             return null;
         }
 
-        return filteringApi.getCspRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getCspRules({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -382,14 +413,27 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
-        if (whitelistRule && whitelistRule.isDocumentWhitelistRule()) {
+        const frameRule = frames.getFrameRule(tab);
+
+        const allowlistRule = filteringApi.findAllowlistRule({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
+        if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
             // $cookie rules are not affected by regular exception rules (@@) unless it's a $document exception.
             return null;
         }
 
         // Get all $cookie rules matching the specified request
-        return filteringApi.getCookieRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getCookieRules({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -406,12 +450,25 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(requestUrl, referrerUrl, RequestTypes.DOCUMENT);
-        if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
+        const frameRule = frames.getFrameRule(tab);
+
+        const allowlistRule = filteringApi.findAllowlistRule({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
+        if (allowlistRule && allowlistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Content)) {
             return null;
         }
 
-        return filteringApi.getReplaceRules(requestUrl, referrerUrl, requestType);
+        return filteringApi.getReplaceRules({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType,
+            frameRule,
+        });
     };
 
     /**
@@ -435,14 +492,25 @@ export const webRequestService = (function () {
             return null;
         }
 
-        const whitelistRule = filteringApi.findWhitelistRule(
-            requestUrl, referrerUrl, RequestTypes.DOCUMENT,
-        );
-        if (whitelistRule && whitelistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.RemoveParam)) {
+        const frameRule = frames.getFrameRule(tab);
+
+        const allowlistRule = filteringApi.findAllowlistRule({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType: RequestTypes.DOCUMENT,
+            frameRule,
+        });
+
+        if (allowlistRule && allowlistRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.RemoveParam)) {
             return null;
         }
 
-        const rules = filteringApi.getRemoveParamRules(requestUrl, referrerUrl, requestType);
+        const rules = filteringApi.getRemoveParamRules({
+            requestUrl,
+            frameUrl: referrerUrl,
+            requestType,
+            frameRule,
+        });
 
         let result = requestUrl;
         rules.forEach((r) => {
