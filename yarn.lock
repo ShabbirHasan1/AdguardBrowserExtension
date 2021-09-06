@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@adguard/assistant@^4.3.45":
-  version "4.3.49"
-  resolved "https://registry.npmjs.org/@adguard/assistant/-/assistant-4.3.49.tgz"
-  integrity sha512-i8pky8/ADcQFl4ILzWLqTdg69enjPRXaMpEMClPYyVfj8ffzYjjMru7iNpjHVdzgSMKj9A4S54jyRuGlMWYDHw==
+"@adguard/assistant@^4.3.50":
+  version "4.3.50"
+  resolved "https://registry.yarnpkg.com/@adguard/assistant/-/assistant-4.3.50.tgz#ebf64301fc6b110522a77c4a94617863662139ba"
+  integrity sha512-7FD9xVH3NQv9vZ7P6pdEVYQZtI4LZ3qw/2F/n2q/SjOvoxyEm365xFwtYTsMaJIG36Hg26oHirxANZW2VRzp2A==
 
 "@adguard/filters-downloader@^1.1.5":
   version "1.1.5"
@@ -22,10 +22,10 @@
     "@babel/runtime" "^7.7.2"
     js-yaml "^3.13.1"
 
-"@adguard/translate@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.npmjs.org/@adguard/translate/-/translate-0.2.3.tgz"
-  integrity sha512-I0XcTSKrrRryD1PGd8kPKHB5SIY45+gTEAMqhpo2lDyUNMkW9MdhrNeAuoejJ+BuqU2TT+jK7KCNe33r7IsSjw==
+"@adguard/translate@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@adguard/translate/-/translate-0.2.4.tgz#d83d259b29f434499c77afc097762b7121d9e0d6"
+  integrity sha512-scnVzevzuw7Y9XmUuASgyz1U2AG7aVk3FiZL0Ekqr8PZP8kfgw+Fl1zlME8dl+7h+K1j+ocJX/4Ie/Wq9q73cA==
 
 "@adguard/tsurlfilter@^0.6.1":
   version "0.6.1"

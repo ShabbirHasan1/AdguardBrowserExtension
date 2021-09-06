@@ -1,8 +1,8 @@
-! Checksum: okpiDjzQ8KIuQT2/D6TYgw
+! Checksum: E0ooBsYwD2Uiyl25E9m6fA
 ! Title: AdGuard Safari filter
 ! Description: Special filter for Safari 9+ on iOS and Mac OS. We need a separate filter for Safari browser because it does not fully support our rules syntax. Already included in AdGuard Base filter.
-! Version: 2.0.1.80
-! TimeUpdated: 2021-06-01T12:30:42+00:00
+! Version: 2.0.1.82
+! TimeUpdated: 2021-08-31T12:30:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -182,8 +182,6 @@ motorradonline.de#@#.mps-banner
 @@||motorradonline.de^$generichide
 ! https://forum.adguard.com/index.php?threads/21564/
 @@||it-times.de^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/4920
-mathb-ege.sdamgia.ru##.content >div[style="margin-bottom:20px"] > div[style="width:728px;margin:auto"]+div
 ! http://freetvall.com/video/9kb116rwshsb/motors-tv http://www.estadiofutebol.com/gratis/motorstv
 @@||ib.adnxs.com/tt^$domain=televisaofutebol.com
 televisaofutebol.com#@#iframe[Width="300"][height="250"]
@@ -1029,13 +1027,6 @@ cari.com.my###cvidloader
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1071
 ! nfl.com - fixing video
 @@||googletagservices.com/tag/js/gpt.js$domain=nfl.com
-! http://forum.adguard.com/showthread.php?6936
-@@||go.admost.com/adx/js/admost.js^$domain=mackolik.com
-! http://forum.adguard.com/showthread.php?7046
-@@||app.medyanetads.com/ad.js$domain=mackolik.com
-@@||app.medyanetads.com/Session$domain=mackolik.com
-@@||app.medyanetads.com/Session?publisher=$domain=sahadan.com
-@@||go.admost.com/adx/get.ashx&accptck$domain=sahadan.com
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1511
 ! fixing issue with RU AdList: Counters
 @@||yandex.ru/clck/jsredir?$domain=yandex.ru

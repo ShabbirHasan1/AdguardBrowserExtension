@@ -83,10 +83,10 @@
     "zip-webpack-plugin": "^4.0.1"
   },
   "dependencies": {
-    "@adguard/assistant": "^4.3.45",
+    "@adguard/assistant": "^4.3.50",
     "@adguard/filters-downloader": "^1.1.5",
     "@adguard/scriptlets": "^1.4.4",
-    "@adguard/translate": "^0.2.3",
+    "@adguard/translate": "^0.2.4",
     "@adguard/tsurlfilter": "^0.6.1",
     "@babel/runtime": "^7.15.3",
     "@xstate/react": "^1.5.1",
