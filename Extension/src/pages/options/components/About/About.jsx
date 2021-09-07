@@ -5,7 +5,6 @@ import { rootStore } from '../../stores/RootStore';
 import {
     CHANGELOG_URL,
     ACKNOWLEDGMENTS_URL,
-    EULA_URL,
     GITHUB_URL,
     PRIVACY_URL,
     WEBSITE_URL,
@@ -59,14 +58,6 @@ const About = observer(() => {
                         className="about__menu-item"
                     >
                         {reactTranslator.getMessage('options_open_changelog')}
-                    </a>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={EULA_URL}
-                        className="about__menu-item"
-                    >
-                        {reactTranslator.getMessage('options_license_agreement')}
                     </a>
                     <a
                         target="_blank"
