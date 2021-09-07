@@ -44,19 +44,19 @@ export const Icons = () => {
             </symbol>
 
             <symbol id="setting-6" viewBox="0 0 24 24">
+                <path d="M4 6H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 14H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 18H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </symbol>
+
+            <symbol id="setting-7" viewBox="0 0 24 24">
                 <path d="M13 14C13 14 15.5308 13.4189 17.0263 11.6741C18.5218 9.92934 19 7 19 7" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M20 14C20 14 17.4692 13.4189 15.9737 11.6741C14.4782 9.92934 14 7 14 7" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M3 20L7.00509 11L11 20" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M4 17.5H9.5" stroke="currentColor" fill="none" strokeWidth="1.5" />
                 <path d="M11.5 6.5H21.5" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" />
                 <path d="M16.5 6V4.5" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" />
-            </symbol>
-
-            <symbol id="setting-7" viewBox="0 0 24 24">
-                <path d="M4 6H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4 14H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4 18H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </symbol>
 
             <symbol id="arrow-back" viewBox="0 0 10 18">
