@@ -13,7 +13,7 @@
         "description"
     ],
     "locales_relative_path": "../../Extension/_locales",
-    "locales_data_format": "json",
+    "locales_data_format": "chrome",
     "locales_data_filename": "messages.json",
     "required_locales": [
         "ru",

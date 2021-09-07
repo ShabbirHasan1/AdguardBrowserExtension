@@ -434,12 +434,6 @@
     "filtering_type_all": {
         "message": "Visi"
     },
-    "filtering_type_image": {
-        "message": "Paveikslėlis"
-    },
-    "filtering_type_media": {
-        "message": "Medija"
-    },
     "filtering_type_other": {
         "message": "Kitkas"
     },
@@ -518,26 +512,17 @@
     "filtering_log_filter_regular": {
         "message": "Įprastas"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Leidžiama"
-    },
     "filtering_log_filter_blocked": {
         "message": "Užblokuota"
     },
     "filtering_log_filter_modified": {
         "message": "Modifikuota"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Naudotojo filtras"
-    },
     "options_settings": {
         "message": "AdGuard nustatymai"
     },
     "options_general_settings": {
         "message": "Pagrindiniai"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "Leisti paieškos reklamą ir svetainių savireklamą"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Rodyti blokuojamų reklamų skaičių ant AdGuard plėtinio piktogramos"
@@ -611,9 +596,6 @@
     "options_reset_stats_done": {
         "message": "Statistika sėkmingai pašalinta"
     },
-    "options_collect_hit_stats_title": {
-        "message": "Siųsti reklamos filtrų naudojimo statistiką"
-    },
     "options_show_context_menu_title": {
         "message": "Pridėti AdGuard elementą į naršyklės kontekstinį meniu"
     },
@@ -622,9 +604,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Filtrai, optimizuoti mobiliesiems įrenginiams"
-    },
-    "options_learn_more": {
-        "message": "Sužinoti daugiau apie tai"
     },
     "options_privacy_title": {
         "message": "Saugus režimas"
@@ -707,9 +686,6 @@
     "options_about": {
         "message": "Apie"
     },
-    "options_license_agreement": {
-        "message": "Galutinio naudotojo licencijos sutartis"
-    },
     "options_privacy_policy": {
         "message": "Privatumo politika"
     },
@@ -724,8 +700,5 @@
     },
     "options_copyright": {
         "message": "Visos teisės saugomos."
-    },
-    "options_delete_filter_confirm": {
-        "message": "Ar tikrai norite ištrinti šį filtrą?"
     }
 }

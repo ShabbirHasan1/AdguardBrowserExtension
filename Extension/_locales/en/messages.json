@@ -942,7 +942,7 @@
         "message": "Only requests processed without filtering"
     },
     "filtering_log_tag_tooltip_allowed": {
-        "message": "Only unblocked requests"
+        "message": "Only allowed and unblocked requests"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Only blocked requests"
@@ -993,10 +993,10 @@
         "message": "Miscellaneous"
     },
     "blocking_pages_malware": {
-        "message": "This web page at <strong>%host%</strong> has been reported as a malware page and has been blocked based on your security preferences."
+        "message": "This web page at <strong>%host%<\/strong> has been reported as a malware page and has been blocked based on your security preferences."
     },
     "blocking_pages_phishing": {
-        "message": "This web page at <strong>%host%</strong> has been reported as a phishing page and has been blocked based on your security preferences."
+        "message": "This web page at <strong>%host%<\/strong> has been reported as a phishing page and has been blocked based on your security preferences."
     },
     "blocking_pages_advanced_button": {
         "message": "Advanced"

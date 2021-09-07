@@ -2,6 +2,9 @@
     "options_popup_title_placeholder": {
         "message": "Masukkan nama filter"
     },
+    "options_filters_list_search_display_option_all_filters": {
+        "message": "Semua filter"
+    },
     "options_filters_list_search_display_option_enabled": {
         "message": "Aktifkan"
     },
@@ -14,6 +17,9 @@
     "popup_header_cta_link": {
         "message": "Blokir lebih banyak?"
     },
+    "options_popup_import_settings_wrong_file_ext": {
+        "message": "Ekstensi berkas harus %extension%"
+    },
     "popup_adguard_for_ios": {
         "message": "AdGuard untuk iOS"
     },
@@ -22,6 +28,9 @@
     },
     "options_filters_filter_version": {
         "message": "versi:"
+    },
+    "options_filters_filter_link": {
+        "message": "Pergi ke beranda"
     },
     "options_filters_filter_updated": {
         "message": "diperbarui:"
@@ -86,6 +95,18 @@
     "background_tab_title": {
         "message": "Tab latar belakang"
     },
+    "options_allowlist": {
+        "message": "Daftar Putih"
+    },
+    "options_allowlist_desc": {
+        "message": "AdGuard tidak memfilter situs web dari daftar putih."
+    },
+    "options_allowlist_invert": {
+        "message": "Balikkan daftar Putih"
+    },
+    "options_allowlist_invert_desc": {
+        "message": "Jangan blokir iklan apapun kecuali untuk daftar putih"
+    },
     "options_userfilter": {
         "message": "Penyaring pengguna"
     },
@@ -94,6 +115,9 @@
     },
     "filtering_log_privacy_applied_rules": {
         "message": "Mode siluman diterapkan"
+    },
+    "filtering_log_in_allowlist": {
+        "message": "Situs ini diizinkan"
     },
     "filtering_log_hide_referrer": {
         "message": "Sembunyikan Referrer dari pihak ketiga"
@@ -128,11 +152,23 @@
     "options_select_update_period_disabled": {
         "message": "Dinonaktifkan"
     },
+    "options_filters": {
+        "message": "Penyaring"
+    },
+    "options_antibanner_rules_count": {
+        "message": "Jumlah aturan filter: %rules_count%"
+    },
     "options_antibanner_custom_group": {
         "message": "Kustom"
     },
     "options_filters_enabled": {
         "message": "Diaktifkan:"
+    },
+    "options_filters_enabled_and_more": {
+        "message": "%enabled% dan %more% lagi"
+    },
+    "options_filters_enabled_and_last": {
+        "message": "%enabled% dan %last%"
     },
     "options_filters_no_enabled": {
         "message": "Tidak ada penyaring aktif"
@@ -142,6 +178,9 @@
     },
     "options_add_custom_filter": {
         "message": "Tambahkan filter kustom"
+    },
+    "options_empty_custom_filter": {
+        "message": "Anda belum memiliki penyaring khusus"
     },
     "options_editor_indicator_saving": {
         "message": "Menyimpan..."
@@ -178,6 +217,15 @@
     },
     "popup_site_filtering_state_paused": {
         "message": "Perlindungan dijeda"
+    },
+    "popup_site_exception_information": {
+        "message": "Penyaringan dimatikan, karena dapat menggangu operasi kerja situs ini."
+    },
+    "popup_tab_blocked_count": {
+        "message": "Diblokir: %num%"
+    },
+    "popup_tab_blocked_all_count": {
+        "message": "Total: %num%"
     },
     "popup_statistics_total": {
         "message": "Jumlah"
@@ -254,6 +302,9 @@
     "options_popup_update_filters": {
         "message": "yang diperbarui."
     },
+    "options_popup_version_update_title_text": {
+        "message": "Ekstensi AdGuard telah diperbarui ke versi %current_version%"
+    },
     "options_popup_version_update_description_minor": {
         "message": "Versi ini berisi perbaikan bug dan peningkatan minor"
     },
@@ -269,8 +320,14 @@
     "options_popup_version_update_offer_button_text": {
         "message": "PELAJARI LEBIH"
     },
+    "popup_block_site_ads_option": {
+        "message": "Blokir iklan di situs ini"
+    },
     "popup_security_report": {
         "message": "Periksa keamanan situs"
+    },
+    "popup_reset_custom_rules": {
+        "message": "Reset semua aturan pengguna halaman ini"
     },
     "popup_open_settings": {
         "message": "Pengaturan AdGuard"
@@ -280,6 +337,9 @@
     },
     "popup_security_report_android": {
         "message": "Laporan keamanan"
+    },
+    "popup_in_allowlist_android": {
+        "message": "Pada daftar Putih"
     },
     "popup_site_protection_disabled_android": {
         "message": "Perlindungan dijeda"
@@ -338,6 +398,9 @@
     "context_safebrowsing": {
         "message": "Keamanan jelajah"
     },
+    "context_allowlist": {
+        "message": "Daftar Putih"
+    },
     "context_userfilter": {
         "message": "Penyaring pengguna"
     },
@@ -347,8 +410,20 @@
     "alert_popup_filter_enabled_title": {
         "message": "Aktivasi otomatis penyaring"
     },
+    "alert_popup_filter_enabled_desc": {
+        "message": "%filter_name% telah diaktifkan secara otomatis"
+    },
+    "filters_download_title": {
+        "message": "Memuat basis data penyaring..."
+    },
+    "filters_download_loading": {
+        "message": "Silahkan tunggu basis data penyaring sedang dimuat..."
+    },
     "filtering_modal_element": {
         "message": "Elemen:"
+    },
+    "filtering_modal_cookie": {
+        "message": "Cookie:"
     },
     "filtering_modal_important": {
         "message": "Beri prioritas lebih tingggi ke aturan"
@@ -359,8 +434,23 @@
     "filtering_log_search_string": {
         "message": "Masukkan string pencarian"
     },
+    "filtering_log_preserve_log_off": {
+        "message": "Simpan log: Mati"
+    },
+    "filtering_log_preserve_log_on": {
+        "message": "SImpan log: Hidup"
+    },
+    "filtering_clear_log_events": {
+        "message": "Kosongkan log"
+    },
     "filtering_type_all": {
         "message": "Semua"
+    },
+    "filtering_type_other": {
+        "message": "Lainnya"
+    },
+    "filtering_table_status": {
+        "message": "Status"
     },
     "filtering_table_type": {
         "message": "Tipe"
@@ -374,8 +464,14 @@
     "filtering_table_filter": {
         "message": "Penyaring"
     },
+    "filtering_table_empty_reload_page_desc": {
+        "message": "<reset>Matikan filter<\/reset> atau <refresh>muat ulang halaman<\/refresh> untuk melihat log penyaringan."
+    },
     "filtering_modal_info_title": {
         "message": "Detai permintaan"
+    },
+    "filtering_modal_preview_title": {
+        "message": "Pratinjau"
     },
     "filtering_modal_type": {
         "message": "Tipe:"
@@ -395,14 +491,44 @@
     "filtering_modal_block": {
         "message": "Blok"
     },
+    "filtering_modal_block_again": {
+        "message": "Blokir lagi"
+    },
     "filtering_modal_unblock": {
         "message": "Jangan blok"
     },
     "filtering_modal_remove_user": {
         "message": "Buang dari penyaring pengguna"
     },
+    "filtering_modal_preview_request_button": {
+        "message": "Pratinjau"
+    },
+    "filtering_modal_remove_allowlist": {
+        "message": "Hapus dari daftar Putih"
+    },
     "filtering_modal_add_title": {
         "message": "Menambah aturan"
+    },
+    "filtering_modal_status_text_desc": {
+        "message": "Status:"
+    },
+    "filtering_modal_status_text_error": {
+        "message": "Tidak ada tanggapan yang diterima"
+    },
+    "filtering_modal_status_text_loading": {
+        "message": "Memuat..."
+    },
+    "filtering_modal_filtering_status_text_desc": {
+        "message": "Status penyaringan:"
+    },
+    "filtering_modal_rule_text_desc": {
+        "message": "Teks aturan:"
+    },
+    "filtering_modal_patterns_desc": {
+        "message": "Pola:"
+    },
+    "filtering_modal_options_desc": {
+        "message": "Opsi:"
     },
     "filtering_modal_apply_domains": {
         "message": "Terapkan aturan ke semua situs"
@@ -419,17 +545,53 @@
     "filtering_modal_open_in_new_tab": {
         "message": "Buka di tab baru"
     },
+    "filtering_modal_show_full_url": {
+        "message": "Tampilkan URL penuh"
+    },
+    "filtering_modal_hide_full_url": {
+        "message": "Sembunyi URL penuh"
+    },
+    "filtering_modal_copy_to_clipboard": {
+        "message": "Salin ke papan klip"
+    },
+    "filtering_modal_copied": {
+        "message": "Tersalin"
+    },
+    "filtering_log_filter_regular": {
+        "message": "Reguler"
+    },
+    "filtering_log_filter_blocked": {
+        "message": "Diblokir"
+    },
+    "filtering_log_filter_modified": {
+        "message": "Diubah"
+    },
     "options_settings": {
         "message": "Pengaturan AdGuard"
     },
     "options_general_settings": {
         "message": "Pengaturan Umum"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Memungkinkan iklan pencarian dan situs web promosi"
+    "options_show_blocked_ads_count_title": {
+        "message": "Mengindikasikan jumlah iklan yang diblokir pada ikon ekstensi AdGuard"
     },
     "options_enable_autodetect_filter": {
         "message": "Aktifkan penyaring yang paling sesuai secara otomatis"
+    },
+    "options_enable_autodetect_filter_desc": {
+        "message": "Filter khusus bahasa akan aktif tergantung pada bahasa situs"
+    },
+    "options_select_theme": {
+        "message": "Tema"
+    },
+    "options_theme_selector_system": {
+        "message": "Sistem"
+    },
+    "options_theme_selector_light": {
+        "message": "Terang"
+    },
+    "options_theme_selector_dark": {
+        "message": "Gelap"
     },
     "options_export_settings": {
         "message": "Ekspor pengaturan"
@@ -443,14 +605,35 @@
     "options_update_antibanner_filters": {
         "message": "Periksa pembaruan penyaring"
     },
+    "options_check_update": {
+        "message": "Periksa pembaruan"
+    },
+    "options_check_update_progress": {
+        "message": "Memeriksa..."
+    },
     "options_set_update_interval": {
         "message": "Interval pembaruan penyaring"
+    },
+    "options_set_update_interval_desc": {
+        "message": "Agar pemblokiran lebih efektif, filter perlu diperbarui secara berkala"
     },
     "options_userfilter_export": {
         "message": "Ekspor"
     },
+    "options_editor_save": {
+        "message": "Simpan"
+    },
     "options_userfilter_import": {
         "message": "Impor"
+    },
+    "options_userfilter_description_key": {
+        "message": "Anda dapat menambahkan aturan Anda sendiri di sini. Opsi ini direkomendasikan untuk pengguna tingkat lanjut yang terbiasa dengan HTML\/CSS. Baca <a>tutorial aturan filter<\/a> untuk belajar menulis menulis aturan filter Anda sendiri."
+    },
+    "options_userfilter_line_break_off": {
+        "message": "Line break: MATI"
+    },
+    "options_userfilter_line_break_on": {
+        "message": "Line break: HIDUP"
     },
     "options_open_changelog": {
         "message": "Log perubahan"
@@ -458,26 +641,59 @@
     "options_safebrowsing_enabled": {
         "message": "Perlindungan dari phishing dan program"
     },
+    "options_safebrowsing_enabled_desc": {
+        "message": "Filter khusus yang melindungi Anda dari <a>situs web berbahaya dan phishing<\/a>."
+    },
     "options_site": {
         "message": "Situs Resmi"
     },
     "options_discuss": {
         "message": "Diskusikan AdGuard"
     },
+    "options_do_you_like_question": {
+        "message": "Anda menyukai AdGuard?"
+    },
+    "options_footer_like_us_cta": {
+        "message": "Berikan nilai!"
+    },
+    "options_miscellaneous_settings": {
+        "message": "Pengaturan tambahan"
+    },
+    "options_show_adguard_full_version_title": {
+        "message": "Tampilkan informasi pada versi penuh AdGuard"
+    },
     "options_show_app_updated_notification": {
         "message": "Beritahu tentang pembaruan ekstensi"
     },
+    "options_open_log": {
+        "message": "Buka log penyaringan"
+    },
+    "options_reset_stats": {
+        "message": "Kosongkan statistik"
+    },
     "options_reset_stats_done": {
         "message": "Statistik telah dikembalikan"
+    },
+    "options_reset_settings": {
+        "message": "Setel ulang pengaturan"
+    },
+    "options_reset_settings_done": {
+        "message": "Pengaturan telah diatur ulang"
+    },
+    "options_reset_settings_error": {
+        "message": "Kesalahan saat atur ulang pengaturan"
+    },
+    "options_collect_hit_stats_title": {
+        "message": "Bantuan dalam pengembangan penyaring Adguard"
+    },
+    "options_show_context_menu_title": {
+        "message": "Tambahkan item AdGuard ke konteks menu browser"
     },
     "options_use_optimized_filters": {
         "message": "Gunakan penyaring teroptimasi"
     },
     "options_use_optimized_filters_desc": {
         "message": "Daftar dari penyaring yang telah dioptimalisasi untuk perangkat seluler"
-    },
-    "options_learn_more": {
-        "message": "Pelajari lebih lanjut mengenai ini"
     },
     "options_privacy_title": {
         "message": "Mode Siluman"
@@ -490,6 +706,18 @@
     },
     "options_hide_referrer_desc": {
         "message": "Cegah pihak ketiga mengtahui website apa yang Anda kunjungi"
+    },
+    "options_hide_search_queries_title": {
+        "message": "Sembunyikan kueri pencarian"
+    },
+    "options_hide_search_queries_desc": {
+        "message": "Sembunyikan kueri website yang dikunjungi dari mesin pencari"
+    },
+    "options_send_not_track_title": {
+        "message": "Kirim signal situs untuk tidak melacak Anda"
+    },
+    "options_send_not_track_desc": {
+        "message": "Kirim sinyal <gpc>Kontrol Privasi Global<\/gpc> dan <dnt>Jangan Lacak<\/dnt> ke situs web yang Anda kunjungi"
     },
     "options_stripped_tracking_parameters": {
         "message": "Parameter pelacak dihapus"
@@ -514,6 +742,15 @@
     },
     "options_strip_tracking_params_title": {
         "message": "Hapus parameter pelacak"
+    },
+    "options_strip_tracking_params_description": {
+        "message": "Jika diaktifkan, filter Pelacak URL AdGuard akan digunakan untuk menghapus parameter pelacakan dari halaman URL."
+    },
+    "options_block_known_trackers_title": {
+        "message": "Blokir pelacak yang dikenal"
+    },
+    "options_block_known_trackers_description": {
+        "message": "Saat diaktifkan, filter Perlindungan Pelacakan AdGuard digunakan untuk memblokir pelacak yang dikenal."
     },
     "options_third_party_title": {
         "message": "Penghancuran otomatis untuk kuki pihak ketika"
@@ -560,9 +797,6 @@
     "options_about": {
         "message": "Tentang"
     },
-    "options_license_agreement": {
-        "message": "Perjanjian Lisensi Pengguna Akhir"
-    },
     "options_privacy_policy": {
         "message": "Kebijakan Privasi"
     },
@@ -578,7 +812,79 @@
     "options_copyright": {
         "message": "Hak cipta dilindungi oleh undang-undag"
     },
-    "options_delete_filter_confirm": {
-        "message": "Apakah anda yakin ingin menghapus penyaring ini?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Buang filter ini?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Buang"
+    },
+    "options_nav_better_than_extension": {
+        "message": "Mengapa program lengkap AdGuard lebih baik daripada ekstensi?"
+    },
+    "options_nav_compare": {
+        "message": "Bagaimana perbandinganya"
+    },
+    "options_nav_hide": {
+        "message": "Sembunyikan"
+    },
+    "options_filters_search": {
+        "message": "Cari"
+    },
+    "options_about_title": {
+        "message": "Ekstensi Browser AdGuard"
+    },
+    "group_description_social": {
+        "message": "Sembunyikan tombol \"Suka\"\/\"Bagikan\" dan widget sosial media lainnya"
+    },
+    "group_description_annoyances": {
+        "message": "Hapus jendela pop-up dan ganguan pemberitahuan lainnya seperti pemberitahuan cookie"
+    },
+    "group_description_security": {
+        "message": "Lindungi diri Anda dari malware, phishing, dan ancaman online lainnya"
+    },
+    "group_description_miscellaneous": {
+        "message": "Pengaturan lain untuk konfigurasi penjelajahan web Anda dengan AdGuard lebih jauh"
+    },
+    "group_description_custom": {
+        "message": "Buat filter Anda sendiri untuk menyempurnakan pemfilteran web sesuai keinginan Anda"
+    },
+    "options_user_rules_editor_stub_title": {
+        "message": "Editor sudah terbuka"
+    },
+    "options_user_rules_editor_stub_go_to_editor_button": {
+        "message": "Pergi ke editor"
+    },
+    "options_editor_open_fullscreen_button_tooltip": {
+        "message": "Buka editor dalam mode layar penuh"
+    },
+    "options_editor_close_fullscreen_button_tooltip": {
+        "message": "Tutup editor mode layar penuh"
+    },
+    "options_clear_stats_confirm_modal_title": {
+        "message": "Kosongkan statistik?"
+    },
+    "options_clear_stats_confirm_modal_clear_button": {
+        "message": "Bersihkan"
+    },
+    "options_reset_settings_confirm_modal_title": {
+        "message": "Setel ulang pengaturan?"
+    },
+    "options_reset_settings_confirm_modal_clear_button": {
+        "message": "Atur ulang"
+    },
+    "options_confirm_modal_cancel_button": {
+        "message": "Batal"
+    },
+    "filtering_log_details_modal_back_button": {
+        "message": "Kembali ke minta"
+    },
+    "filtering_log_details_modal_try_again": {
+        "message": "Coba lagi"
+    },
+    "options_stealth_general_title": {
+        "message": "Umum"
+    },
+    "options_stealth_cookies_title": {
+        "message": "Cookie"
     }
 }

@@ -158,9 +158,6 @@
     "options_general_settings": {
         "message": "Գլխավոր կարգավորումներ"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Թույլ տալ, որ որոնման գովազդի եւ ինքնակառավարման գովազդ կայքեր"
-    },
     "options_enable_autodetect_filter": {
         "message": "Ակտիվացնել առավել համապատասխանող զտիչները ինքնաբար"
     },

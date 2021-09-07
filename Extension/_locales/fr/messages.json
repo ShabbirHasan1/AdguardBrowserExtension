@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Tout"
     },
-    "filtering_type_image": {
-        "message": "Image"
-    },
-    "filtering_type_media": {
-        "message": "Média"
-    },
     "filtering_type_other": {
         "message": "Autre"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Règle:"
+    },
+    "filtering_modal_rules": {
+        "message": "Règles :"
     },
     "filtering_modal_privacy": {
         "message": "Mode Furtif:"
@@ -569,14 +566,11 @@
     "filtering_modal_copied": {
         "message": "Copié"
     },
-    "filtering_log_filter_processed": {
-        "message": "Traités"
-    },
     "filtering_log_filter_regular": {
         "message": "Normal"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Autorisé"
+    "filtering_log_filter_allowed": {
+        "message": "Autorisées"
     },
     "filtering_log_filter_blocked": {
         "message": "Bloqué"
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Modifié"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Filtre utilisateur"
+    "filtering_log_filter_user_rules": {
+        "message": "Règles d'utilisateur"
+    },
+    "filtering_log_status_processed": {
+        "message": "Traitée"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Autorisée"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Bloquée"
+    },
+    "filtering_log_status_modified": {
+        "message": "Modifiée"
     },
     "options_settings": {
         "message": "Paramètres d'AdGuard"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "Paramètres généraux"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Autoriser les annonces de recherche et l'auto-promotion des sites web"
+    "options_block_acceptable_ads": {
+        "message": "Bloquer les publicités de recherche et l'autopromotion des sites Web"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Les annonces de recherche sont des annonces que vous voyez parmi les résultats d'une requête de recherche lorsque vous utilisez un moteur de recherche en ligne comme Google, Bing, DuckDuckGo, etc. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Débarrassez-vous de <a>l'’autopromotion et des publicités basées sur le contexte des sites Web<\/a> qui apparaissent dans les résultats de recherche"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Indiquer le nombre d'annonces bloquées sur l'icône de l'extension AdGuard"
@@ -711,7 +717,10 @@
         "message": "Erreur lors de la réinitialisation des paramètres"
     },
     "options_collect_hit_stats_title": {
-        "message": "Envoyer des statistiques sur l'utilisation des filtres"
+        "message": "Participer au développement des filtres AdGuard"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Envoyer des <a>statistiques anonymes sur l’utilisation des filtres publicitaires<\/a> qui nous aideront à les améliorer et à les optimiser."
     },
     "options_show_context_menu_title": {
         "message": "Ajouter AdGuard au menu contextuel du navigateur"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Listes de filtres optimisés pour les appareils mobiles"
-    },
-    "options_learn_more": {
-        "message": "En savoir plus"
     },
     "options_privacy_title": {
         "message": "Mode Furtif"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "À propos"
     },
-    "options_license_agreement": {
-        "message": "Contrat de licence d'utilisateur final (EULA)"
-    },
     "options_privacy_policy": {
         "message": "Politique de confidentialité"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "Tous les droits sont réservés."
     },
-    "options_delete_filter_confirm": {
-        "message": "Voulez-vous vraiment supprimer ce filtre ?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Retirer ce filtre?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Supprimer"
     },
     "options_nav_better_than_extension": {
         "message": "Pourquoi le programme à part entière AdGuard est-il meilleur que l'extension ?"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Réinitialiser"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Annuler"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Embellir"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Essayer à nouveau"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Requêtes de première partie"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Uniquement les requêtes de première partie"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Uniquement les requêtes de tiers"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Uniquement les requêtes traitées sans filtrage"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Uniquement les requêtes bloquées"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Uniquement les requêtes modifiées"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Uniquement les requêtes modifiées par les règles de l’utilisateur"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Documents et sous-documents"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Feuilles de style"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Scripts"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests et requêtes fetch"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Images"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Média"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Police de caractères, pings, WebRTC, WebSocket, etc."
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "Requêtes de tiers"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Maintenez Cmd pour sélectionner plusieurs filtres"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "Méthode de requête HTTP"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Maintenez la touche Ctrl enfoncée pour sélectionner plusieurs filtres"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "Code de statut HTTP"
     },
     "options_stealth_general_title": {
         "message": "Général"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Divers"
+    },
+    "blocking_pages_malware": {
+        "message": "Cette page web <strong>%host%<\/strong> a été signalée comme une page malveillante et fût bloquée selon vos préférences de sécurité."
+    },
+    "blocking_pages_phishing": {
+        "message": "Cette page web <strong>%host%<\/strong> a été signalée comme une page d'hameçonnage et fût bloquée selon vos préférences de sécurité."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Avancés"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Plus d'information"
+    },
+    "blocking_pages_page_title": {
+        "message": "Accès refusé"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard a bloqué l'accès à cette page"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Bloqué par AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard n'a pas autorisé le chargement de cette page en raison de la régle de filtrage suivante"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Retour"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Procéder malgré tout"
     }
 }

@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "全部"
     },
-    "filtering_type_image": {
-        "message": "图像"
-    },
-    "filtering_type_media": {
-        "message": "媒体"
-    },
     "filtering_type_other": {
         "message": "其它"
     },
@@ -492,6 +486,9 @@
         "message": "源："
     },
     "filtering_modal_rule": {
+        "message": "规则："
+    },
+    "filtering_modal_rules": {
         "message": "规则："
     },
     "filtering_modal_privacy": {
@@ -569,14 +566,11 @@
     "filtering_modal_copied": {
         "message": "已复制"
     },
-    "filtering_log_filter_processed": {
-        "message": "已处理"
-    },
     "filtering_log_filter_regular": {
         "message": "常规"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "已在白名单"
+    "filtering_log_filter_allowed": {
+        "message": "已允许"
     },
     "filtering_log_filter_blocked": {
         "message": "已拦截"
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "已修改"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "用户过滤器"
+    "filtering_log_filter_user_rules": {
+        "message": "用户规则"
+    },
+    "filtering_log_status_processed": {
+        "message": "已处理"
+    },
+    "filtering_log_status_allowed": {
+        "message": "已允许"
+    },
+    "filtering_log_status_blocked": {
+        "message": "已拦截"
+    },
+    "filtering_log_status_modified": {
+        "message": "已修改"
     },
     "options_settings": {
         "message": "AdGuard 设置"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "常规设置"
     },
-    "options_allow_acceptable_ads": {
-        "message": "允许搜索广告及网站的自我推销"
+    "options_block_acceptable_ads": {
+        "message": "拦截搜索广告和网站的自我推销"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "搜索广告是您在使用 Google、Bing、DuckDuckGo 等在线搜索引擎时在搜索查询结果中看到的广告。<a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "摆脱搜索结果中<a>基于上下文的广告及网站上的自我推销广告<\/a>"
     },
     "options_show_blocked_ads_count_title": {
         "message": "在 AdGuard 扩展图标上显示已拦截的广告数量"
@@ -669,7 +675,7 @@
         "message": "钓鱼和恶意保护"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "保护您免受恶意网站和钓鱼网站侵害的特殊过滤器。<a><\/a>"
+        "message": "保护您免受<a>恶意网站和钓鱼网站<\/a>侵害的特殊过滤器。"
     },
     "options_site": {
         "message": "官方网站"
@@ -711,7 +717,10 @@
         "message": "重置设置时出错"
     },
     "options_collect_hit_stats_title": {
-        "message": "发送广告过滤器使用统计信息"
+        "message": "帮助我们一起开发 AdGuard 过滤器"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "发送 <a>匿名的广告过滤器使用统计数据<\/a>，这些数据帮助我们改进并优化它们。"
     },
     "options_show_context_menu_title": {
         "message": "添加 AdGuard 到浏览器上下文菜单"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "为移动设备优化的过滤器列表"
-    },
-    "options_learn_more": {
-        "message": "了解更多信息"
     },
     "options_privacy_title": {
         "message": "隐身模式"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "关于"
     },
-    "options_license_agreement": {
-        "message": "最终用户许可协议"
-    },
     "options_privacy_policy": {
         "message": "隐私策略"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "保留所有版权。"
     },
-    "options_delete_filter_confirm": {
-        "message": "您确定要删除此过滤器？"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "移除此过滤器?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "移除"
     },
     "options_nav_better_than_extension": {
         "message": "为什么完整的 AdGuard 应用程序比扩展更好？"
@@ -885,7 +891,7 @@
         "message": "创建您自己的过滤器以根据您的喜好微调网络过滤"
     },
     "group_description_lang": {
-        "message": "不要限制自己——阻止任何语言网站上的广告"
+        "message": "突破限制 —— 阻止任何语言网站上的广告"
     },
     "fullscreen_user_rules_title": {
         "message": "用户规则"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "重置"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "取消"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "美化"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "重试"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "第一方请求"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "仅第一方请求"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "仅第三方请求"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "仅未经过滤的请求"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "仅拦截的请求"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "仅修改的请求"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "仅被用户规则改变的请求"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "文档和子文档"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "样式表"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "脚本"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests 和 fetch 请求"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "图像"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "媒体"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "字体、Pings、WebRTC、WebSocket 等等"
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "第三方请求"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "按住 Cmd 选择多个过滤器"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP 请求方式"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "按住 Ctrl 选择多个过滤器"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP 状态码"
     },
     "options_stealth_general_title": {
         "message": "常规"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "其它"
+    },
+    "blocking_pages_malware": {
+        "message": "位于 <strong>%host%<\/strong> 的网页已被报告为恶意网站，根据您的安全设置，我们拦截了与此网站的连接。"
+    },
+    "blocking_pages_phishing": {
+        "message": "位于 <strong>%host%<\/strong> 的网页已被报告为钓鱼网站，根据您的安全设置，我们拦截了与此网站的连接。"
+    },
+    "blocking_pages_advanced_button": {
+        "message": "高级"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "更多信息"
+    },
+    "blocking_pages_page_title": {
+        "message": "访问被拒绝"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard 已阻止访问此网页"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "由 AdGuard 拦截"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "根据以下过滤规则， Adguard 已阻止该网页加载"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "返回"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "依然继续访问"
     }
 }

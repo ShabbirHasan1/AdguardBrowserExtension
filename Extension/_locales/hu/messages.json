@@ -2,6 +2,9 @@
     "options_popup_title_placeholder": {
         "message": "Adja meg a szűrő nevét"
     },
+    "options_filters_list_search_display_option_all_filters": {
+        "message": "Minden szűrő"
+    },
     "options_filters_list_search_display_option_enabled": {
         "message": "Engedélyezve"
     },
@@ -25,6 +28,9 @@
     },
     "options_filters_filter_version": {
         "message": "verzió:"
+    },
+    "options_filters_filter_link": {
+        "message": "Ugrás a kezdőlapra"
     },
     "options_filters_filter_updated": {
         "message": "frissítve:"
@@ -100,6 +106,9 @@
     },
     "options_allowlist_invert_desc": {
         "message": "Engedélyezze a hirdetéseket mindenhol, leszámítva a kivételek listáját"
+    },
+    "options_allowlist_alert_invert": {
+        "message": "A kivételek listája meg lett fordítva. A hirdetések csak azokon a webhelyeken lesznek blokkolva, amik hozzá lettek adva a kivételekhez. <a>Kikapcsolás<\/a>"
     },
     "options_userfilter": {
         "message": "Felhasználói szabályok"
@@ -428,20 +437,26 @@
     "filtering_log_search_string": {
         "message": "Adja meg a keresett szöveget"
     },
+    "filtering_log_preserve_log_off": {
+        "message": "Napló megőrzése: KI"
+    },
+    "filtering_log_preserve_log_on": {
+        "message": "Napló megőrzése: BE"
+    },
+    "filtering_refresh_tab_short": {
+        "message": "Frissítés"
+    },
     "filtering_clear_log_events": {
         "message": "Napló törlése"
     },
     "filtering_type_all": {
         "message": "Mind"
     },
-    "filtering_type_image": {
-        "message": "Kép"
-    },
-    "filtering_type_media": {
-        "message": "Média"
-    },
     "filtering_type_other": {
         "message": "Egyéb"
+    },
+    "filtering_table_status": {
+        "message": "Állapot"
     },
     "filtering_table_type": {
         "message": "Típus"
@@ -461,6 +476,9 @@
     "filtering_modal_info_title": {
         "message": "Kérés részletei"
     },
+    "filtering_modal_preview_title": {
+        "message": "Előnézet"
+    },
     "filtering_modal_type": {
         "message": "Típus:"
     },
@@ -469,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Szabály:"
+    },
+    "filtering_modal_rules": {
+        "message": "Szabályok:"
     },
     "filtering_modal_privacy": {
         "message": "Lopakodó mód:"
@@ -479,17 +500,35 @@
     "filtering_modal_block": {
         "message": "Blokkolás"
     },
+    "filtering_modal_block_again": {
+        "message": "Ismételt blokkolás"
+    },
     "filtering_modal_unblock": {
         "message": "Feloldás"
     },
     "filtering_modal_remove_user": {
         "message": "Eltávolítás a felhasználói szabályok közül"
     },
+    "filtering_modal_preview_request_button": {
+        "message": "Előnézet"
+    },
     "filtering_modal_remove_allowlist": {
         "message": "Eltávolítás a kivételek közül"
     },
     "filtering_modal_add_title": {
         "message": "Szabály hozzáadása"
+    },
+    "filtering_modal_status_text_desc": {
+        "message": "Állapot:"
+    },
+    "filtering_modal_status_text_error": {
+        "message": "Nem érkezett válasz"
+    },
+    "filtering_modal_status_text_loading": {
+        "message": "Betöltés..."
+    },
+    "filtering_modal_filtering_status_text_desc": {
+        "message": "Szűrés állapota:"
     },
     "filtering_modal_rule_text_desc": {
         "message": "Szabály szövege:"
@@ -515,11 +554,23 @@
     "filtering_modal_open_in_new_tab": {
         "message": "Megnyitás új fülön"
     },
+    "filtering_modal_show_full_url": {
+        "message": "Mutassa a teljes URL-t"
+    },
+    "filtering_modal_hide_full_url": {
+        "message": "Ne mutassa a teljes URL-t"
+    },
+    "filtering_modal_copy_to_clipboard": {
+        "message": "Másolás vágólapra"
+    },
+    "filtering_modal_copied": {
+        "message": "Átmásolva"
+    },
     "filtering_log_filter_regular": {
         "message": "Szokásos"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Engedélyezeve"
+    "filtering_log_filter_allowed": {
+        "message": "Engedélyezve"
     },
     "filtering_log_filter_blocked": {
         "message": "Blokkolva"
@@ -527,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Módosítva"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Felhasználói szűrő"
+    "filtering_log_filter_user_rules": {
+        "message": "Felhasználói szabályok"
+    },
+    "filtering_log_status_processed": {
+        "message": "Feldolgozva"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Engedélyezve"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Blokkolva"
+    },
+    "filtering_log_status_modified": {
+        "message": "Módosítva"
     },
     "options_settings": {
         "message": "AdGuard beállítások"
@@ -536,14 +599,20 @@
     "options_general_settings": {
         "message": "Általános beállítások"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Keresési hirdetések és a webhelyek önpromócióinak engedélyezése"
+    "options_block_acceptable_ads": {
+        "message": "Blokkolja a keresők hirdetéseit és a weboldalak önpromóciós reklámjait"
+    },
+    "options_block_acceptable_ads_desc": {
+        "message": "Szabaduljon meg a <a>webhelyek önpromóciós reklámjaitól és a kontextusalapú hirdetésektől<\/a>, amelyek a keresési eredmények között jelennek meg"
     },
     "options_show_blocked_ads_count_title": {
         "message": "A blokkolt hirdetések számának megjelenítése az AdGuard kiegészítő ikonján"
     },
     "options_enable_autodetect_filter": {
         "message": "A megfelelő szűrők automatikus aktiválása"
+    },
+    "options_enable_autodetect_filter_desc": {
+        "message": "A nyelvspecifikus szűrők a webhely nyelvétől függően aktiválódnak"
     },
     "options_select_theme": {
         "message": "Téma"
@@ -569,8 +638,17 @@
     "options_update_antibanner_filters": {
         "message": "Szűrőfrissítések ellenőrzése"
     },
+    "options_check_update": {
+        "message": "Frissítések ellenőrzése"
+    },
+    "options_check_update_progress": {
+        "message": "Ellenőrzés..."
+    },
     "options_set_update_interval": {
         "message": "Szűrőfrissítési gyakoriság"
+    },
+    "options_set_update_interval_desc": {
+        "message": "A hatékonyabb blokkolás érdekében a szűrőket rendszeresen frissíteni kell"
     },
     "options_userfilter_export": {
         "message": "Exportálás"
@@ -584,11 +662,20 @@
     "options_userfilter_description_key": {
         "message": "Itt hozzáadhatja saját szabályait. Ezt a lehetőséget csak a HTML\/CSS világában jártas felhasználóinknak ajánljuk. Olvassa el a <a>szűrőszabályokról szóló oktatóanyagot<\/a>, hogy megtanulja, hogyan írhat saját szűrőszabályokat."
     },
+    "options_userfilter_line_break_off": {
+        "message": "Sortörés: KI"
+    },
+    "options_userfilter_line_break_on": {
+        "message": "Sortörés: BE"
+    },
     "options_open_changelog": {
         "message": "Változásnapló"
     },
     "options_safebrowsing_enabled": {
         "message": "Adathalászat- és kártevők elleni védelem"
+    },
+    "options_safebrowsing_enabled_desc": {
+        "message": "Speciális szűrők, amelyek megvédik Önt a <a>kártékony és adathalász webhelyektől<\/a>."
     },
     "options_site": {
         "message": "Hivatalos webhely"
@@ -602,17 +689,38 @@
     "options_footer_like_us_cta": {
         "message": "Értékeljen minket!"
     },
+    "options_miscellaneous_settings": {
+        "message": "Vegyes"
+    },
     "options_show_adguard_full_version_title": {
         "message": "Információ megjelenítése a teljes verziós AdGuardon"
     },
     "options_show_app_updated_notification": {
         "message": "Értesítsen a kiegészítő frissítéseiről"
     },
+    "options_open_log": {
+        "message": "Szűrési napló megnyitása"
+    },
+    "options_reset_stats": {
+        "message": "Statisztikák visszaállítása"
+    },
     "options_reset_stats_done": {
         "message": "Statisztikák visszaállítva"
     },
+    "options_reset_settings": {
+        "message": "Beállítások visszaállítása"
+    },
+    "options_reset_settings_done": {
+        "message": "A beállítások alaphelyzetbe lettek állítva"
+    },
+    "options_reset_settings_error": {
+        "message": "Hiba történt a beállítások alaphelyzetbe állításakor"
+    },
     "options_collect_hit_stats_title": {
-        "message": "Statisztikák küldése a hirdetésszűrők használatáról"
+        "message": "Segítsen az AdGuard szűrőinek fejlesztésében"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Küldjön <a>névtelen statisztikákat a hirdetésszűrők használatáról<\/a>, ezzel segíti a javítást és optimalizálást."
     },
     "options_show_context_menu_title": {
         "message": "Az AdGuard hozzáadása a böngésző helyi menüjéhez"
@@ -622,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Mobileszközökre optimalizált szűrők listái"
-    },
-    "options_learn_more": {
-        "message": "Tudjon meg többet róla"
     },
     "options_privacy_title": {
         "message": "Lopakodó mód"
@@ -637,6 +742,18 @@
     },
     "options_hide_referrer_desc": {
         "message": "Annak megelőzése, hogy a harmadik felek megismerjék, Ön milyen webhelyeket látogat meg"
+    },
+    "options_hide_search_queries_title": {
+        "message": "Keresési kérések elrejtése"
+    },
+    "options_hide_search_queries_desc": {
+        "message": "Elrejti a keresési kérést a weboldal elől, amit a kereső találatai közül látogat meg"
+    },
+    "options_send_not_track_title": {
+        "message": "Jelzést küld a webhelyeknek, hogy ne kövessék nyomon"
+    },
+    "options_send_not_track_desc": {
+        "message": "Ez elküldi a <gpc>Global Privacy Control<\/gpc> és a <dnt>Do Not Track<\/dnt> jelzéseket a webhelyek számára, amelyeket meglátogat"
     },
     "options_stripped_tracking_parameters": {
         "message": "Követési paraméterek eltávolítva"
@@ -661,6 +778,15 @@
     },
     "options_strip_tracking_params_title": {
         "message": "Követési paraméterek levágása"
+    },
+    "options_strip_tracking_params_description": {
+        "message": "Ha engedélyezve van, az AdGuard URL Követési szűrőt használjuk ahhoz, hogy eltávolítsuk a nyomkövetésre használt paramétereket az oldalak URL-jeiből."
+    },
+    "options_block_known_trackers_title": {
+        "message": "Ismert nyomkövetők blokkolása"
+    },
+    "options_block_known_trackers_description": {
+        "message": "Ha engedélyezve van, az AdGuard Nyomkövetés Elleni szűrője blokkolja az ismert nyomkövetőket."
     },
     "options_third_party_title": {
         "message": "Harmadik féltől származó sütik önmegsemmisítése"
@@ -707,9 +833,6 @@
     "options_about": {
         "message": "Névjegy"
     },
-    "options_license_agreement": {
-        "message": "Végfelhasználói Licencszerződés"
-    },
     "options_privacy_policy": {
         "message": "Adatvédelmi Irányelvek"
     },
@@ -725,10 +848,175 @@
     "options_copyright": {
         "message": "Minden jog fenntartva."
     },
-    "options_delete_filter_confirm": {
-        "message": "Biztosan törli ezt a szűrőt?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Szűrő eltávolítása?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Eltávolítás"
+    },
+    "options_nav_better_than_extension": {
+        "message": "Miért jobb az AdGuard teljes értékű programja, mint a bővítmény?"
+    },
+    "options_nav_compare": {
+        "message": "Hogyan kerülnek összehasonlításra"
+    },
+    "options_nav_hide": {
+        "message": "Elrejtés"
+    },
+    "options_filters_search": {
+        "message": "Keresés"
+    },
+    "options_about_title": {
+        "message": "AdGuard Böngészőkiegészítő"
+    },
+    "group_description_adblocking": {
+        "message": "Itt tudja beállítani a hirdetésblokkolást, hogy egyszer és mindenkorra megszabaduljon a szalaghirdetésektől, felugró ablakoktól, videohirdetésektől, stb"
+    },
+    "group_description_stealth": {
+        "message": "Védje személyazonosságát és érzékeny személyes adatait az online nyomkövetők ezreivel szemben azzal, hogy blokkolja az összes népszerű nyomkövetési technikát"
+    },
+    "group_description_social": {
+        "message": "Rejtse el a kéretlen \"Lájk\"\/\"Megosztás\" gombokat és a többi közösségi média widgetet"
+    },
+    "group_description_annoyances": {
+        "message": "Távolítsa el az előugró ablakokat és egyéb bosszantó értesítéseket, például a süti értesítéseket"
+    },
+    "group_description_security": {
+        "message": "Védje magát a rosszindulatú programokkal, adathalászokkal és más online fenyegetésekkel szemben"
+    },
+    "group_description_miscellaneous": {
+        "message": "Egyéb beállítások, amelyekkel még tovább fokozhatja a webes böngészését az AdGuarddal"
+    },
+    "group_description_custom": {
+        "message": "Hozza létre saját szűrőit a szűrés tetszés szerinti finomhangolásához"
+    },
+    "group_description_lang": {
+        "message": "Ne szorítsa magát korlátok közé — blokkolja a hirdetéseket bármilyen nyelvű weboldalon"
+    },
+    "fullscreen_user_rules_title": {
+        "message": "Felhasználói szabályok"
+    },
+    "options_user_rules_editor_stub_title": {
+        "message": "A szerkesztő már meg van nyitva"
+    },
+    "options_user_rules_editor_stub_go_to_editor_button": {
+        "message": "Szerkesztő megnyitása"
+    },
+    "options_editor_open_fullscreen_button_tooltip": {
+        "message": "Szerkesztő megnyitása teljes képernyős módban"
+    },
+    "options_editor_close_fullscreen_button_tooltip": {
+        "message": "Szerkesztő teljes képernyős módjának bezárása"
+    },
+    "options_clear_stats_confirm_modal_title": {
+        "message": "Statisztika törlése?"
+    },
+    "options_clear_stats_confirm_modal_clear_button": {
+        "message": "Törlés"
+    },
+    "options_reset_settings_confirm_modal_title": {
+        "message": "Beállítások visszaállítása?"
+    },
+    "options_reset_settings_confirm_modal_clear_button": {
+        "message": "Visszaállítás"
+    },
+    "options_confirm_modal_cancel_button": {
+        "message": "Mégse"
+    },
+    "filtering_log_details_modal_beautify_button": {
+        "message": "Formázás"
+    },
+    "filtering_log_details_modal_back_button": {
+        "message": "Vissza a kéréshez"
+    },
+    "filtering_log_details_modal_try_again": {
+        "message": "Újrapróbálkozás"
+    },
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Csak elsődleges kérések"
+    },
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Csak harmadik fél kérései"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Csak szűrés nélkül feldolgozott kérések"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Csak blokkolt kérések"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Csak módosított kérések"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Csak a felhasználói szabályok által módosított kérések"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumentumok és aldokumentumok"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Stíluslapok"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Szkriptek"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests és fetch kérések"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Képek"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Média"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Betűtípusok, ping, WebRTC, WebSocket stb."
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Harmadik fél kérése"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP kérés módja"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP állapot kód"
     },
     "options_stealth_general_title": {
         "message": "Általános"
+    },
+    "options_stealth_cookies_title": {
+        "message": "Sütik"
+    },
+    "options_stealth_miscellaneous_title": {
+        "message": "Vegyes"
+    },
+    "blocking_pages_malware": {
+        "message": "Ez a webhely a(z) <strong>%host%<\/strong> címen rosszindulatú, kártékony webhelyként lett bejelentve, ezért blokkolva lett az Ön biztonsága érdekében."
+    },
+    "blocking_pages_phishing": {
+        "message": "Ez a webhely a(z) <strong>%host%<\/strong> címen adathalász webhelyként lett bejelentve, ezért blokkolva lett az Ön biztonsága érdekében."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Haladó"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "További információ"
+    },
+    "blocking_pages_page_title": {
+        "message": "Hozzáférés megtagadva"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "Az AdGuard blokkolta a hozzáférést ehhez az oldalhoz"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blokkolva az AdGuard által"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "Az AdGuard megakadályozta ezen oldal betöltését az alábbi szűrőszabály miatt"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Visszalépés"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Folytatás ennek ellenére"
     }
 }

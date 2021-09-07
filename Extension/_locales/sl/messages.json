@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Vse"
     },
-    "filtering_type_image": {
-        "message": "Slika"
-    },
-    "filtering_type_media": {
-        "message": "Medij"
-    },
     "filtering_type_other": {
         "message": "Drugo"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Pravilo:"
+    },
+    "filtering_modal_rules": {
+        "message": "Pravila:"
     },
     "filtering_modal_privacy": {
         "message": "Skrit način:"
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Kopirano"
     },
-    "filtering_log_filter_processed": {
-        "message": "Obdelano"
-    },
     "filtering_log_filter_regular": {
         "message": "Redno"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Dovoljeno"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Spremenjeno"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Uporabniški filter"
+    "filtering_log_filter_user_rules": {
+        "message": "Uporabniška pravila"
+    },
+    "filtering_log_status_processed": {
+        "message": "Obdelano"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Dovoljeno"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Onemogočeno"
+    },
+    "filtering_log_status_modified": {
+        "message": "Spremenjeno"
     },
     "options_settings": {
         "message": "Nastavitve AdGuarda"
@@ -593,17 +599,20 @@
     "options_general_settings": {
         "message": "Splošno"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Dovoli iskalne oglase in samopromocijo spletnih strani"
+    "options_block_acceptable_ads": {
+        "message": "Onemogoči iskalne oglase in samopromocijo"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Iskalni oglasi v so oglasi, ki jih vidite med rezultati iskalne poizvedbe pri uporabi spletnega iskalnika, kot so Google, Bing, DuckDuckGo itd. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Znebite se <a>samooglaševalskih invsebinsko zasnovanih oglasov spletnih strani<\/a>, ki se pojavljajo v rezultatih iskanja"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Nakaži število onemogočenih oglasov na ikoni AdGuard razširitve"
     },
     "options_enable_autodetect_filter": {
         "message": "Samodejno aktiviraj najprimernejše filtre"
+    },
+    "options_enable_autodetect_filter_desc": {
+        "message": "Posebni filtri jezikov se bodo vklopili, odvisno od jezika spletne strani"
     },
     "options_select_theme": {
         "message": "Tema"
@@ -666,7 +675,7 @@
         "message": "Varstvo pred lažnim predstavljanjem in škodljivimi programi"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Posebni filtri, ki vas obvarujejo pred zlonamernimi in lažnimi spletnimi stranmi. <a><\/a>"
+        "message": "Posebni filtri, ki vas obvarujejo pred <a>zlonamernimi in lažnimi spletnimi stranmi<\/a>."
     },
     "options_site": {
         "message": "Uradna spletna stran"
@@ -708,7 +717,10 @@
         "message": "Napaka pri ponastavitvi nastavitev"
     },
     "options_collect_hit_stats_title": {
-        "message": "Pošlji statistiko uporabe filtrov oglasov"
+        "message": "Pomagajte pri razvoju filtrov AdGuard"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Pošljite <a> anonimne statistične podatke o uporabi oglasnih filtrov<\/a>, ki nam jih bodo pomagali izboljšati in optimizirati."
     },
     "options_show_context_menu_title": {
         "message": "Dodaj vnos AdGuarda vpriročni meni brskalnika"
@@ -718,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Seznami filtrov, optimizirani za mobilne naprave"
-    },
-    "options_learn_more": {
-        "message": "Več o tem"
     },
     "options_privacy_title": {
         "message": "Skrit način"
@@ -773,6 +782,12 @@
     "options_strip_tracking_params_description": {
         "message": "Ko je omogočen, se AdGuard filter za sledenje URL-jev uporablja za odstranjevanje parametrov sledenja iz URL-jev strani."
     },
+    "options_block_known_trackers_title": {
+        "message": "Onemogoča znane sledilce"
+    },
+    "options_block_known_trackers_description": {
+        "message": "Ko je omogočen, se filter za zaščito sledenja AdGuard uporablja za zaviranje znanih sledilcev."
+    },
     "options_third_party_title": {
         "message": "Samouničilni piškotki tretje strani"
     },
@@ -818,9 +833,6 @@
     "options_about": {
         "message": "Vizitka"
     },
-    "options_license_agreement": {
-        "message": "Licenčna pogodba za končnega uporabnika"
-    },
     "options_privacy_policy": {
         "message": "Politika zasebnosti"
     },
@@ -836,8 +848,11 @@
     "options_copyright": {
         "message": "Vse pravice so pridržane."
     },
-    "options_delete_filter_confirm": {
-        "message": "Ali ste prepričani, da želite izbrisati ta filter?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Odstranim ta filter?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Odstrani"
     },
     "options_nav_better_than_extension": {
         "message": "Zakaj je AdGuard polnopravni program boljši od razširitve?"
@@ -876,7 +891,7 @@
         "message": "Ustvarite lastne filtre za natančno prilagajanje spletnega filtriranja po vaših željah"
     },
     "group_description_lang": {
-        "message": "Ne omejujte se — onemogočite oglase na spletnih straneh v katerem koli jeziku"
+        "message": "Ne omejujte se — onemogočite oglase na spletnih straneh v vseh jezikih"
     },
     "fullscreen_user_rules_title": {
         "message": "Uporabniška pravila"
@@ -905,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Ponastavi"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Prekliči"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Polepšaj"
     },
@@ -914,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Poskusi znova"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Zahteve prve stranke"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Zahteve samo prve stranke"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Zahteve samo druge stranke"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Samo zahteve, obdelane brez filtriranja"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Samo onemogočene zahteve"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Samo spremenjene zahteve"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Samo zahteve, spremenjene z uporabniškimi pravili"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumenti in poddokumenti"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Slogi listov"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Skripti"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XML Http zahteve in pridobivanje zahtev"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Slike"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Medij"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "DrugoPisave, pingi, WebRTC, WebSocket itd."
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "Zahteve druge stranke"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Pridržite Cmd, da izberete več filtrov"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "Metoda zahteve HTTP"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Pridržite Ctrl, da izberete več filtrov"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "Koda stanja HTTP"
     },
     "options_stealth_general_title": {
         "message": "Splošno"
@@ -934,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Razno"
+    },
+    "blocking_pages_malware": {
+        "message": "Ta spletna stran v <strong>%host%<\/strong> je bila prijavljena kot stran z zlonamernimi programi in je bila onemogočena glede na vaše varnostne nastavitve."
+    },
+    "blocking_pages_phishing": {
+        "message": "Ta spletna stran v <strong>%host%<\/strong> je bila prijavljena kot lažna stran in je bila onemogočena glede na vaše varnostne nastavitve."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Napredno"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Več podatkov"
+    },
+    "blocking_pages_page_title": {
+        "message": "Dostop zavrnjen"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard je onemogočil dostop do te strani"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Onemogočeno z AdGuardom"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard je preprečil nalaganje te strani zaradi naslednjega pravila filtriranja"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Pojdi nazaj"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Vseeno nadaljuj"
     }
 }

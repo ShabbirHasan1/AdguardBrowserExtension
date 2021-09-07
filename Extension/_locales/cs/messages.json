@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Vše"
     },
-    "filtering_type_image": {
-        "message": "Obrázek"
-    },
-    "filtering_type_media": {
-        "message": "Média"
-    },
     "filtering_type_other": {
         "message": "Ostatní"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Pravidlo:"
+    },
+    "filtering_modal_rules": {
+        "message": "Pravidla:"
     },
     "filtering_modal_privacy": {
         "message": "Soukromí:"
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Zkopírováno"
     },
-    "filtering_log_filter_processed": {
-        "message": "Zpracováno"
-    },
     "filtering_log_filter_regular": {
         "message": "Obvyklý"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Povoleno"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Modifikováno"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Uživatelský filtr"
+    "filtering_log_filter_user_rules": {
+        "message": "Uživatelská pravidla"
+    },
+    "filtering_log_status_processed": {
+        "message": "Zpracováno"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Povoleno"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Blokováno"
+    },
+    "filtering_log_status_modified": {
+        "message": "Modifikováno"
     },
     "options_settings": {
         "message": "Nastavení AdGuardu"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "Obecné"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Povolit vyhledávání reklam a vlastní propagaci webových stránek"
+    "options_block_acceptable_ads": {
+        "message": "Blokovat reklamy ve vyhledávání a méně rušivé reklamy na webových stránkách"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Reklamy ve vyhledávání jsou reklamy, které vidíte mezi výsledky vyhledávacího dotazu při použití online vyhledávače, jako je Google, Bing, DuckDuckGo atd. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Zbavte se <a>kontextových reklam a vlastní propagace na webových stránkách<\/a>, které se zobrazují ve výsledcích vyhledávání"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Uvést počet blokovaných reklam na ikoně rozšíření AdGuard"
@@ -669,7 +675,7 @@
         "message": "Ochrana proti phishingu a škodlivému softwaru"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Speciální filtry, které Vás chrání před škodlivými weby a krádeží identity. <a><\/a>"
+        "message": "Speciální filtry, které Vás chrání před <a>škodlivými weby a krádeží identity<\/a>."
     },
     "options_site": {
         "message": "Oficiální stránka"
@@ -711,7 +717,10 @@
         "message": "Chyba při resetování nastavení"
     },
     "options_collect_hit_stats_title": {
-        "message": "Odeslat statistiky používání filtrů reklam"
+        "message": "Pomoc s vývojem filtrů AdGuard"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Odesílat <a>anonymní statistiky používání filtrů reklam<\/a>, které nám je pomohou vylepšit a optimalizovat."
     },
     "options_show_context_menu_title": {
         "message": "Přidat položku AdGuard do kontextového menu prohlížeče"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Seznamy filtrů optimalizovaných pro mobilní zařízení"
-    },
-    "options_learn_more": {
-        "message": "Zjistit více"
     },
     "options_privacy_title": {
         "message": "Soukromí"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "O programu"
     },
-    "options_license_agreement": {
-        "message": "Licenční smlouva s koncovým uživatelem"
-    },
     "options_privacy_policy": {
         "message": "Zásady ochrany osobních údajů"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "Všechna práva vyhrazena."
     },
-    "options_delete_filter_confirm": {
-        "message": "Opravdu chcete smazat tento filtr?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Odebrat tento filtr?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Odstranit"
     },
     "options_nav_better_than_extension": {
         "message": "Proč je plnohodnotný program AdGuard lepší než rozšíření?"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Resetovat"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Zrušit"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Vylepšit"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Zkusit znovu"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Vlastní dotazy"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Pouze vlastní požadavky"
     },
-    "filtering_log_tooltip_third_party": {
-        "message": "Dotazy třetích stran"
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Pouze požadavky třetích stran"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Podržením klávesy Cmd vyberte více filtrů"
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Pouze požadavky zpracované bez filtrování"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Podržením klávesy Ctrl vyberte více filtrů"
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Pouze blokované požadavky"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Pouze modifikované požadavky"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Pouze požadavky upravené podle uživatelských pravidel"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumenty a subdokumenty"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Šablony"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Skripty"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttp požadavky a vyvolané požadavky"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Obrázky"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Média"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Písma, odezvy, WebRTC, WebSocket atd."
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Požadavky třetích stran"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "Metoda HTTP požadavku"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "Kód HTTP stavu"
     },
     "options_stealth_general_title": {
         "message": "Obecné"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Různé"
+    },
+    "blocking_pages_malware": {
+        "message": "Webová stránka <strong>%host%<\/strong> byla ohlášena jako škodlivá a na základě Vašich bezpečnostních nastavení byla zablokována."
+    },
+    "blocking_pages_phishing": {
+        "message": "Webová stránka <strong>%host%<\/strong> byla ohlášena jako podvodná a na základě Vašich bezpečnostních nastavení byla zablokována."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Pokročilé"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Další informace"
+    },
+    "blocking_pages_page_title": {
+        "message": "Přístup odepřen"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard zablokoval přístup na tuto stránku"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blokováno programem AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard zabránil načtení této stránky kvůli následujícímu pravidlu filtru"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Zpět"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Přesto pokračovat"
     }
 }

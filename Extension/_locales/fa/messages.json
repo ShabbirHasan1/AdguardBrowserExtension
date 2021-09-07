@@ -422,12 +422,6 @@
     "filtering_type_all": {
         "message": "همه"
     },
-    "filtering_type_image": {
-        "message": "تصویر"
-    },
-    "filtering_type_media": {
-        "message": "رسانه"
-    },
     "filtering_type_other": {
         "message": "ساير"
     },
@@ -503,26 +497,17 @@
     "filtering_log_filter_regular": {
         "message": "عادی"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "اجازه داده شده"
-    },
     "filtering_log_filter_blocked": {
         "message": "مسدود شده"
     },
     "filtering_log_filter_modified": {
         "message": "ویرایش شده"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "فیلترهای دستی"
-    },
     "options_settings": {
         "message": "تنظیمات AdGuard"
     },
     "options_general_settings": {
         "message": "تنظیمات عمومی"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "اجازه تبلیغات درون سایتی و تبلیغات جستجو"
     },
     "options_show_blocked_ads_count_title": {
         "message": "تعداد تبلیغات مسدود شده را در آیکون افزونه AdGuard نشان می دهد"
@@ -584,9 +569,6 @@
     "options_reset_stats_done": {
         "message": "آمار ریست شود"
     },
-    "options_collect_hit_stats_title": {
-        "message": "ارسال آمار استفاده فیلترکننده تبلیغات"
-    },
     "options_show_context_menu_title": {
         "message": "افزودن AdGuard به منوی زمینۀ مرورگر"
     },
@@ -595,9 +577,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "لیست فیلترهای بهینه شده برای دستگاه گوشی"
-    },
-    "options_learn_more": {
-        "message": "بیشتر در مورد آن بدانید"
     },
     "options_privacy_title": {
         "message": "حریم خصوصی"
@@ -680,9 +659,6 @@
     "options_about": {
         "message": "درباره"
     },
-    "options_license_agreement": {
-        "message": "توافقنامه مجوز کاربر-نهایی"
-    },
     "options_privacy_policy": {
         "message": "سیاست حریم خصوصی"
     },
@@ -697,8 +673,5 @@
     },
     "options_copyright": {
         "message": "همه حقوق محفوظ است."
-    },
-    "options_delete_filter_confirm": {
-        "message": "آیا واقعا میخواهید این فیلتر را حذف کنید؟"
     }
 }

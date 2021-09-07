@@ -326,9 +326,6 @@
     "options_general_settings": {
         "message": "Opcions generals"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Permet els anuncis de cerca i l'auto-promoció de llocs web"
-    },
     "options_enable_autodetect_filter": {
         "message": "Activeu els filtres més adequats automàticament"
     },
@@ -371,9 +368,6 @@
     "options_use_optimized_filters_desc": {
         "message": "Llistes de filtres optimitzats per a dispositius mòbils"
     },
-    "options_learn_more": {
-        "message": "Aprèn més sobre això"
-    },
     "options_privacy_title": {
         "message": "Mode encobert"
     },
@@ -391,9 +385,6 @@
     },
     "options_github": {
         "message": "GitHub"
-    },
-    "options_delete_filter_confirm": {
-        "message": "Confirmeu que voleu suprimir aquest filtre?"
     },
     "description": {
         "message": "Unmatched adblock extension against advertising and pop-ups. Blocks ads on Facebook, YouTube and all other websites."

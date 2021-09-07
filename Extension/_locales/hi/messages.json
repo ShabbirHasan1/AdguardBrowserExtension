@@ -425,9 +425,6 @@
     "options_general_settings": {
         "message": "सामान्य"
     },
-    "options_allow_acceptable_ads": {
-        "message": "वेबसाइटों को खोज विज्ञापनों और स्वयं को बढ़ावा देने की अनुमति दें"
-    },
     "options_enable_autodetect_filter": {
         "message": "सबसे उपयुक्त फ़िल्टर को स्वचालित रूप से सक्रिय करें"
     },
@@ -475,9 +472,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "मोबाइल उपकरणों के लिए अनुकूलित फिल्टर की सूची"
-    },
-    "options_learn_more": {
-        "message": "इसके बारे में और जानें"
     },
     "options_privacy_title": {
         "message": "चुपके मोड"
@@ -560,9 +554,6 @@
     "options_about": {
         "message": "के बारे में"
     },
-    "options_license_agreement": {
-        "message": "अंत उपयोगकर्ता लाइसेंस समझौता"
-    },
     "options_privacy_policy": {
         "message": "गोपनीयता नीति"
     },
@@ -577,8 +568,5 @@
     },
     "options_copyright": {
         "message": "\tसर्वाधिकार सुरक्षित।"
-    },
-    "options_delete_filter_confirm": {
-        "message": "क्या आप वाकई इस DNS फ़िल्टर को हटाना चाहते हैं?"
     }
 }

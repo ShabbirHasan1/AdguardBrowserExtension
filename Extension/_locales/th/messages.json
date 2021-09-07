@@ -416,9 +416,6 @@
     "options_general_settings": {
         "message": "ทั่วไป"
     },
-    "options_allow_acceptable_ads": {
-        "message": "อนุญาตโฆษณาการค้นหาและการโปรโมตเว็บไซต์ด้วยตนเอง"
-    },
     "options_enable_autodetect_filter": {
         "message": "เปิดใช้งานตัวกรองที่เหมาะสมที่สุดโดยอัตโนมัติ"
     },
@@ -466,9 +463,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "รายการตัวกรองที่ปรับให้เหมาะสำหรับอุปกรณ์มือถือ"
-    },
-    "options_learn_more": {
-        "message": "เรียนรู้เพิ่มเติมเกี่ยวกับมัน"
     },
     "options_privacy_title": {
         "message": "โหมดซ่อนตัว"
@@ -548,9 +542,6 @@
     "options_about": {
         "message": "เกี่ยวกับ"
     },
-    "options_license_agreement": {
-        "message": "ข้อตกลงสิทธิ์การใช้งานสำหรับผู้ใช้ปลายทาง"
-    },
     "options_privacy_policy": {
         "message": "นโยบายความเป็นส่วนตัว"
     },
@@ -565,8 +556,5 @@
     },
     "options_copyright": {
         "message": "สงวนลิขสิทธิ์"
-    },
-    "options_delete_filter_confirm": {
-        "message": "คุณแน่ใจหรือไม่ว่าต้องการลบตัวกรองนี้?"
     }
 }

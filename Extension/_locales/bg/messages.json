@@ -158,13 +158,13 @@
     "options_general_settings": {
         "message": "Общи настройки"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Разрешаване на реклами за търсене и самостоятелно рекламиране на сайтове"
-    },
     "options_enable_autodetect_filter": {
         "message": "Автоматично активиране на най-подходящите филтри"
     },
     "options_update_antibanner_filters": {
+        "message": "Провери за актуализации"
+    },
+    "options_check_update": {
         "message": "Провери за актуализации"
     },
     "options_userfilter_export": {
@@ -193,9 +193,6 @@
     },
     "short_name": {
         "message": "AdGuard рекламен блокер"
-    },
-    "options_license_agreement": {
-        "message": "Лицензионно споразумение с краен потребител"
     },
     "options_github": {
         "message": "GitHub"

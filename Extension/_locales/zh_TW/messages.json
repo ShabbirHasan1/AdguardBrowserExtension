@@ -204,7 +204,7 @@
         "message": "受信任的"
     },
     "options_popup_trusted_filter_description": {
-        "message": "受信任的過濾器可使用在錯誤的手中可能是危險的之強大的過濾規則修飾語。除非您完全地信任它，否則勿勾選該核取框。"
+        "message": "受信任的過濾器可使用在錯誤的手中可能是危險的之強大的過濾規則修飾語。除非您完全地信任它，否則勿勾選此核取框。"
     },
     "popup_site_filtering_state": {
         "message": "對此網站之防護"
@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "所有的"
     },
-    "filtering_type_image": {
-        "message": "影像"
-    },
-    "filtering_type_media": {
-        "message": "媒體"
-    },
     "filtering_type_other": {
         "message": "其它"
     },
@@ -492,6 +486,9 @@
         "message": "來源："
     },
     "filtering_modal_rule": {
+        "message": "規則："
+    },
+    "filtering_modal_rules": {
         "message": "規則："
     },
     "filtering_modal_privacy": {
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "已複製"
     },
-    "filtering_log_filter_processed": {
-        "message": "已處理的"
-    },
     "filtering_log_filter_regular": {
         "message": "常規的"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "已允許的"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "已修飾的"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "使用者過濾器"
+    "filtering_log_filter_user_rules": {
+        "message": "使用者規則"
+    },
+    "filtering_log_status_processed": {
+        "message": "已處理的"
+    },
+    "filtering_log_status_allowed": {
+        "message": "已允許的"
+    },
+    "filtering_log_status_blocked": {
+        "message": "已封鎖的"
+    },
+    "filtering_log_status_modified": {
+        "message": "已修飾的"
     },
     "options_settings": {
         "message": "AdGuard 設定"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "一般的"
     },
-    "options_allow_acceptable_ads": {
-        "message": "允許搜尋廣告和網站之自我推銷"
+    "options_block_acceptable_ads": {
+        "message": "封鎖搜尋廣告和網站的自我推銷"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "搜尋廣告是當使用諸如 Google、Bing、DuckDuckGo 等等的線上搜尋引擎時在搜尋查詢的結果之中看到的廣告。<a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "擺脫出現在搜尋結果中的<a>網站的自我推銷和基於情境的廣告<\/a>"
     },
     "options_show_blocked_ads_count_title": {
         "message": "於 AdGuard 擴充功能圖示上顯示已封鎖的廣告之數量"
@@ -669,7 +675,7 @@
         "message": "網路釣魚和惡意軟體防護"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "保護您免於惡意的和網路釣魚的網站之專門的過濾器。<a><\/a>"
+        "message": "保護您免於<a>惡意的和網路釣魚的網站<\/a>之專門的過濾器。"
     },
     "options_site": {
         "message": "官方的網站"
@@ -711,7 +717,10 @@
         "message": "當重置設定時出錯"
     },
     "options_collect_hit_stats_title": {
-        "message": "傳送廣告過濾器使用之統計資料"
+        "message": "幫助 AdGuard 過濾器之開發"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "傳送<a>廣告過濾器使用之匿名的統計資料<\/a>，其將幫助我們改善和最佳化它們。"
     },
     "options_show_context_menu_title": {
         "message": "新增 AdGuard 項目至瀏覽器之內容功能表"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "對於行動裝置已最佳化的過濾器之清單"
-    },
-    "options_learn_more": {
-        "message": "了解更多關於它"
     },
     "options_privacy_title": {
         "message": "隱匿模式"
@@ -741,7 +747,7 @@
         "message": "隱藏您的搜尋查詢"
     },
     "options_hide_search_queries_desc": {
-        "message": "對搜尋引擎隱藏有關訪問過的網站之查詢"
+        "message": "對透過搜尋引擎所訪問的網站隱藏搜尋查詢"
     },
     "options_send_not_track_title": {
         "message": "傳送不追蹤您的信號給網站"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "關於"
     },
-    "options_license_agreement": {
-        "message": "終端用戶授權協定"
-    },
     "options_privacy_policy": {
         "message": "隱私政策"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "保留所有的權利。"
     },
-    "options_delete_filter_confirm": {
-        "message": "您確定您想要刪除此過濾器嗎？"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "移除此過濾器嗎？"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "移除"
     },
     "options_nav_better_than_extension": {
         "message": "為什麼全面的 AdGuard 程式比擴充功能更好？"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "重置"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "取消"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "美化"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "再次嘗試"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "第一方的請求"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "僅第一方的請求"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "僅第三方的請求"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "僅已處理而無過濾的請求"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "僅已封鎖的請求"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "僅已修飾的請求"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "僅被使用者規則修飾的請求"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "文件和子文件"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "樣式表"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "腳本"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests 和擷取請求"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "影像"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "媒體"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "字型、pings、WebRTC、WebSocket 等等"
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "第三方的請求"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "按住 cmd 以選擇多個過濾器"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP 請求方式"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "按住 Ctrl 以選擇多個過濾器"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP 狀態碼"
     },
     "options_stealth_general_title": {
         "message": "一般的"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "雜項的"
+    },
+    "blocking_pages_malware": {
+        "message": "於 <strong>%host%<\/strong> 之網頁已被報告為惡意軟體頁面，且根據您的安全性偏好設定，已被封鎖。"
+    },
+    "blocking_pages_phishing": {
+        "message": "於 <strong>%host%<\/strong> 之網頁已被報告為網路釣魚頁面，且根據您的安全性偏好設定，已被封鎖。"
+    },
+    "blocking_pages_advanced_button": {
+        "message": "進階的"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "更多的資訊"
+    },
+    "blocking_pages_page_title": {
+        "message": "拒絕存取"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard 已封鎖至此頁面之存取"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "被 AdGuard 封鎖"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "由於下面的過濾器規則，AdGuard 已防止此頁面載入"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "返回"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "無論如何繼續"
     }
 }

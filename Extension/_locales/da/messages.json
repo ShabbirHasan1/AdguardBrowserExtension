@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Alle"
     },
-    "filtering_type_image": {
-        "message": "Billede"
-    },
-    "filtering_type_media": {
-        "message": "Medier"
-    },
     "filtering_type_other": {
         "message": "Andet"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Regel:"
+    },
+    "filtering_modal_rules": {
+        "message": "Regler:"
     },
     "filtering_modal_privacy": {
         "message": "Skjult Tilstand:"
@@ -569,14 +566,11 @@
     "filtering_modal_copied": {
         "message": "Kopieret"
     },
-    "filtering_log_filter_processed": {
-        "message": "Behandlet"
-    },
     "filtering_log_filter_regular": {
         "message": "Almindelig"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Hvidlistet"
+    "filtering_log_filter_allowed": {
+        "message": "Tilladt"
     },
     "filtering_log_filter_blocked": {
         "message": "Blokeret"
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Ændret"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Brugerfilter"
+    "filtering_log_filter_user_rules": {
+        "message": "Brugerregler"
+    },
+    "filtering_log_status_processed": {
+        "message": "Behandlet"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Tilladt"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Blokeret"
+    },
+    "filtering_log_status_modified": {
+        "message": "Ændret"
     },
     "options_settings": {
         "message": "AdGuard Indstillinger"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "Generelt"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Tillad søgningsreklamer og selvpromovering af websteder"
+    "options_block_acceptable_ads": {
+        "message": "Blokér søgningsannoncer og selvpromovering"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Søgeannoncer er dem, som ses blandt resultaterne af en søgeforespørgsel ved brug af en online-søgemaskine såsom Google, Bing, DuckDuckGo mv. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Slip af med <a>websteders selvpromoverende og kontekstbaserede annoncer<\/a>, som vises i søgeresultater"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Vis antal afblokerede annoncer på AdGuard-udvidelsesikonet"
@@ -669,7 +675,7 @@
         "message": "Phishing- og malware-beskyttelse"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Specialfiltre, som beskytter mod websteder med ondsindet og phishing indhold. <a><\/a>"
+        "message": "Specialfiltre, som beskytter mod websteder med <a>ondsindet og phishing indhold<\/a>."
     },
     "options_site": {
         "message": "Officielt websted"
@@ -711,7 +717,10 @@
         "message": "Fejl under nulstilling af indstillinger"
     },
     "options_collect_hit_stats_title": {
-        "message": "Indsend statistikker for brugen af annoncefiltrene"
+        "message": "Hjælp med at udvike AdGuard-filtre"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Send <a>anonym statistik over brug af annoncefiltre<\/a>, hvilket vil hjælper os med at forbedre og optimere dem."
     },
     "options_show_context_menu_title": {
         "message": "Føj AdGuard-element til browserens kontekstmenu"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Lister over filtre optimeret til mobilenheder"
-    },
-    "options_learn_more": {
-        "message": "Få mere at vide om det"
     },
     "options_privacy_title": {
         "message": "Skjult Tilstand"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "Om"
     },
-    "options_license_agreement": {
-        "message": "Slutbrugerlicensaftale"
-    },
     "options_privacy_policy": {
         "message": "Fortrolighedspolitik"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "Alle rettigheder forbeholdes."
     },
-    "options_delete_filter_confirm": {
-        "message": "Sikker på, at du vil slette dette filter?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Fjern dette filter?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Fjern"
     },
     "options_nav_better_than_extension": {
         "message": "Hvorfor er det komplette AdGuard-program bedre end udvidelse?"
@@ -885,7 +891,7 @@
         "message": "Opret egne filtre for at finjustere webfiltrering efter egne præferencer"
     },
     "group_description_lang": {
-        "message": "Vær ikke begrænset — brug adblocking på websteder på ethvert sprog"
+        "message": "Bliv ikke begrænset — brug adblocking uanset webstedets sprog"
     },
     "fullscreen_user_rules_title": {
         "message": "Brugerregler"
@@ -900,7 +906,7 @@
         "message": "Åbn editor i fuldskærmstilstand"
     },
     "options_editor_close_fullscreen_button_tooltip": {
-        "message": "Luk editor fuldskærmstilstand"
+        "message": "Luk editors fuldskærmstilstand"
     },
     "options_clear_stats_confirm_modal_title": {
         "message": "Ryd statistikker?"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Nulstil"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Afbryd"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Forskøn"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Forsøg igen"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Førstepartsforespørgsler"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Kun førstepartsforespørgsler"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Kun tredjepartsforespørgsler"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Kun forespørgsler behandlet uden filtrering"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Kun blokerede forespørgsler"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Kun ændrede forespørgsler"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Kun forespørgsler ændret af brugerregler"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumenter og underdokumenter"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Skrifttype- og layoutskabeloner"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Scripts"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests og hent-forespørgsler"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Billeder"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Media"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Skrifttyper, pings, WebRTC, WebSockets mv."
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "Tredjepartsforespørgsler"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Tryk og hold på Cmd for filtermultivalg"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP-forespørgselsmetode"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Tryk og hold på Ctrl for filtermultivalg"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP-statuskode"
     },
     "options_stealth_general_title": {
         "message": "Generelt"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Diverse"
+    },
+    "blocking_pages_malware": {
+        "message": "Denne webside på <strong>%host%<\/strong> er blevet anmeldt som en malware-side og er blevet blokeret iht. dine sikkerhedspræferencer."
+    },
+    "blocking_pages_phishing": {
+        "message": "Denne webside på <strong>%host%<\/strong> er blevet anmeldt som en phishing-side og er blevet blokeret iht. dine sikkerhedspræferencer."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Avanceret"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Mere information"
+    },
+    "blocking_pages_page_title": {
+        "message": "Adgang nægtet"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard har blokeret adgangen til denne side"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blokeret af AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard har forhindret denne side i at blive indlæst grundet flg. filterregel"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Gå tilbage"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Fortsæt alligevel"
     }
 }

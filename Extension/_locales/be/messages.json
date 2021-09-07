@@ -434,12 +434,6 @@
     "filtering_type_all": {
         "message": "Усе"
     },
-    "filtering_type_image": {
-        "message": "Выява"
-    },
-    "filtering_type_media": {
-        "message": "Медыа"
-    },
     "filtering_type_other": {
         "message": "Іншае"
     },
@@ -518,26 +512,17 @@
     "filtering_log_filter_regular": {
         "message": "Звычайны"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Дазволены"
-    },
     "filtering_log_filter_blocked": {
         "message": "Заблакаваны"
     },
     "filtering_log_filter_modified": {
         "message": "Зменена"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Карыстальніцкі фільтр"
-    },
     "options_settings": {
         "message": "Налады AdGuard"
     },
     "options_general_settings": {
         "message": "Агульныя налады"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "Дазволіць пошукавую рэкламу і ўласныя прома-акцыі сайтаў"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Паказваць колькасць заблакаванай рэкламы на іконцы AdGuard"
@@ -611,9 +596,6 @@
     "options_reset_stats_done": {
         "message": "Статыстыка абнулена"
     },
-    "options_collect_hit_stats_title": {
-        "message": "Адпраўляць статыстыку выкарыстоўвання фільтраў"
-    },
     "options_show_context_menu_title": {
         "message": "Дадаць AdGuard у кантэкставае меню браўзара"
     },
@@ -622,9 +604,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Спісы фільтраў, аптымізаваныя для мабільных прылад"
-    },
-    "options_learn_more": {
-        "message": "Дадатковая інфармацыя"
     },
     "options_privacy_title": {
         "message": "Антытрэкінг"
@@ -707,9 +686,6 @@
     "options_about": {
         "message": "Пра нас"
     },
-    "options_license_agreement": {
-        "message": "Дамова публічнай аферты"
-    },
     "options_privacy_policy": {
         "message": "Палітыка прыватнасці"
     },
@@ -724,9 +700,6 @@
     },
     "options_copyright": {
         "message": "Усе правы захаваныя."
-    },
-    "options_delete_filter_confirm": {
-        "message": "Вы ўпэўнены, што хочаце выдаліць дадзены фільтр?"
     },
     "options_stealth_general_title": {
         "message": "Агульныя"

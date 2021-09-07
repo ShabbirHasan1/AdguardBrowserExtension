@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Все"
     },
-    "filtering_type_image": {
-        "message": "Изображения"
-    },
-    "filtering_type_media": {
-        "message": "Медиа"
-    },
     "filtering_type_other": {
         "message": "Прочее"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Правило:"
+    },
+    "filtering_modal_rules": {
+        "message": "Правила:"
     },
     "filtering_modal_privacy": {
         "message": "Антитрекинг"
@@ -569,14 +566,11 @@
     "filtering_modal_copied": {
         "message": "Скопировано"
     },
-    "filtering_log_filter_processed": {
-        "message": "Обработано"
-    },
     "filtering_log_filter_regular": {
         "message": "Обычные"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "В белом списке"
+    "filtering_log_filter_allowed": {
+        "message": "Разрешенные"
     },
     "filtering_log_filter_blocked": {
         "message": "Заблокированные"
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Измененные"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Пользовательские фильтры"
+    "filtering_log_filter_user_rules": {
+        "message": "Пользовательские правила"
+    },
+    "filtering_log_status_processed": {
+        "message": "Обработан"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Разрешен"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Заблокирован"
+    },
+    "filtering_log_status_modified": {
+        "message": "Изменен"
     },
     "options_settings": {
         "message": "Настройки AdGuard"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "Основные"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Разрешить поисковую рекламу и собственную рекламу сайтов"
+    "options_block_acceptable_ads": {
+        "message": "Блокировать поисковую рекламу и саморекламу сайтов"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Поисковая реклама — это реклама, которую вы видите среди результатов поиска при использовании поисковой системы в Интернете, такой как Google, Bing, DuckDuckGo и т.д. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Избавьтесь от <a>саморекламы сайтов и контекстной рекламы<\/a>, появляющейся в результатах поиска"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Показывать количество заблокированной рекламы на иконке расширения AdGuard"
@@ -618,7 +624,7 @@
         "message": "Светлая"
     },
     "options_theme_selector_dark": {
-        "message": "Темная"
+        "message": "Тёмная"
     },
     "options_export_settings": {
         "message": "Экспорт настроек"
@@ -669,7 +675,7 @@
         "message": "Защита от фишинговых и вредоносных сайтов"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Специальные фильтры, защищающие от вредоносных и фишинговых сайтов. <a><\/a>"
+        "message": "Специальные фильтры, защищающие от <a>вредоносных и фишинговых сайтов.<\/a>"
     },
     "options_site": {
         "message": "Официальный сайт"
@@ -711,7 +717,10 @@
         "message": "Ошибка при сбросе настроек"
     },
     "options_collect_hit_stats_title": {
-        "message": "Отправлять статистику использования фильтров"
+        "message": "Помочь с разработкой фильтров AdGuard"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Отправляйте <a>анонимную статистику использования рекламных фильтров<\/a>, это поможет нам улучшить и оптимизировать их."
     },
     "options_show_context_menu_title": {
         "message": "Добавить AdGuard в контекстное меню браузера"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Список фильтров, оптимизированных для мобильных устройств"
-    },
-    "options_learn_more": {
-        "message": "Узнать больше"
     },
     "options_privacy_title": {
         "message": "Антитрекинг"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "О программе"
     },
-    "options_license_agreement": {
-        "message": "Договор публичной оферты"
-    },
     "options_privacy_policy": {
         "message": "Политика конфиденциальности"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "Все права защищены. "
     },
-    "options_delete_filter_confirm": {
-        "message": "Вы уверены, что хотите удалить данный фильтр?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Удалить этот фильтр?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Удалить"
     },
     "options_nav_better_than_extension": {
         "message": "Почему полнофункциональная программа AdGuard лучше расширения?"
@@ -870,7 +876,7 @@
         "message": "Защитите личные данные от онлайн-трекеров, заблокировав все известные популярные методы отслеживания"
     },
     "group_description_social": {
-        "message": "Скройте ненужные кнопки «Нравится»\/«Поделиться» и другие виджеты социальных сетей"
+        "message": "Скройте ненужные кнопки «Нравится», «Поделиться» и другие виджеты социальных сетей"
     },
     "group_description_annoyances": {
         "message": "Уберите всплывающие окна и другие раздражающие уведомления, например уведомления о файлах cookie"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Сбросить"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Отмена"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Оптимизировать"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Попробовать снова"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Внутренние запросы"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Только внутренние запросы"
     },
-    "filtering_log_tooltip_third_party": {
-        "message": "Сторонние запросы"
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Только сторонние запросы"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Удерживайте Cmd, чтобы выбрать несколько фильтров"
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Только запросы, обработанные без фильтрации"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Удерживайте Ctrl, чтобы выбрать несколько фильтров"
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Только заблокированные запросы"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Только измененные запросы"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Только запросы, измененные пользовательскими правилами"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Документы и поддокументы"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Таблицы стилей"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Скрипты"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "Запросы XMLHttpRequests и fetch"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Изображения"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Медиа"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Шрифты, пинги, WebRTC, WebSocket и т.д. "
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Сторонний запросы"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "Метод HTTP-запроса"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "Код состояния HTTP"
     },
     "options_stealth_general_title": {
         "message": "Общие"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Разное"
+    },
+    "blocking_pages_malware": {
+        "message": "Данная веб-страница <strong>%host%<\/strong> может содержать вредоносное ПО. Она была заблокирована в соответствии с вашими настройками безопасности."
+    },
+    "blocking_pages_phishing": {
+        "message": "Данная веб-страница <strong>%host%<\/strong> может являться фишинговой. Она была заблокирована в соответствии с вашими настройками безопасности."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Дополнительно"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Подробная информация"
+    },
+    "blocking_pages_page_title": {
+        "message": "Доступ заблокирован"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard заблокировал доступ к этой странице"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Заблокировано AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard предотвратил загрузку этой страницы в соответствии со следующим правилом фильтрации"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Назад"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Все равно продолжить"
     }
 }

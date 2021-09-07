@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "모두"
     },
-    "filtering_type_image": {
-        "message": "이미지"
-    },
-    "filtering_type_media": {
-        "message": "미디어"
-    },
     "filtering_type_other": {
         "message": "기타"
     },
@@ -492,6 +486,9 @@
         "message": "출처:"
     },
     "filtering_modal_rule": {
+        "message": "규칙:"
+    },
+    "filtering_modal_rules": {
         "message": "규칙:"
     },
     "filtering_modal_privacy": {
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "복사됨"
     },
-    "filtering_log_filter_processed": {
-        "message": "처리됨"
-    },
     "filtering_log_filter_regular": {
         "message": "일반"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "허용됨"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "수정됨"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "사용자 필터"
+    "filtering_log_filter_user_rules": {
+        "message": "사용자 규칙"
+    },
+    "filtering_log_status_processed": {
+        "message": "처리됨"
+    },
+    "filtering_log_status_allowed": {
+        "message": "허용됨"
+    },
+    "filtering_log_status_blocked": {
+        "message": "차단됨"
+    },
+    "filtering_log_status_modified": {
+        "message": "수정됨"
     },
     "options_settings": {
         "message": "AdGuard 설정"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "일반"
     },
-    "options_allow_acceptable_ads": {
-        "message": "검색 엔진의 광고와 웹사이트의 자체 광고 허용"
+    "options_block_acceptable_ads": {
+        "message": "검색 광고 및 웹 사이트 광고홍보 차단"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "검색 광고는 Google, Bing, DuckDuckGo 등과 같은 검색 엔진을 사용할 때 검색어의 결과 중 표시되는 광고입니다.<a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "검색 결과에 표시되는 <a>컨텍스트 기반 광고와 자체 홍보 광고를<\/a> 차단하세요."
     },
     "options_show_blocked_ads_count_title": {
         "message": "차단된 광고의 수를 AdGuard 확장 프로그램 아이콘에 표시"
@@ -669,7 +675,7 @@
         "message": "피싱, 멀웨어 보호"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "악성 및 피싱 웹 사이트로부터 사용자를 보호하는 특수 필터입니다.<a><\/a>"
+        "message": "<a>악성 및 피싱 웹 사이트로부터<\/a> 사용자를 보호하는 특수 필터입니다."
     },
     "options_site": {
         "message": "공식 웹사이트"
@@ -711,7 +717,10 @@
         "message": "설정을 초기화하는 동안 오류가 발생했습니다"
     },
     "options_collect_hit_stats_title": {
-        "message": "사용중인 광고 필터 통계 전송"
+        "message": "AdGuard 필터 개발을 도와주세요"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "저희가 필터를 개선하고 최적화하는 데 도움을 주는 <a>광고 필터 사용에 대한 익명 통계<\/a>를 전송합니다."
     },
     "options_show_context_menu_title": {
         "message": "AdGuard 항목을 브라우저 콘텍스트 메뉴에 추가"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "모바일 기기에 최적화된 필터 리스트"
-    },
-    "options_learn_more": {
-        "message": "자세히 알아보기"
     },
     "options_privacy_title": {
         "message": "스텔스 모드"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "정보"
     },
-    "options_license_agreement": {
-        "message": "최종 사용자 라이선스 계약"
-    },
     "options_privacy_policy": {
         "message": "개인정보취급방침"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "All rights reserved."
     },
-    "options_delete_filter_confirm": {
-        "message": "정말 이 필터를 삭제할까요?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "이 필터를 제거하시겠습니까?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "제거"
     },
     "options_nav_better_than_extension": {
         "message": "AdGuard 정식 프로그램이 확장 프로그램보다 나은 이유는 무엇인가요?"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "초기화"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "취소"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "가독성 향상"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "다시 시도"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "퍼스트 파티 요청"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "퍼스트 파티 요청만 표시"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "제 3자 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "필터링 없이 처리된 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "차단된 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "수정된 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "사용자 규칙에 의해 변경된 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "문서 및 하위 문서"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "스타일 시트"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "스크립트"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XML Http 요청 및 페치 요청"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "이미지"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "미디어"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "폰트, 핑, WebRTC, WebSocket 등"
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "제 3자 요청"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "여러 필터를 선택하려면 Cmd를 길게 누릅니다"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP 요청 방법"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "여러 필터를 선택하려면 Ctrl를 길게 누릅니다"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP 상태 코드"
     },
     "options_stealth_general_title": {
         "message": "일반"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "기타"
+    },
+    "blocking_pages_malware": {
+        "message": "<strong>%host%<\/strong> 페이지는 멀웨어 페이지로 보고되어, 설정하신 보안 설정에 따라 차단되었습니다."
+    },
+    "blocking_pages_phishing": {
+        "message": "<strong>%host%<\/strong> 페이지는 피싱 페이지로 보고되어, 설정하신 보안 설정에 따라 차단되었습니다."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "고급"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "추가 정보"
+    },
+    "blocking_pages_page_title": {
+        "message": "접근 거부됨"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard가 이 페이지 접근을 차단하였습니다"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "AdGuard에 의해 차단됨"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "다음 필터 규칙으로 인해 AdGuard에서 이 페이지를 로드하지 못했습니다"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "뒤로가기"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "무시하고 계속하기"
     }
 }

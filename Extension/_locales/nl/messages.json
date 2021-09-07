@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Alles"
     },
-    "filtering_type_image": {
-        "message": "Afbeelding"
-    },
-    "filtering_type_media": {
-        "message": "Media"
-    },
     "filtering_type_other": {
         "message": "Overige"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Regel:"
+    },
+    "filtering_modal_rules": {
+        "message": "Regels:"
     },
     "filtering_modal_privacy": {
         "message": "Incognito modus"
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Gekopieerd"
     },
-    "filtering_log_filter_processed": {
-        "message": "Verwerkt"
-    },
     "filtering_log_filter_regular": {
         "message": "Standaard"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Toegestaan"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Aangepast"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Gebruikersfilter"
+    "filtering_log_filter_user_rules": {
+        "message": "Gebruikersregels"
+    },
+    "filtering_log_status_processed": {
+        "message": "Verwerkt"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Toegestaan"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Geblokkeerd"
+    },
+    "filtering_log_status_modified": {
+        "message": "Aangepast"
     },
     "options_settings": {
         "message": "AdGuard-instellingen"
@@ -593,17 +599,20 @@
     "options_general_settings": {
         "message": "Algemene instellingen"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Toestaan van zoek-advertenties en reclames voor eigen websites"
+    "options_block_acceptable_ads": {
+        "message": "Zoekadvertenties en zelfpromotie van websites blokkeren"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Zoekadvertenties zijn advertenties die je ziet tussen de resultaten van een zoekopdracht wanneer je een online zoekmachine zoals Google, Bing, DuckDuckGo, enz. gebruikt. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "<a>Zelfpromotie van websites en contextgebaseerde advertenties<\/a> die in de zoekresultaten verschijnen verwijderen"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Aantal geblokkeerde advertenties weergeven op het AdGuard uitbreidingspictogram"
     },
     "options_enable_autodetect_filter": {
         "message": "De meest geschikte filters automatisch activeren"
+    },
+    "options_enable_autodetect_filter_desc": {
+        "message": "Taalspecifieke filters worden ingeschakeld, afhankelijk van de taal van de site"
     },
     "options_select_theme": {
         "message": "Thema"
@@ -666,7 +675,7 @@
         "message": "Phishing- en malware-bescherming"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Speciale filters die je beschermen tegen kwaadaardige en phishing-websites. <a><\/a>"
+        "message": "Speciale filters die je beschermen tegen <a>kwaadaardige en phishing-websites<\/a>."
     },
     "options_site": {
         "message": "Officiële website"
@@ -678,7 +687,7 @@
         "message": "Vind je AdGuard goed?"
     },
     "options_footer_like_us_cta": {
-        "message": "Beoordeel ons!"
+        "message": "Beoordeel het!"
     },
     "options_miscellaneous_settings": {
         "message": "Overig"
@@ -708,7 +717,10 @@
         "message": "Fout bij het herstellen van instellingen"
     },
     "options_collect_hit_stats_title": {
-        "message": "Statistieken over het gebruik van advertentiefilters versturen"
+        "message": "Helpen bij de ontwikkeling van AdGuard-filters"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "<a>Anonieme statistieken over het gebruik van advertentiefilters<\/a> versturen, zodat wij ze kunnen verbeteren en optimaliseren."
     },
     "options_show_context_menu_title": {
         "message": "AdGuard item toevoegen aan het contextmenu van de webbrowser"
@@ -719,14 +731,11 @@
     "options_use_optimized_filters_desc": {
         "message": "Lijst van geoptimaliseerde filters voor mobiele apparaten"
     },
-    "options_learn_more": {
-        "message": "Meer info"
-    },
     "options_privacy_title": {
         "message": "Incognito modus"
     },
     "options_privacy_desc": {
-        "message": "Beschermt je identiteit en gevoelige persoonlijke informatie tegen duizenden online trackers door de meest populaire tracking methodes te blokkeren."
+        "message": "Je identiteit en gevoelige persoonlijke informatie beschermen tegen duizenden online volgers door de meest populaire volgmethodes te blokkeren."
     },
     "options_hide_referrer_title": {
         "message": "Verwijzing verbergen voor derde partijen"
@@ -773,6 +782,12 @@
     "options_strip_tracking_params_description": {
         "message": "Indien ingeschakeld, wordt het AdGuard URL-trackingfilter gebruikt om trackingparameters uit de URL's van pagina's te verwijderen."
     },
+    "options_block_known_trackers_title": {
+        "message": "Bekende volgers blokkeren"
+    },
+    "options_block_known_trackers_description": {
+        "message": "Wanneer ingeschakeld, wordt het AdGuard Tracking Protection filter gebruikt om bekende volgers te blokkeren."
+    },
     "options_third_party_title": {
         "message": "Zelf-vernietigende cookies van derden"
     },
@@ -818,9 +833,6 @@
     "options_about": {
         "message": "Over"
     },
-    "options_license_agreement": {
-        "message": "Licentieovereenkomst voor eindgebruiker"
-    },
     "options_privacy_policy": {
         "message": "Privacybeleid"
     },
@@ -836,8 +848,11 @@
     "options_copyright": {
         "message": "Alle rechten voorbehouden."
     },
-    "options_delete_filter_confirm": {
-        "message": "Ben je zeker om deze filter te verwijderen?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Dit filter verwijderen?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Verwijderen"
     },
     "options_nav_better_than_extension": {
         "message": "Waarom is het volledige AdGuard programma beter dan de uitbreiding?"
@@ -858,7 +873,7 @@
         "message": "Hier advertentieblokkering configureren om voor eens en voor altijd vervelende banners, pop-ups, videoadvertenties en dergelijke aan te pakken"
     },
     "group_description_stealth": {
-        "message": "Beschermt je identiteit en gevoelige persoonlijke informatie tegen duizenden online trackers door de meest populaire tracking methodes te blokkeren"
+        "message": "Je identiteit en gevoelige persoonlijke informatie beschermen tegen duizenden online volgers door alle bekende populaire volgmethodes te blokkeren"
     },
     "group_description_social": {
         "message": "Ongewenste \"Vind ik leuk\"\/\"Delen\"-knoppen en andere widgets verbergen voor sociale media"
@@ -876,7 +891,7 @@
         "message": "Je eigen filters maken om webfiltering naar je voorkeur af te stemmen"
     },
     "group_description_lang": {
-        "message": "Beperk jezelf niet - blokkeer advertenties op websites in alle talen"
+        "message": "Beperk jezelf niet - advertenties op websites in alle talen blokkeren"
     },
     "fullscreen_user_rules_title": {
         "message": "Gebruikersregels"
@@ -905,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Herstellen"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Annuleren"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Verfraaien"
     },
@@ -914,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Opnieuw proberen"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Eerste lijns verzoeken"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Alleen eerste lijns verzoeken"
     },
-    "filtering_log_tooltip_third_party": {
-        "message": "Verzoeken van derden"
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Alleen derde lijns verzoeken"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Houd Cmd ingedrukt om meerdere filters te selecteren"
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Alleen verzoeken verwerkt zonder filtering"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Houd Ctrl ingedrukt om meerdere filters te selecteren"
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Alleen geblokkeerde verzoeken"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Alleen aangepaste verzoeken"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Alleen verzoeken gewijzigd door gebruikersregels"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Documenten en subdocumenten"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Stylesheets"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Scripts"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests- en ophaalverzoeken"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Afbeeldingen"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Media"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Lettertypen, pings, WebRTC, WebSocket, enz."
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Derde lijns verzoek"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP-request methode"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP-statuscode"
     },
     "options_stealth_general_title": {
         "message": "Algemeen"
@@ -934,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Diversen"
+    },
+    "blocking_pages_malware": {
+        "message": "Deze pagina op <strong>%host%<\/strong> is gerapporteerd als een malware-pagina en is geblokkeerd op basis van je beveiligingsinstellingen."
+    },
+    "blocking_pages_phishing": {
+        "message": "Deze pagina op <strong>%host%<\/strong> is gerapporteerd als een phishing-pagina en is geblokkeerd op basis van je beveiligingsinstellingen."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Geavanceerd"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Meer informatie"
+    },
+    "blocking_pages_page_title": {
+        "message": "Toegang geweigerd"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard heeft de toegang tot deze pagina geblokkeerd"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Geblokkeerd door AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard heeft voorkomen dat deze pagina wordt geladen vanwege de volgende filterregel"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Teruggaan"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Toch doorgaan"
     }
 }

@@ -383,12 +383,6 @@
     "filtering_type_all": {
         "message": "Alle"
     },
-    "filtering_type_image": {
-        "message": "Bilde"
-    },
-    "filtering_type_media": {
-        "message": "Media"
-    },
     "filtering_type_other": {
         "message": "Annet"
     },
@@ -461,26 +455,17 @@
     "filtering_log_filter_regular": {
         "message": "Regular"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Tillatt"
-    },
     "filtering_log_filter_blocked": {
         "message": "Blokkért"
     },
     "filtering_log_filter_modified": {
         "message": "Modified"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Brukerfilter"
-    },
     "options_settings": {
         "message": "AdGuard-innstillinger"
     },
     "options_general_settings": {
         "message": "Generelle innstillinger"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "Tillat søk og nettsider å bruke selvfremmende annonser"
     },
     "options_enable_autodetect_filter": {
         "message": "Aktiver de mest passende filtrene automatisk"
@@ -547,9 +532,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Liste over filtre som er optimalisert for mobiler og nettbrett"
-    },
-    "options_learn_more": {
-        "message": "Lær mer om det"
     },
     "options_privacy_title": {
         "message": "Snikemodus"
@@ -629,9 +611,6 @@
     "options_about": {
         "message": "Om"
     },
-    "options_license_agreement": {
-        "message": "Lisensavtale for brukere"
-    },
     "options_privacy_policy": {
         "message": "Personvern"
     },
@@ -646,9 +625,6 @@
     },
     "options_copyright": {
         "message": "Alle rettigheter reservert."
-    },
-    "options_delete_filter_confirm": {
-        "message": "Er du sikker på at du vil slette dette filteret?"
     },
     "options_stealth_general_title": {
         "message": "Generelle innstillinger"

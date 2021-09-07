@@ -416,9 +416,6 @@
     "options_general_settings": {
         "message": "الإعدادات العامة"
     },
-    "options_allow_acceptable_ads": {
-        "message": "السماح بإعلانات البحث والترويج الذاتي لمواقع الويب"
-    },
     "options_enable_autodetect_filter": {
         "message": "تفعيل الفلاتر الأكثر ملائمة تلقائياً"
     },
@@ -466,9 +463,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "قوائم الفلاتر المحسنة للاجهزه المحمولة"
-    },
-    "options_learn_more": {
-        "message": "معرفة المزيد حول هذا الموضوع"
     },
     "options_privacy_title": {
         "message": "وضع التخفي"
@@ -548,9 +542,6 @@
     "options_about": {
         "message": "حول"
     },
-    "options_license_agreement": {
-        "message": "اتفاقيه ترخيص المستخدم النهائي"
-    },
     "options_privacy_policy": {
         "message": "سياسة الخصوصية"
     },
@@ -565,8 +556,5 @@
     },
     "options_copyright": {
         "message": ".جميع الحقوق محفوظه"
-    },
-    "options_delete_filter_confirm": {
-        "message": "هل أنت متأكد من أنك تريد حذف هذا الفلتر؟"
     }
 }

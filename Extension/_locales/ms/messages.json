@@ -155,9 +155,6 @@
     "options_general_settings": {
         "message": "Tetapan Umum"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Membenarkan pencarian iklan dan itu promosi diri laman web"
-    },
     "options_enable_autodetect_filter": {
         "message": "Aktifkan penyaring yang paling sesuai secara automatik"
     },
@@ -190,9 +187,6 @@
     },
     "short_name": {
         "message": "Penghalang Iklan AdGuard"
-    },
-    "options_license_agreement": {
-        "message": "Persetujuan Lesen Pengguna-Akhir"
     },
     "options_github": {
         "message": "GitHub"

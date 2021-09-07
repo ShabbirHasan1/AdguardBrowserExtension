@@ -434,12 +434,6 @@
     "filtering_type_all": {
         "message": "Toate"
     },
-    "filtering_type_image": {
-        "message": "Imagine"
-    },
-    "filtering_type_media": {
-        "message": "Media"
-    },
     "filtering_type_other": {
         "message": "Altul"
     },
@@ -518,26 +512,17 @@
     "filtering_log_filter_regular": {
         "message": "Obișnuit"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Autorizat"
-    },
     "filtering_log_filter_blocked": {
         "message": "Blocat"
     },
     "filtering_log_filter_modified": {
         "message": "Modificat"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Filtrul utilizatorului"
-    },
     "options_settings": {
         "message": "Setări AdGuard"
     },
     "options_general_settings": {
         "message": "Setări Generale"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "Lăsați reclame la căutare și auto-promovare site-uri"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Indicați numărul de reclame blocate pe iconul extensia AdGuard"
@@ -611,9 +596,6 @@
     "options_reset_stats_done": {
         "message": "Statisticile au fost resetate"
     },
-    "options_collect_hit_stats_title": {
-        "message": "Trimiteți statistici privind utilizarea filtrelor de anunțuri"
-    },
     "options_show_context_menu_title": {
         "message": "Adăugați AdGuard în meniul contextual al browserului"
     },
@@ -622,9 +604,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Liste de filtre optimizate pentru aparate mobile"
-    },
-    "options_learn_more": {
-        "message": "Aflați mai multe"
     },
     "options_privacy_title": {
         "message": "Mod Incognito"
@@ -707,9 +686,6 @@
     "options_about": {
         "message": "Despre"
     },
-    "options_license_agreement": {
-        "message": "Acord de Licență Utilizator Final"
-    },
     "options_privacy_policy": {
         "message": "Politică Confidențialitate"
     },
@@ -724,9 +700,6 @@
     },
     "options_copyright": {
         "message": "Toate drepturile rezervate."
-    },
-    "options_delete_filter_confirm": {
-        "message": "Sunteți sigur că vreți să ștergeți acest filtru?"
     },
     "options_stealth_general_title": {
         "message": "General"

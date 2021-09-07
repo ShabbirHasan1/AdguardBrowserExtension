@@ -2,6 +2,9 @@
     "options_popup_title_placeholder": {
         "message": "Skriv in ett namn på filtret"
     },
+    "options_filters_list_search_display_option_all_filters": {
+        "message": "Alla filter"
+    },
     "options_filters_list_search_display_option_enabled": {
         "message": "Inkopplat"
     },
@@ -127,6 +130,9 @@
     },
     "options_select_update_period_disabled": {
         "message": "Frånkopplad"
+    },
+    "options_filters": {
+        "message": "Filter"
     },
     "options_antibanner_custom_group": {
         "message": "Egna"
@@ -350,8 +356,14 @@
     "filtering_log_search_string": {
         "message": "Skriv in söksträngen"
     },
+    "filtering_refresh_tab_short": {
+        "message": "Uppdatera"
+    },
     "filtering_type_all": {
         "message": "Allt"
+    },
+    "filtering_table_status": {
+        "message": "Status"
     },
     "filtering_table_type": {
         "message": "Kodtyp"
@@ -368,6 +380,9 @@
     "filtering_modal_info_title": {
         "message": "Förfrågningsdetaljer"
     },
+    "filtering_modal_preview_title": {
+        "message": "Förhandsgranskning"
+    },
     "filtering_modal_type": {
         "message": "Kodtyp"
     },
@@ -376,6 +391,9 @@
     },
     "filtering_modal_rule": {
         "message": "Filtreringsregel:"
+    },
+    "filtering_modal_rules": {
+        "message": "Regler:"
     },
     "filtering_modal_privacy": {
         "message": "Integritet"
@@ -392,8 +410,14 @@
     "filtering_modal_remove_user": {
         "message": "Ta bort från det egna filtret"
     },
+    "filtering_modal_preview_request_button": {
+        "message": "Förhandsgranska"
+    },
     "filtering_modal_add_title": {
         "message": "Lägga till en filterregel"
+    },
+    "filtering_modal_status_text_desc": {
+        "message": "Status:"
     },
     "filtering_modal_apply_domains": {
         "message": "Tillämpa regeln på alla webbplatser"
@@ -410,17 +434,32 @@
     "filtering_modal_open_in_new_tab": {
         "message": "Öppna i en ny flik"
     },
+    "filtering_modal_copy_to_clipboard": {
+        "message": "Kopiera till urklipp"
+    },
+    "filtering_modal_copied": {
+        "message": "Kopierad"
+    },
+    "filtering_log_filter_user_rules": {
+        "message": "Användarregler"
+    },
     "options_settings": {
         "message": "AdGuard Inställningar"
     },
     "options_general_settings": {
         "message": "Allmänt"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Tillåt sökningsannonser och webbplatsens egenreklam"
-    },
     "options_enable_autodetect_filter": {
         "message": "Aktivera de mest lämpade filtren automatiskt"
+    },
+    "options_select_theme": {
+        "message": "Tema"
+    },
+    "options_theme_selector_light": {
+        "message": "Ljust"
+    },
+    "options_theme_selector_dark": {
+        "message": "Mörkt"
     },
     "options_export_settings": {
         "message": "Exportera inställningar"
@@ -440,6 +479,9 @@
     "options_userfilter_export": {
         "message": "Exportera"
     },
+    "options_editor_save": {
+        "message": "Spara"
+    },
     "options_userfilter_import": {
         "message": "Importera"
     },
@@ -455,6 +497,9 @@
     "options_discuss": {
         "message": "Diskutera AdGuard"
     },
+    "options_do_you_like_question": {
+        "message": "Gillar du AdGuard?"
+    },
     "options_show_app_updated_notification": {
         "message": "Avisera om tilläggsuppdateringar"
     },
@@ -466,9 +511,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Lista över filter, optimerade för mobilenheter"
-    },
-    "options_learn_more": {
-        "message": "Läs mer om det"
     },
     "options_privacy_title": {
         "message": "Integritet"
@@ -548,11 +590,8 @@
     "options_about": {
         "message": "Om"
     },
-    "options_license_agreement": {
-        "message": "Slutanvändaravtal"
-    },
     "options_privacy_policy": {
-        "message": "Intergritetspolicy"
+        "message": "Integritetspolicy"
     },
     "options_acknowledgment": {
         "message": "Tillerkännanden"
@@ -566,7 +605,25 @@
     "options_copyright": {
         "message": "Alla rättigheter förbehållna."
     },
-    "options_delete_filter_confirm": {
-        "message": "Är du säker på att ta bort det här filtret?"
+    "options_filters_search": {
+        "message": "Sök"
+    },
+    "options_clear_stats_confirm_modal_clear_button": {
+        "message": "Rensa"
+    },
+    "options_confirm_modal_cancel_button": {
+        "message": "Avbryt"
+    },
+    "filtering_log_details_modal_beautify_button": {
+        "message": "Förfina"
+    },
+    "filtering_log_details_modal_try_again": {
+        "message": "Försök igen"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blockerad av AdGuard"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Fortsätt ändå"
     }
 }

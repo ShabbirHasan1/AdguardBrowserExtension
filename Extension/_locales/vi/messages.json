@@ -297,7 +297,7 @@
         "message": "đã được cập nhật"
     },
     "options_popup_version_update_title_text": {
-        "message": "Tiện ích AdGuard đã được cập nhật lên phiên bản %current_version%"
+        "message": "Tiện ích mở rộng AdGuard đã được cập nhật lên phiên bản %current_version%"
     },
     "options_popup_version_update_description_minor": {
         "message": "Phiên bản này chủ yếu bao gồm sửa lỗi và các cải tiến nhỏ."
@@ -434,12 +434,6 @@
     "filtering_type_all": {
         "message": "Tất cả"
     },
-    "filtering_type_image": {
-        "message": "Hình ảnh"
-    },
-    "filtering_type_media": {
-        "message": "Đa phương tiện"
-    },
     "filtering_type_other": {
         "message": "Khác"
     },
@@ -518,26 +512,17 @@
     "filtering_log_filter_regular": {
         "message": "Thông thường"
     },
-    "filtering_log_filter_allowlisted": {
-        "message": "Cho phép"
-    },
     "filtering_log_filter_blocked": {
         "message": "Đã chặn"
     },
     "filtering_log_filter_modified": {
         "message": "Đã chỉnh sửa"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Quy tắc của người dùng"
-    },
     "options_settings": {
         "message": "Cài đặt AdGuard"
     },
     "options_general_settings": {
         "message": "Cài đặt Tổng quát"
-    },
-    "options_allow_acceptable_ads": {
-        "message": "Cho phép quảng cáo theo kết quả tìm kiếm và các trang web tự quảng cáo chính nó"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Hiển thị số quảng cáo đã bị chặn trên biểu tượng tiện ích mở rộng AdGuard"
@@ -606,13 +591,10 @@
         "message": "Hiện thông tin trên phiên bản AdGuard đầy đủ"
     },
     "options_show_app_updated_notification": {
-        "message": "Thông báo về các bản cập nhật mở rộng"
+        "message": "Thông báo về các bản cập nhật tiện ích mở rộng"
     },
     "options_reset_stats_done": {
         "message": "Thống kê đã được đặt lại"
-    },
-    "options_collect_hit_stats_title": {
-        "message": "Gửi thống kê sử dụng của bộ lọc quảng cáo"
     },
     "options_show_context_menu_title": {
         "message": "Thêm AdGuard vào danh mục tác vụ của trình duyệt"
@@ -622,9 +604,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Danh sách các bộ lọc được tối ưu hóa cho thiết bị di động"
-    },
-    "options_learn_more": {
-        "message": "Tìm hiểu thêm về nó"
     },
     "options_privacy_title": {
         "message": "Chế độ ẩn danh"
@@ -707,9 +686,6 @@
     "options_about": {
         "message": "Giới thiệu"
     },
-    "options_license_agreement": {
-        "message": "Thỏa thuận cấp phép người dùng"
-    },
     "options_privacy_policy": {
         "message": "Chính sách riêng tư"
     },
@@ -724,9 +700,6 @@
     },
     "options_copyright": {
         "message": "Tất cả các quyền đã được đăng ký trước"
-    },
-    "options_delete_filter_confirm": {
-        "message": "Bạn có chắc muốn xoá bộ lọc này?"
     },
     "options_stealth_general_title": {
         "message": "Chung"

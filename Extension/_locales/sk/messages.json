@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Všetko"
     },
-    "filtering_type_image": {
-        "message": "Obrázok"
-    },
-    "filtering_type_media": {
-        "message": "Médiá"
-    },
     "filtering_type_other": {
         "message": "Iné"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Pravidlo:"
+    },
+    "filtering_modal_rules": {
+        "message": "Pravidlá:"
     },
     "filtering_modal_privacy": {
         "message": "Súkromie:"
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Skopírované"
     },
-    "filtering_log_filter_processed": {
-        "message": "Spracované"
-    },
     "filtering_log_filter_regular": {
         "message": "Štandardný"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Povolené"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Modifikované"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Používateľský filter"
+    "filtering_log_filter_user_rules": {
+        "message": "Používateľské pravidlá"
+    },
+    "filtering_log_status_processed": {
+        "message": "Spracované"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Povolené"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Zablokované"
+    },
+    "filtering_log_status_modified": {
+        "message": "Modifikované"
     },
     "options_settings": {
         "message": "Nastavenia AdGuard"
@@ -593,17 +599,20 @@
     "options_general_settings": {
         "message": "Všeobecné"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Povoliť vyhľadávacie reklamy a vlastnú propagáciu webových stránok"
+    "options_block_acceptable_ads": {
+        "message": "Blokovať vyhľadávacie reklamy a vlastnú propagáciu"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Vyhľadávacie reklamy sú reklamy, ktoré vidíte medzi výsledkami vyhľadávacieho dopytu pri použití online vyhľadávača ako Google, Bing, DuckDuckGo atď. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Zbavte sa <a>vlastnej propagácie a kontextových reklám<\/a>, ktoré sa objavujú vo výsledkoch vyhľadávania"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Zobrazovať počet zablokovaných reklám na ikone AdGuard rozšírenia"
     },
     "options_enable_autodetect_filter": {
         "message": "Zapnúť najvhodnejšie filtre automaticky"
+    },
+    "options_enable_autodetect_filter_desc": {
+        "message": "Jazykovo špecifické filtre sa zapnú v závislosti od jazyka navštívených stránok"
     },
     "options_select_theme": {
         "message": "Téma"
@@ -666,7 +675,7 @@
         "message": "Ochrana proti podvodným a škodlivým stránkam"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Špeciálne filtre, ktoré Vás chránia pred škodlivými a podvodnými stránkami. <a><\/a>"
+        "message": "Špeciálne filtre, ktoré Vás chránia pred <a>škodlivými a podvodnými stránkami<\/a>."
     },
     "options_site": {
         "message": "Oficiálna domovská stránka"
@@ -708,7 +717,10 @@
         "message": "Chyba pri obnove nastavení"
     },
     "options_collect_hit_stats_title": {
-        "message": "Poslať štatistiku o využití filtrov reklamy"
+        "message": "Pomôcť s vývojom AdGuard filtrov"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Posielať <a>anonymné štatistiky používania reklamných filtrov<\/a>, ktoré nám ich pomôžu zlepšovať a optimalizovať."
     },
     "options_show_context_menu_title": {
         "message": "Pridať položku AdGuard do kontextovej ponuky prehliadača"
@@ -718,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Zoznam filtrov optimalizovaných pre mobilné zariadenia"
-    },
-    "options_learn_more": {
-        "message": "Viac informácií"
     },
     "options_privacy_title": {
         "message": "Súkromie"
@@ -824,9 +833,6 @@
     "options_about": {
         "message": "O"
     },
-    "options_license_agreement": {
-        "message": "Licenčná zmluva s koncovým používateľom"
-    },
     "options_privacy_policy": {
         "message": "Pravidlá ochrany súkromia"
     },
@@ -842,8 +848,11 @@
     "options_copyright": {
         "message": "Všetky práva vyhradené."
     },
-    "options_delete_filter_confirm": {
-        "message": "Naozaj chcete vymazať tento filter?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Odstrániť tento filter?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Odstrániť"
     },
     "options_nav_better_than_extension": {
         "message": "Prečo je plnohodnotný program AdGuard lepší ako rozšírenie?"
@@ -911,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Obnoviť"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Zrušiť"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Skrášliť"
     },
@@ -920,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Skúste znova"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Vlastné dopyty"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Len vlastné dopyty"
     },
-    "filtering_log_tooltip_third_party": {
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Len dopyty tretích strán"
+    },
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Iba dopyty spracované bez filtrácie"
+    },
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Len zablokované dopyty"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Len modifikované dopyty"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Len dopyty zmenené používateľskými pravidlami"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumenty a subdokumenty"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Štýly"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Skripty"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttp dopyty a vyvolané dopyty"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Obrázky"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Médiá"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Fonty, pingy, WebRTC, WebSocket, atď."
+    },
+    "filtering_log_badge_tooltip_third_party": {
         "message": "Dopyty tretích strán"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Podržaním klávesu Cmd vyberte viac filtrov"
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "Metóda HTTP dopytu"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Podržaním klávesu Ctrl vyberte viac filtrov"
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "Kód HTTP stavu"
     },
     "options_stealth_general_title": {
         "message": "Všeobecné"
@@ -940,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Rôzne"
+    },
+    "blocking_pages_malware": {
+        "message": "Stránka <strong>%host%<\/strong> bola nahlásená ako stránka so škodlivým kódom a bola zablokovaná na základe Vašich bezpečnostných nastavení."
+    },
+    "blocking_pages_phishing": {
+        "message": "Stránka <strong>%host%<\/strong> bola nahlásená ako podvodná a bola zablokovaná na základe Vašich bezpečnostných nastavení."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Pokročilé"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Viac informácií"
+    },
+    "blocking_pages_page_title": {
+        "message": "Prístup bol zamietnutý"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard zablokoval prístup k tejto stránke"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Blokované AdGuardom"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard zabránil načítaniu tejto stránky kvôli nasledujúcemu filtračnému pravidlu"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Naspäť"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Aj tak pokračovať"
     }
 }

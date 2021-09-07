@@ -425,9 +425,6 @@
     "options_general_settings": {
         "message": "Opšta podešavanja"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Dozvolite oglase za pretragu i sajtove za samopromociju"
-    },
     "options_enable_autodetect_filter": {
         "message": "Automatski uključi najpogodnije filtere"
     },
@@ -475,9 +472,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Llista filtera optimizovana za mobilne uređaje"
-    },
-    "options_learn_more": {
-        "message": "Saznajte više o tome"
     },
     "options_privacy_title": {
         "message": "Nevidljivi način rada"
@@ -560,9 +554,6 @@
     "options_about": {
         "message": "O programu"
     },
-    "options_license_agreement": {
-        "message": "Licenčni ugovor s krajnjim korisnikom"
-    },
     "options_privacy_policy": {
         "message": "Politika privatnosti"
     },
@@ -577,8 +568,5 @@
     },
     "options_copyright": {
         "message": "Sva prava zadržana."
-    },
-    "options_delete_filter_confirm": {
-        "message": "Jeste li sigurni da želite da izbrišete ovaj filter?"
     }
 }

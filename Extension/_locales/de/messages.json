@@ -360,7 +360,7 @@
         "message": "Website-Sicherheit prüfen …"
     },
     "context_complaint_website": {
-        "message": "Fehler melden …"
+        "message": "Diese Webseite melden …"
     },
     "context_site_filtering_disabled": {
         "message": "AdGuard funktioniert auf dieser Domain nicht"
@@ -452,12 +452,6 @@
     "filtering_type_all": {
         "message": "Alle"
     },
-    "filtering_type_image": {
-        "message": "Grafik"
-    },
-    "filtering_type_media": {
-        "message": "Medien"
-    },
     "filtering_type_other": {
         "message": "Sonstiges"
     },
@@ -493,6 +487,9 @@
     },
     "filtering_modal_rule": {
         "message": "Regel:"
+    },
+    "filtering_modal_rules": {
+        "message": "Regeln:"
     },
     "filtering_modal_privacy": {
         "message": "Privatsphären-Modus:"
@@ -569,13 +566,10 @@
     "filtering_modal_copied": {
         "message": "Kopiert"
     },
-    "filtering_log_filter_processed": {
-        "message": "Verarbeitet"
-    },
     "filtering_log_filter_regular": {
         "message": "Regulär"
     },
-    "filtering_log_filter_allowlisted": {
+    "filtering_log_filter_allowed": {
         "message": "Zugelassen"
     },
     "filtering_log_filter_blocked": {
@@ -584,8 +578,20 @@
     "filtering_log_filter_modified": {
         "message": "Geändert"
     },
-    "filtering_log_filter_user_rule": {
-        "message": "Benutzerfilter"
+    "filtering_log_filter_user_rules": {
+        "message": "Benutzerregeln"
+    },
+    "filtering_log_status_processed": {
+        "message": "Verarbeitet"
+    },
+    "filtering_log_status_allowed": {
+        "message": "Zugelassen"
+    },
+    "filtering_log_status_blocked": {
+        "message": "Gesperrt"
+    },
+    "filtering_log_status_modified": {
+        "message": "Geänderte"
     },
     "options_settings": {
         "message": "AdGuard-Einstellungen"
@@ -593,11 +599,11 @@
     "options_general_settings": {
         "message": "Allgemein"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Werbeanzeigen in Suchvorgängen und Eigenwerbung der Webseiten erlauben"
+    "options_block_acceptable_ads": {
+        "message": "Werbung in Suchmaschinen und Eigenwerbung sperren"
     },
-    "options_allow_acceptable_ads_desc": {
-        "message": "Werbung in der Suche ist Werbung, die unter den Ergebnissen einer Suchanfrage angezeigt wird, wenn Sie eine Online-Suchmaschine wie Google, Bing, DuckDuckGo usw. verwenden. <a><\/a>"
+    "options_block_acceptable_ads_desc": {
+        "message": "Entfernt <a>kontextbezogene Anzeigen in Suchergebnissen von Suchmaschinen und Eigenwerbung auf Websites<\/a>. "
     },
     "options_show_blocked_ads_count_title": {
         "message": "Anzahl der gesperrten Werbungen auf dem Symbol der AdGuard-Erweiterung anzeigen"
@@ -669,7 +675,7 @@
         "message": "Schutz vor Phishing und Malware"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Spezielle Filter, die Sie vor bösartigen und Phishing-Websites schützen. <a><\/a>"
+        "message": "Spezielle Filter, die Sie vor <a>bösartigen und Phishing-Websites schützen.<\/a>"
     },
     "options_site": {
         "message": "Offizielle Webseite"
@@ -711,7 +717,10 @@
         "message": "Fehler beim Zurücksetzen der Einstellungen"
     },
     "options_collect_hit_stats_title": {
-        "message": "Statistiken zur Verwendung von Anzeigenfiltern senden"
+        "message": "Helfen Sie mit bei der Verbesserung der AdGuard-Filter"
+    },
+    "options_collect_hit_stats_desc": {
+        "message": "Senden Sie uns <a>anonymisierte Statistiken über die Nutzung von Werbefiltern<\/a>, die uns helfen, diese zu verbessern und zu optimieren."
     },
     "options_show_context_menu_title": {
         "message": "AdGuard zum Browser-Kontextmenü hinzufügen"
@@ -721,9 +730,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Die Listen von Filtern, die für mobile Geräte optimiert sind"
-    },
-    "options_learn_more": {
-        "message": "Mehr darüber erfahren"
     },
     "options_privacy_title": {
         "message": "Privatsphären-Modus"
@@ -827,9 +833,6 @@
     "options_about": {
         "message": "Über uns"
     },
-    "options_license_agreement": {
-        "message": "Endbenutzer-Lizenzvereinbarung"
-    },
     "options_privacy_policy": {
         "message": "Datenschutzerklärung"
     },
@@ -845,8 +848,11 @@
     "options_copyright": {
         "message": "Alle Rechte vorbehalten."
     },
-    "options_delete_filter_confirm": {
-        "message": "Möchten Sie diesen Filter wirklich löschen?"
+    "options_remove_filter_confirm_modal_title": {
+        "message": "Diesen Filter entfernen?"
+    },
+    "options_remove_filter_confirm_modal_ok_button": {
+        "message": "Entfernen"
     },
     "options_nav_better_than_extension": {
         "message": "Warum ist AdGuard als vollwertige Anwendung besser als eine Erweiterung?"
@@ -914,6 +920,9 @@
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "Zurücksetzen"
     },
+    "options_confirm_modal_cancel_button": {
+        "message": "Abbrechen"
+    },
     "filtering_log_details_modal_beautify_button": {
         "message": "Verschönern"
     },
@@ -923,17 +932,53 @@
     "filtering_log_details_modal_try_again": {
         "message": "Erneut versuchen"
     },
-    "filtering_log_tooltip_first_party": {
-        "message": "Anfragen von Erstanbietern"
+    "filtering_log_tag_tooltip_first_party": {
+        "message": "Nur Anfragen von Erstanbietern"
     },
-    "filtering_log_tooltip_third_party": {
-        "message": "Anfragen von Drittanbietern"
+    "filtering_log_tag_tooltip_third_party": {
+        "message": "Nur Anfragen von Drittanbietern"
     },
-    "filtering_log_tooltip_multiple_filters_mac": {
-        "message": "Halten Sie die Taste „Cmd” gedrückt, um mehrere Filter auszuwählen"
+    "filtering_log_tag_tooltip_regular": {
+        "message": "Nur Anfragen, die ohne Filterung verarbeitet werden"
     },
-    "filtering_log_tooltip_multiple_filters_win": {
-        "message": "Halten Sie die Taste „Ctrl” gedrückt, um mehrere Filter auszuwählen"
+    "filtering_log_tag_tooltip_blocked": {
+        "message": "Nur gesperrte Anfragen"
+    },
+    "filtering_log_tag_tooltip_modified": {
+        "message": "Nur geänderte Anfragen"
+    },
+    "filtering_log_tag_tooltip_user_rules": {
+        "message": "Nur durch Benutzerregeln geänderte Anfragen"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "Dokumente und Unterdokumente"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "Formatvorlagen"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "Skripts"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests und Abrufanforderungen"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "Grafiken"
+    },
+    "filtering_log_tag_tooltip_media": {
+        "message": "Medien"
+    },
+    "filtering_log_tag_tooltip_other": {
+        "message": "Schriftarten, Pings, WebRTC, WebSocket usw."
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Anfrage von Drittanbieter"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "HTTP-Anforderungsmethode"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "HTTP-Statuscode"
     },
     "options_stealth_general_title": {
         "message": "Allgemein"
@@ -943,5 +988,35 @@
     },
     "options_stealth_miscellaneous_title": {
         "message": "Sonstiges"
+    },
+    "blocking_pages_malware": {
+        "message": "Diese Webseite unter <strong>%host%<\/strong> wurde als Webseite gemeldet die Malware enthält und wurde aufgrund Ihrer Sicherheitseinstellungen gesperrt."
+    },
+    "blocking_pages_phishing": {
+        "message": "Diese Webseite unter <strong>%host%<\/strong> wurde als Phishing-Seite gemeldet und gemäß Ihren Sicherheitseinstellungen gesperrt."
+    },
+    "blocking_pages_advanced_button": {
+        "message": "Erweitert"
+    },
+    "blocking_pages_more_info_button": {
+        "message": "Weitere Informationen"
+    },
+    "blocking_pages_page_title": {
+        "message": "Zugriff verweigert"
+    },
+    "blocking_pages_safe_header_title": {
+        "message": "AdGuard hat den Zugriff auf diese Webseite gesperrt"
+    },
+    "blocking_pages_rule_header_title": {
+        "message": "Gesperrt durch AdGuard"
+    },
+    "blocking_pages_rule_content_title": {
+        "message": "AdGuard hat das Laden dieser Seite aufgrund der folgenden Filterregel unterbunden"
+    },
+    "blocking_pages_btn_go_back": {
+        "message": "Zurück"
+    },
+    "blocking_pages_btn_proceed": {
+        "message": "Trotzdem fortfahren"
     }
 }

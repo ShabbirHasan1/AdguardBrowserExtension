@@ -425,9 +425,6 @@
     "options_general_settings": {
         "message": "Üldine"
     },
-    "options_allow_acceptable_ads": {
-        "message": "Luba veebilehtedel end otsingutulemustes reklaamida"
-    },
     "options_enable_autodetect_filter": {
         "message": "Aktiveeri automaatselt sobivad filtrid"
     },
@@ -475,9 +472,6 @@
     },
     "options_use_optimized_filters_desc": {
         "message": "Erinevad filtrid, mis on optimeeritud mobiiliseadetele"
-    },
-    "options_learn_more": {
-        "message": "Rohkem infot selle kohta"
     },
     "options_privacy_title": {
         "message": "Varjatud režiim"
@@ -560,9 +554,6 @@
     "options_about": {
         "message": "Teave"
     },
-    "options_license_agreement": {
-        "message": "Lõppkasutaja litsentsileping"
-    },
     "options_privacy_policy": {
         "message": "Privaatsuspoliitika"
     },
@@ -578,7 +569,13 @@
     "options_copyright": {
         "message": "Kõik õigused kaitstud."
     },
-    "options_delete_filter_confirm": {
-        "message": "Oled kindel, et soovid selle filtri kustutada?"
+    "options_reset_settings_confirm_modal_title": {
+        "message": "Lähtesta seadistused?"
+    },
+    "options_reset_settings_confirm_modal_clear_button": {
+        "message": "Lähtesta"
+    },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "Kolmanda-osapoole päring"
     }
 }
