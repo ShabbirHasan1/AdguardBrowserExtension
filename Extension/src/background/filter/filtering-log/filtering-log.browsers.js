@@ -177,7 +177,7 @@ const browsersFilteringLog = (function () {
                 destinationRuleDTO.isStealthModeRule = true;
             }
 
-            destinationRuleDTO.allowlistRule = sourceRule.isWhitelist();
+            destinationRuleDTO.allowlistRule = sourceRule.isAllowlist();
             destinationRuleDTO.cspRule = sourceRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Csp);
             destinationRuleDTO.modifierValue = sourceRule.getAdvancedModifierValue();
             destinationRuleDTO.cookieRule = sourceRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Cookie);

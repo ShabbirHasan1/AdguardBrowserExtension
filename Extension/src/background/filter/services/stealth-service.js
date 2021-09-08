@@ -132,7 +132,7 @@ export const stealthService = (() => {
             frameRule: frames.getFrameRule(tab),
         });
 
-        if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
+        if (allowlistRule && allowlistRule.isDocumentAllowlistRule()) {
             log.debug(`Allowlist rule found: ${allowlistRule.getText()}`);
             return false;
         }
@@ -162,7 +162,7 @@ export const stealthService = (() => {
                 frameUrl: referrerUrl,
                 requestType,
             });
-            if (stealthDocumentAllowlistRule && stealthDocumentAllowlistRule.isDocumentWhitelistRule()) {
+            if (stealthDocumentAllowlistRule && stealthDocumentAllowlistRule.isDocumentAllowlistRule()) {
                 log.debug('Stealth document allowlist rule found.');
                 return stealthDocumentAllowlistRule;
             }

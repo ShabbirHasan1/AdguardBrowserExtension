@@ -214,7 +214,7 @@ export const webRequestService = (function () {
      */
     const isRequestBlockedByRule = (requestRule) => {
         return requestRule
-            && !requestRule.isWhitelist()
+            && !requestRule.isAllowlist()
             && !requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Replace)
             && !requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Redirect);
     };
@@ -225,7 +225,7 @@ export const webRequestService = (function () {
      * @returns {boolean}
      */
     const isPopupBlockedByRule = (requestRule) => {
-        return requestRule && !requestRule.isWhitelist()
+        return requestRule && !requestRule.isAllowlist()
             && requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Popup);
     };
 
@@ -235,7 +235,7 @@ export const webRequestService = (function () {
      * @return {boolean}
      */
     const isDocumentBlockingRule = (requestRule) => {
-        return requestRule && !requestRule.isWhitelist()
+        return requestRule && !requestRule.isAllowlist()
             && requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Elemhide)
             && requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Jsinject)
             && requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Urlblock);
@@ -273,7 +273,7 @@ export const webRequestService = (function () {
                 return { cancel: true };
             }
         // check if request rule is blocked by rule and is redirect rule
-        } else if (requestRule && !requestRule.isWhitelist()) {
+        } else if (requestRule && !requestRule.isAllowlist()) {
             if (requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Redirect)) {
                 // eslint-disable-next-line max-len
                 const redirectUrl = redirectService.createRedirectUrl(requestRule.getAdvancedModifierValue());
@@ -312,7 +312,7 @@ export const webRequestService = (function () {
             allowlistRule = frames.getFrameRule(tab);
         }
 
-        if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
+        if (allowlistRule && allowlistRule.isDocumentAllowlistRule()) {
             // Frame is allowlisted by the main frame's $document rule
             // We do nothing more in this case - return the rule.
             return allowlistRule;
@@ -422,7 +422,7 @@ export const webRequestService = (function () {
             frameRule,
         });
 
-        if (allowlistRule && allowlistRule.isDocumentWhitelistRule()) {
+        if (allowlistRule && allowlistRule.isDocumentAllowlistRule()) {
             // $cookie rules are not affected by regular exception rules (@@) unless it's a $document exception.
             return null;
         }
@@ -514,7 +514,7 @@ export const webRequestService = (function () {
 
         let result = requestUrl;
         rules.forEach((r) => {
-            if (!r.isWhitelist()) {
+            if (!r.isAllowlist()) {
                 const ruleResult = r.getAdvancedModifier().removeParameters(result);
                 if (ruleResult !== result) {
                     filteringLog.addRemoveParamEvent({
@@ -570,7 +570,7 @@ export const webRequestService = (function () {
      * @return {object} Request rule if suitable by its own type and request type or null
      */
     const postProcessRequest = function (tab, requestUrl, referrerUrl, requestType, requestRule) {
-        if (requestRule && !requestRule.isWhitelist()) {
+        if (requestRule && !requestRule.isAllowlist()) {
             const isRequestBlockingRule = isRequestBlockedByRule(requestRule);
             const isReplaceRule = requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Replace);
 

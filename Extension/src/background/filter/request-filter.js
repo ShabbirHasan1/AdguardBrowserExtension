@@ -219,7 +219,7 @@ export const RequestFilter = (() => {
             const result = this.getMatchingResult(matchQuery);
 
             const basicResult = result.getBasicResult();
-            if (basicResult && basicResult.isWhitelist()) {
+            if (basicResult && basicResult.isAllowlist()) {
                 return basicResult;
             }
 

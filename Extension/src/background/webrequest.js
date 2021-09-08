@@ -153,7 +153,7 @@ const webrequestInit = function () {
             requestType,
         );
 
-        if (!requestRule?.isDocumentWhitelistRule()) {
+        if (!requestRule?.isDocumentAllowlistRule()) {
             cookieService.onBeforeRequest(requestDetails, getCookieRules(tab, requestUrl, referrerUrl));
         }
 
@@ -170,7 +170,7 @@ const webrequestInit = function () {
         }
 
         if (requestRule
-            && !requestRule.isWhitelist()
+            && !requestRule.isAllowlist()
             && requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Popup)
             && requestType === RequestTypes.DOCUMENT) {
             const isNewTab = tabsApi.isNewPopupTab(tabId);
