@@ -202,7 +202,7 @@ export const RequestFilter = (() => {
             const result = engine.matchRequest(matchQuery);
 
             if (!result) {
-                return new TSUrlFilter.MatchingResult([], []);
+                return new TSUrlFilter.MatchingResult([], null);
             }
 
             return result;
