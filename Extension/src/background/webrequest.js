@@ -927,6 +927,7 @@ const webrequestInit = function () {
                 }
                 const injection = injections.get(tabId, frameId);
                 if (injection && injection.jsScriptText) {
+                    // grep "localScriptRulesService" for details about script source
                     tabsApi.executeScriptCode(tabId, frameId, injection.jsScriptText);
                 }
             }
@@ -997,6 +998,7 @@ const webrequestInit = function () {
                 }
 
                 if (injection.jsScriptText) {
+                    // grep "localScriptRulesService" for details about script source
                     tabsApi.executeScriptCode(tabId, frameId, injection.jsScriptText);
                 }
                 if (injection.cssText) {
@@ -1073,6 +1075,7 @@ const webrequestInit = function () {
                     const jsScriptText = buildScriptText(result.scripts);
                     const cssText = buildCssText(result.selectors);
                     if (jsScriptText) {
+                        // grep "localScriptRulesService" for details about script source
                         tabsApi.executeScriptCode(tabId, frameId, jsScriptText);
                     }
                     if (cssText) {
