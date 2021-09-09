@@ -120,6 +120,7 @@ export const webRequestService = (function () {
             result.selectors = filteringApi.getSelectorsForUrl(
                 documentUrl, cosmeticOptions, true, !prefs.features.canUseInsertCSSAndExecuteScript,
             );
+            // grep "localScriptRulesService" for details about script source
             result.scripts = filteringApi.getScriptsStringForUrl(documentUrl, tab, cosmeticOptions);
         } else {
             // In preload content script only ExtendedCss selectors are necessary.

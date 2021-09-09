@@ -56,6 +56,7 @@ export const preload = (function () {
     const executeScript = function (script) {
         const scriptTag = document.createElement('script');
         scriptTag.setAttribute('type', 'text/javascript');
+        // grep "localScriptRulesService" for details about script source
         scriptTag.textContent = script;
 
         const parent = document.head || document.documentElement;

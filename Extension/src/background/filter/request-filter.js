@@ -113,7 +113,7 @@ export const RequestFilter = (() => {
         /**
          * Builds the final output string for the specified page.
          * Depending on the browser we either allow or forbid the new remote rules
-         * (see how `scriptSource` is used).
+         * grep "localScriptRulesService" for details about script source
          *
          * @param {string} url Page URL
          * @param {Object} tab tab
@@ -125,11 +125,15 @@ export const RequestFilter = (() => {
             const scriptRules = this.getScriptsForUrl(url, cosmeticOptions);
 
             const isFirefox = browserUtils.isFirefoxBrowser();
-            const isOpera = browserUtils.isOperaBrowser();
 
             const selectedScriptRules = scriptRules.filter((scriptRule) => {
+                // Scriptlets should not be excluded for remote filters
                 if (scriptRule.isScriptlet) {
-                    // Scriptlets should not be excluded for remote filters
+                    return true;
+                }
+
+                // User rules should not be excluded from remote filters
+                if (scriptRule.filterListId === utils.filters.USER_FILTER_ID) {
                     return true;
                 }
 
@@ -141,26 +145,20 @@ export const RequestFilter = (() => {
 
                 if (!isLocal) {
                     /**
-                     * Note (!) (Firefox, Opera):
-                     * In case of Firefox and Opera add-ons,
+                     * Note (!) (Firefox):
+                     * In case of Firefox add-ons
                      * JS filtering rules are hardcoded into add-on code.
                      * Look at localScriptRulesService.isLocal to learn more.
-                     * Commented instructions would be preprocessed during compilation by webpack
+                     * Commented instructions are preprocessed during compilation by webpack
                      */
                     /* @if remoteScripts == false */
-                    if (!isFirefox && !isOpera) {
-                        return true;
-                    }
-                    /* @endif */
-
-                    /* @if remoteScripts == true */
-                    if (!isOpera) {
-                        return true;
+                    if (isFirefox) {
+                        return false;
                     }
                     /* @endif */
                 }
 
-                return false;
+                return true;
             });
 
             if (debug) {

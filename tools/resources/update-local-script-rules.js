@@ -1,12 +1,12 @@
 /**
- * By the rules of AMO and addons.opera.com we cannot use remote scripts
- * (and our JS injection rules could be counted as remote scripts).
- * So what we do:
- * 1. We gather all current JS rules in the local_script_rules.json
- *      and load into the DEFAULT_SCRIPT_RULES object (see lib/utils/local-script-rules.js)
- * 2. We disable JS rules got from remote server
- * 3. We allow only custom rules got from the User filter (which user creates manually)
- *      or from this DEFAULT_SCRIPT_RULES object
+ * By the rules of AMO we cannot use remote scripts (and our JS rules can be counted as such).
+ * Because of that we use the following approach (that was accepted by AMO reviewers):
+ *
+ * 1. We pre-build JS rules from AdGuard filters into the add-on (see the file called "local_script_rules.json").
+ * 2. At runtime we check every JS rule if it's included into "local_script_rules.json".
+ *  If it is included we allow this rule to work since it's pre-built. Other rules are discarded.
+ * 3. We also allow "User rules" to work since those rules are added manually by the user.
+ *  This way filters maintainers can test new rules before including them in the filters.
  */
 import { promises as fs } from 'fs';
 import {

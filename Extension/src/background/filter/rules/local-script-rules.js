@@ -16,24 +16,27 @@
  */
 
 /**
- * By the rules of AMO and addons.opera.com we cannot use remote scripts
- * (and our JS injection rules could be counted as remote scripts).
+ * By the rules of AMO we cannot use remote scripts (and our JS rules can be counted as such).
+ * Because of that we use the following approach (that was accepted by AMO reviewers):
  *
- * So what we do:
- * 1. We gather all current JS rules in the DEFAULT_SCRIPT_RULES object
- * 2. We disable JS rules got from remote server
- * 3. We allow only custom rules got from the User filter (which user creates manually)
- *    or from this DEFAULT_SCRIPT_RULES object
+ * 1. We pre-build JS rules from AdGuard filters into the add-on (see the file called "local_script_rules.json").
+ * 2. At runtime we check every JS rule if it's included into "local_script_rules.json".
+ *  If it is included we allow this rule to work since it's pre-built. Other rules are discarded.
+ * 3. We also allow "User rules" to work since those rules are added manually by the user.
+ *  This way filters maintainers can test new rules before including them in the filters.
  */
 export const localScriptRulesService = (function () {
-    let DEFAULT_SCRIPT_RULES = Object.create(null);
+    /**
+     * Storage for script rule texts from the local_script_rules.json
+     */
+    let LOCAL_SCRIPT_RULES = Object.create(null);
 
     /**
      * Saves local script rules to object
      * @param json JSON object loaded from the filters/local_script_rules.json file
      */
     const setLocalScriptRules = function (json) {
-        DEFAULT_SCRIPT_RULES = Object.create(null);
+        LOCAL_SCRIPT_RULES = Object.create(null);
 
         const { rules } = json;
         for (let i = 0; i < rules.length; i += 1) {
@@ -44,17 +47,17 @@ export const localScriptRulesService = (function () {
                 ruleText = domains;
             }
             ruleText += `#%#${script}`;
-            DEFAULT_SCRIPT_RULES[ruleText] = true;
+            LOCAL_SCRIPT_RULES[ruleText] = true;
         }
     };
 
     /**
-     * Checks js rule is local
+     * Checks if ruleText is in the local_script_rules
      * @param ruleText Rule text
      * @returns {boolean}
      */
     const isLocal = function (ruleText) {
-        return ruleText in DEFAULT_SCRIPT_RULES;
+        return ruleText in LOCAL_SCRIPT_RULES;
     };
 
     return {
