@@ -25,7 +25,7 @@
  * 3. We also allow "User rules" to work since those rules are added manually by the user.
  *  This way filters maintainers can test new rules before including them in the filters.
  */
-export const localScriptRulesService = (function () {
+const localScriptRulesService = (function () {
     /**
      * Storage for script rule texts from the local_script_rules.json
      */
@@ -65,3 +65,5 @@ export const localScriptRulesService = (function () {
         isLocal,
     };
 })();
+
+export default localScriptRulesService;
