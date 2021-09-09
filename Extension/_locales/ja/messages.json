@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "フィルタの アップデートを確認する"
     },
-    "context_general_settings": {
-        "message": "一般"
-    },
-    "context_antibanner": {
-        "message": "広告ブロッカー"
-    },
-    "context_safebrowsing": {
-        "message": "ブラウジングセキュリティ"
-    },
-    "context_allowlist": {
-        "message": "ホワイトリスト"
-    },
-    "context_userfilter": {
-        "message": "ユーザールール"
-    },
-    "context_miscellaneous_settings": {
-        "message": "その他の設定"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "フィルタの自動有効化"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "フィルタリングを適用せずに処理されたリクエストのみを表示"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "ホワイトリスト登録もしくはブロック解除されているリクエストのみを表示"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "ブロックされたリクエストのみを表示"

@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Vérifier les mises à jour des filtres"
     },
-    "context_general_settings": {
-        "message": "Paramètres généraux"
-    },
-    "context_antibanner": {
-        "message": "Bloqueur de publicités"
-    },
-    "context_safebrowsing": {
-        "message": "Sécurité de navigation"
-    },
-    "context_allowlist": {
-        "message": "Liste blanche"
-    },
-    "context_userfilter": {
-        "message": "Règles d'utilisateur"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Divers"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto-activation des filtres"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Uniquement les requêtes traitées sans filtrage"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Uniquement les requêtes autorisées et débloquées"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Uniquement les requêtes bloquées"

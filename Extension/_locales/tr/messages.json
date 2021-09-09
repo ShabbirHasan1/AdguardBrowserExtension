@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Filtre güncellemelerini denetle"
     },
-    "context_general_settings": {
-        "message": "Genel"
-    },
-    "context_antibanner": {
-        "message": "Reklam engelleyici"
-    },
-    "context_safebrowsing": {
-        "message": "Gezinti koruması"
-    },
-    "context_allowlist": {
-        "message": "İzin listesi"
-    },
-    "context_userfilter": {
-        "message": "Kullanıcı kuralları"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Diğer"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Filtre otomatik etkinleştirildi"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Yalnızca filtreleme yapılmadan işlenen istekler"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Yalnızca izin verilen ve engellenmemiş istekler"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Yalnızca engellenen istekler"

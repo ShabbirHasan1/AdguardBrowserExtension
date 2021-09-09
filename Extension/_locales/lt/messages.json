@@ -383,24 +383,6 @@
     "context_update_antibanner_filters": {
         "message": "Patikrinti filtro atnaujinimus"
     },
-    "context_general_settings": {
-        "message": "Pagrindiniai"
-    },
-    "context_antibanner": {
-        "message": "Reklamos blokavimo priemonė"
-    },
-    "context_safebrowsing": {
-        "message": "Saugus naršymas"
-    },
-    "context_allowlist": {
-        "message": "Baltasis sąrašas"
-    },
-    "context_userfilter": {
-        "message": "Naudotojo filtras"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Įvairūs"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatinis filtrų aktyvinimas"
     },

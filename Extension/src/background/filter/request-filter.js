@@ -202,7 +202,7 @@ export const RequestFilter = (() => {
             const result = engine.matchRequest(matchQuery);
 
             if (!result) {
-                return new TSUrlFilter.MatchingResult([], []);
+                return new TSUrlFilter.MatchingResult([], null);
             }
 
             return result;
@@ -219,7 +219,7 @@ export const RequestFilter = (() => {
             const result = this.getMatchingResult(matchQuery);
 
             const basicResult = result.getBasicResult();
-            if (basicResult && basicResult.isWhitelist()) {
+            if (basicResult && basicResult.isAllowlist()) {
                 return basicResult;
             }
 

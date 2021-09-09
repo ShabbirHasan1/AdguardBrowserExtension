@@ -68,21 +68,6 @@
     "context_update_antibanner_filters": {
         "message": "Semak kemaskini penyaring"
     },
-    "context_general_settings": {
-        "message": "Tetapan umum"
-    },
-    "context_antibanner": {
-        "message": "Penghalang iklan"
-    },
-    "context_safebrowsing": {
-        "message": "Keselamatan pelayaran"
-    },
-    "context_userfilter": {
-        "message": "Penyaring pengguna"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Pelbagai"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto-aktifkan penyaring"
     },

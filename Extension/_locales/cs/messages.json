@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Vyhledat aktualizace filtrů"
     },
-    "context_general_settings": {
-        "message": "Obecné"
-    },
-    "context_antibanner": {
-        "message": "Blokování reklamy"
-    },
-    "context_safebrowsing": {
-        "message": "Bezpečné prohlížení"
-    },
-    "context_allowlist": {
-        "message": "Seznam povolených"
-    },
-    "context_userfilter": {
-        "message": "Uživatelská pravidla"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Různé"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatická aktivace filtrů"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Pouze požadavky zpracované bez filtrování"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Pouze povolené a odblokované požadavky"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Pouze blokované požadavky"

@@ -230,21 +230,6 @@
     "context_update_antibanner_filters": {
         "message": "Busqueu actualitzacions per als filtres"
     },
-    "context_general_settings": {
-        "message": "Opcions generals"
-    },
-    "context_antibanner": {
-        "message": "Filtre de publicitat"
-    },
-    "context_safebrowsing": {
-        "message": "Seguretat a la navegació"
-    },
-    "context_userfilter": {
-        "message": "Filtre d'usuari"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Miscel·lanis"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto-activació dels filtres"
     },

@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Проверить обновления фильтров"
     },
-    "context_general_settings": {
-        "message": "Основные настройки"
-    },
-    "context_antibanner": {
-        "message": "Антибаннер"
-    },
-    "context_safebrowsing": {
-        "message": "Антифишинг"
-    },
-    "context_allowlist": {
-        "message": "Белый список"
-    },
-    "context_userfilter": {
-        "message": "Пользовательские правила"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Дополнительные настройки"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Автоматическая активация фильтров"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Только запросы, обработанные без фильтрации"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Только разрешенные и разблокированные запросы"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Только заблокированные запросы"

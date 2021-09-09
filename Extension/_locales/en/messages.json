@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Check for filter updates"
     },
-    "context_general_settings": {
-        "message": "General"
-    },
-    "context_antibanner": {
-        "message": "Ad blocker"
-    },
-    "context_safebrowsing": {
-        "message": "Browsing security"
-    },
-    "context_allowlist": {
-        "message": "Allowlist"
-    },
-    "context_userfilter": {
-        "message": "User rules"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Miscellaneous"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto-activation of the filters"
     },

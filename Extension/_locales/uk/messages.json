@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Перевірити оновлення фільтрів"
     },
-    "context_general_settings": {
-        "message": "Основні"
-    },
-    "context_antibanner": {
-        "message": "Антибанер"
-    },
-    "context_safebrowsing": {
-        "message": "Антифішинг"
-    },
-    "context_allowlist": {
-        "message": "Список дозволів"
-    },
-    "context_userfilter": {
-        "message": "Правила користувача"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Різне"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Автоматичне підключення фільтрів"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Лише запити, опрацьовані без фільтрування"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Лише дозволені та розблоковані запити"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Лише заблоковані запити"

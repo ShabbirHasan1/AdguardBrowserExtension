@@ -135,7 +135,7 @@ export const frames = (function () {
      */
     const isTabAllowlisted = function (tab) {
         const frameRule = tabsApi.getTabMetadata(tab.tabId, 'frameRule');
-        return frameRule && frameRule.isDocumentWhitelistRule();
+        return frameRule && frameRule.isDocumentAllowlistRule();
     };
 
     /**

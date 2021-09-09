@@ -383,24 +383,6 @@
     "context_update_antibanner_filters": {
         "message": "Праверыць абнаўленні фільтраў"
     },
-    "context_general_settings": {
-        "message": "Агульныя налады"
-    },
-    "context_antibanner": {
-        "message": "Блакаванне банераў"
-    },
-    "context_safebrowsing": {
-        "message": "Browsing Security"
-    },
-    "context_allowlist": {
-        "message": "Белы спіс"
-    },
-    "context_userfilter": {
-        "message": "Карыстальніцкі фільтр"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Рознае"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Аўтаматычнае падключэнне фільтра"
     },

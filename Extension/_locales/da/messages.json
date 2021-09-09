@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Søg efter filteropdateringer"
     },
-    "context_general_settings": {
-        "message": "Generelt"
-    },
-    "context_antibanner": {
-        "message": "Adblocker"
-    },
-    "context_safebrowsing": {
-        "message": "Browsing Sikkerhed"
-    },
-    "context_allowlist": {
-        "message": "Hvidliste"
-    },
-    "context_userfilter": {
-        "message": "Brugerregler"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Forskelligt"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto aktivering af filtrene"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Kun forespørgsler behandlet uden filtrering"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Kun tilladte og ublokerede forespørgsler"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Kun blokerede forespørgsler"

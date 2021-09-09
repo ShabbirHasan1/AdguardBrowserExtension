@@ -344,24 +344,6 @@
     "context_update_antibanner_filters": {
         "message": "Se etter filteroppdateringer"
     },
-    "context_general_settings": {
-        "message": "Generelle innstillinger"
-    },
-    "context_antibanner": {
-        "message": "Annonseblokkerer"
-    },
-    "context_safebrowsing": {
-        "message": "Nettsurfingsikkerhet"
-    },
-    "context_allowlist": {
-        "message": "Hvitelistet"
-    },
-    "context_userfilter": {
-        "message": "Brukerfilter"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Diverse"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatisk aktivering av filtrene"
     },

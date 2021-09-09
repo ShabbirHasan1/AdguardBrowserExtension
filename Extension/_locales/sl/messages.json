@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Preveri obstoj posodobitev filtra"
     },
-    "context_general_settings": {
-        "message": "Splošno"
-    },
-    "context_antibanner": {
-        "message": "Zaviralec oglasov"
-    },
-    "context_safebrowsing": {
-        "message": "Varnost brskanja"
-    },
-    "context_allowlist": {
-        "message": "Seznam dovoljenih"
-    },
-    "context_userfilter": {
-        "message": "Uporabniška pravila"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Razno"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Samodejno aktiviranje filtrov"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Samo zahteve, obdelane brez filtriranja"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Samo dovoljene in znova omogočene zahteve"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Samo onemogočene zahteve"

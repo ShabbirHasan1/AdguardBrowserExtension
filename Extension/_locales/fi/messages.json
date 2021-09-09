@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Tarkista suodatinpäivitykset"
     },
-    "context_general_settings": {
-        "message": "Yleiset"
-    },
-    "context_antibanner": {
-        "message": "Mainosten estäjä"
-    },
-    "context_safebrowsing": {
-        "message": "Selauksen suojaus"
-    },
-    "context_allowlist": {
-        "message": "Sallittujen lista"
-    },
-    "context_userfilter": {
-        "message": "Käyttäjän säännöt"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Muut asetukset"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Suodattimia aktivoitiin automaattisesti"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Vain suodattamattomat pyynnöt"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Vain sallitut pyynnöt"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Vain estetyt pyynnöt"

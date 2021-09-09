@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "检查过滤器更新"
     },
-    "context_general_settings": {
-        "message": "常规设置"
-    },
-    "context_antibanner": {
-        "message": "广告拦截器"
-    },
-    "context_safebrowsing": {
-        "message": "浏览安全"
-    },
-    "context_allowlist": {
-        "message": "白名单"
-    },
-    "context_userfilter": {
-        "message": "用户过滤器"
-    },
-    "context_miscellaneous_settings": {
-        "message": "其它"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "自动激活过滤器"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "仅未经过滤的请求"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "仅已允许和未拦截的请求"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "仅拦截的请求"

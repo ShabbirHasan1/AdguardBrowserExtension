@@ -329,21 +329,6 @@
     "context_update_antibanner_filters": {
         "message": "Käivita filtrite uuendamine"
     },
-    "context_general_settings": {
-        "message": "Üldine"
-    },
-    "context_antibanner": {
-        "message": "Reklaami blokeerija"
-    },
-    "context_safebrowsing": {
-        "message": "Sirvimise turvalisus"
-    },
-    "context_userfilter": {
-        "message": "Kasutaja reeglid"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Mitmesugust"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Toimus automaatne filtri aktiveerimine"
     },

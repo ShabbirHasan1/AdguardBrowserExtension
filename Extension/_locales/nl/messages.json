@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Controleren op filterupdates"
     },
-    "context_general_settings": {
-        "message": "Algemene instellingen"
-    },
-    "context_antibanner": {
-        "message": "Advertentieblokkeerder"
-    },
-    "context_safebrowsing": {
-        "message": "Surfveiligheid"
-    },
-    "context_allowlist": {
-        "message": "Toestemmingslijst"
-    },
-    "context_userfilter": {
-        "message": "Eigen filter"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Overig"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatische filterinschakeling"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Alleen verzoeken verwerkt zonder filtering"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Alleen toegestane en gedeblokkeerde verzoeken"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Alleen geblokkeerde verzoeken"
