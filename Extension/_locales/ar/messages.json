@@ -320,21 +320,6 @@
     "context_update_antibanner_filters": {
         "message": "بحث عن تحديثات الفلاتر"
     },
-    "context_general_settings": {
-        "message": "الإعدادات العامة"
-    },
-    "context_antibanner": {
-        "message": "حاجب الإعلاانات"
-    },
-    "context_safebrowsing": {
-        "message": "حماية التصفح"
-    },
-    "context_userfilter": {
-        "message": "فلتر المستخدم"
-    },
-    "context_miscellaneous_settings": {
-        "message": "متنوع"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "التنشيط التلقائي للفلاتر"
     },

@@ -389,24 +389,6 @@
     "context_update_antibanner_filters": {
         "message": "Periksa pembaruan penyaring"
     },
-    "context_general_settings": {
-        "message": "Pengaturan umum"
-    },
-    "context_antibanner": {
-        "message": "Pemblok iklan"
-    },
-    "context_safebrowsing": {
-        "message": "Keamanan jelajah"
-    },
-    "context_allowlist": {
-        "message": "Daftar Putih"
-    },
-    "context_userfilter": {
-        "message": "Penyaring pengguna"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Lainnya"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Aktivasi otomatis penyaring"
     },

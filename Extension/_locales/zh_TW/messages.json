@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "檢查過濾器更新"
     },
-    "context_general_settings": {
-        "message": "一般的"
-    },
-    "context_antibanner": {
-        "message": "廣告封鎖器"
-    },
-    "context_safebrowsing": {
-        "message": "瀏覽安全"
-    },
-    "context_allowlist": {
-        "message": "允許清單"
-    },
-    "context_userfilter": {
-        "message": "使用者規則"
-    },
-    "context_miscellaneous_settings": {
-        "message": "雜項的"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "過濾器之自動的啟動"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "僅已處理而無過濾的請求"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "僅已允許的和已解除封鎖的請求"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "僅已封鎖的請求"

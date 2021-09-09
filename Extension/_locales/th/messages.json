@@ -320,21 +320,6 @@
     "context_update_antibanner_filters": {
         "message": "ตรวจสอบการอัปเดตตัวกรอง"
     },
-    "context_general_settings": {
-        "message": "ทั่วไป"
-    },
-    "context_antibanner": {
-        "message": "ตัวปิดกั้นโฆษณา"
-    },
-    "context_safebrowsing": {
-        "message": "Browsing security"
-    },
-    "context_userfilter": {
-        "message": "ใช้ตัวกรอง"
-    },
-    "context_miscellaneous_settings": {
-        "message": "เบ็ดเตล็ด"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "เปิดใช้งานตัวกรองอัตโนมัติ"
     },

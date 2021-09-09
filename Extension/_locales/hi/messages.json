@@ -329,21 +329,6 @@
     "context_update_antibanner_filters": {
         "message": "अद्यतन के लिए जांचे"
     },
-    "context_general_settings": {
-        "message": "सामान्य"
-    },
-    "context_antibanner": {
-        "message": "विज्ञापन अवरोधित किए गए"
-    },
-    "context_safebrowsing": {
-        "message": "ब्राउज़िंग सुरक्षा"
-    },
-    "context_userfilter": {
-        "message": "उपयोगकर्ता फ़िल्टर"
-    },
-    "context_miscellaneous_settings": {
-        "message": "कई तरह का"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "\tफ़िल्टर का स्वतः सक्रियण"
     },

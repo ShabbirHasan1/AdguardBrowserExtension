@@ -68,21 +68,6 @@
     "context_update_antibanner_filters": {
         "message": "Ստուգել զտիչի թարմացումները"
     },
-    "context_general_settings": {
-        "message": "Գլխավոր կարգավորումներ"
-    },
-    "context_antibanner": {
-        "message": "Գովազդի արգելափակում"
-    },
-    "context_safebrowsing": {
-        "message": "Դիտարկման անվտանգություն"
-    },
-    "context_userfilter": {
-        "message": "Օգտվողի զտիչ"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Խառը"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Զտիչների ինքնաակտիվացում"
     },

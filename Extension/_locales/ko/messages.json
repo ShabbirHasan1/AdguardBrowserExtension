@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "필터 업데이트 확인"
     },
-    "context_general_settings": {
-        "message": "일반"
-    },
-    "context_antibanner": {
-        "message": "광고 차단"
-    },
-    "context_safebrowsing": {
-        "message": "브라우징 보안"
-    },
-    "context_allowlist": {
-        "message": "허용 목록"
-    },
-    "context_userfilter": {
-        "message": "사용자 규칙"
-    },
-    "context_miscellaneous_settings": {
-        "message": "기타"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "필터 자동 켜짐"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "필터링 없이 처리된 요청만 표시"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "허용 요청 및 차단 해제된 요청만 허용"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "차단된 요청만 표시"

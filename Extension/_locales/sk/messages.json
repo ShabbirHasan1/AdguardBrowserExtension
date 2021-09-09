@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Skontrolovať aktualizácie filtrov"
     },
-    "context_general_settings": {
-        "message": "Všeobecné"
-    },
-    "context_antibanner": {
-        "message": "Blokovač reklamy"
-    },
-    "context_safebrowsing": {
-        "message": "Bezpečnosť prehliadania"
-    },
-    "context_allowlist": {
-        "message": "Zoznam povolení"
-    },
-    "context_userfilter": {
-        "message": "Používateľský filter"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Rôzne"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatická aktivácia filtrov"
     },

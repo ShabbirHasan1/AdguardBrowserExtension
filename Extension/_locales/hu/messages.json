@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Szűrő frissítések ellenőrzése"
     },
-    "context_general_settings": {
-        "message": "Általános"
-    },
-    "context_antibanner": {
-        "message": "Hirdetésblokkoló"
-    },
-    "context_safebrowsing": {
-        "message": "Böngészési biztonság"
-    },
-    "context_allowlist": {
-        "message": "Kivételek"
-    },
-    "context_userfilter": {
-        "message": "Felhasználói szabályok"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Vegyes"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "A szűrők automatikus aktiválása"
     },
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Csak szűrés nélkül feldolgozott kérések"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Csak engedélyezett vagy feloldott kérések"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Csak blokkolt kérések"

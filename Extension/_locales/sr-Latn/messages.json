@@ -329,21 +329,6 @@
     "context_update_antibanner_filters": {
         "message": "Proveri da li postoje ažuriranja filtera"
     },
-    "context_general_settings": {
-        "message": "Opšta podešavanja"
-    },
-    "context_antibanner": {
-        "message": "Blokator reklama"
-    },
-    "context_safebrowsing": {
-        "message": "Bezbednost pregledanja"
-    },
-    "context_userfilter": {
-        "message": "Korisnički filter"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Razno"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Automatsko uključivanje filtera"
     },

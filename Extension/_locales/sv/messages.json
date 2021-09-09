@@ -326,21 +326,6 @@
     "context_update_antibanner_filters": {
         "message": "Kontrollera om det finns uppdateringar"
     },
-    "context_general_settings": {
-        "message": "Allmänt"
-    },
-    "context_antibanner": {
-        "message": "Annonsblockerare"
-    },
-    "context_safebrowsing": {
-        "message": "Surfsäkerhet"
-    },
-    "context_userfilter": {
-        "message": "Egna filter"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Annat"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Autoinkoppling av filter"
     },

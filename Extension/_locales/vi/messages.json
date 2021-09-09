@@ -383,24 +383,6 @@
     "context_update_antibanner_filters": {
         "message": "Kiểm tra cập nhật bộ lọc"
     },
-    "context_general_settings": {
-        "message": "Cài đặt tổng quát"
-    },
-    "context_antibanner": {
-        "message": "Bộ chặn quảng cáo"
-    },
-    "context_safebrowsing": {
-        "message": "Bảo vệ duyệt web"
-    },
-    "context_allowlist": {
-        "message": "Danh sách cho phép"
-    },
-    "context_userfilter": {
-        "message": "Bộ lọc của người dùng"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Khác"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Tự kích hoạt bộ lọc"
     },

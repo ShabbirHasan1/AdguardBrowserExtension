@@ -383,24 +383,6 @@
     "context_update_antibanner_filters": {
         "message": "Verificați pentru actualizări de filtre"
     },
-    "context_general_settings": {
-        "message": "Setări generale"
-    },
-    "context_antibanner": {
-        "message": "Blocare reclame"
-    },
-    "context_safebrowsing": {
-        "message": "Securitate la navigare"
-    },
-    "context_allowlist": {
-        "message": "Listă autorizări"
-    },
-    "context_userfilter": {
-        "message": "Reguli utilizator"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Diverse"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Auto-activarea filtrelor"
     },

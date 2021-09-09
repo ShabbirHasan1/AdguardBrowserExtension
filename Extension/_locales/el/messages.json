@@ -392,24 +392,6 @@
     "context_update_antibanner_filters": {
         "message": "Έλεγχος για ενημερώσεις φίλτρων"
     },
-    "context_general_settings": {
-        "message": "Γενικά"
-    },
-    "context_antibanner": {
-        "message": "Ad blocker"
-    },
-    "context_safebrowsing": {
-        "message": "Ασφάλεια περιήγησης"
-    },
-    "context_allowlist": {
-        "message": "Επιτρεπόμενη λίστα"
-    },
-    "context_userfilter": {
-        "message": "Κανόνες χρήστη"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Διάφορα"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Αυτόματη ενεργοποίηση των φίλτρων"
     },

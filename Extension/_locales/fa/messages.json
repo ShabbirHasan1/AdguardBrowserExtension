@@ -377,24 +377,6 @@
     "context_update_antibanner_filters": {
         "message": "بررسی بروز رسانی برای فیلتر"
     },
-    "context_general_settings": {
-        "message": "تنظیمات عمومی"
-    },
-    "context_antibanner": {
-        "message": "مسدود ساز تبلیغ"
-    },
-    "context_safebrowsing": {
-        "message": "امنیت وب گردی"
-    },
-    "context_allowlist": {
-        "message": "لیست سفید"
-    },
-    "context_userfilter": {
-        "message": "فیلتر کاربر"
-    },
-    "context_miscellaneous_settings": {
-        "message": "متفرقه"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "فعالسازی خودکار فیلترها"
     },

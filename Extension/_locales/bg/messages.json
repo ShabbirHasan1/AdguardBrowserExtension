@@ -71,21 +71,6 @@
     "context_update_antibanner_filters": {
         "message": "Провери за актуализации на филтрите"
     },
-    "context_general_settings": {
-        "message": "Общи настройки"
-    },
-    "context_antibanner": {
-        "message": "Блокиране на реклама"
-    },
-    "context_safebrowsing": {
-        "message": "Безопасност на сърфирането"
-    },
-    "context_userfilter": {
-        "message": "Потребителски филтър"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Разни"
-    },
     "alert_popup_filter_enabled_title": {
         "message": "Автоматична активация на филтрите"
     },

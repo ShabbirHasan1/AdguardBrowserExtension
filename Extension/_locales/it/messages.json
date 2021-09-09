@@ -297,7 +297,7 @@
         "message": "Nessun aggiornamento trovato"
     },
     "options_popup_update_error": {
-        "message": "Impossibile ottenere gli aggiornamenti. Si prega di riprovare più tardi."
+        "message": "Impossibile ottenere gli aggiornamenti. Ti invitiamo a riprovare più tardi."
     },
     "options_popup_update_filter": {
         "message": "è stato aggiornato."
@@ -391,24 +391,6 @@
     },
     "context_update_antibanner_filters": {
         "message": "Ricerca aggiornamenti filtro"
-    },
-    "context_general_settings": {
-        "message": "Generali"
-    },
-    "context_antibanner": {
-        "message": "Blocca-annunci"
-    },
-    "context_safebrowsing": {
-        "message": "Sicurezza di navigazione"
-    },
-    "context_allowlist": {
-        "message": "Lista bianca"
-    },
-    "context_userfilter": {
-        "message": "Regole utente"
-    },
-    "context_miscellaneous_settings": {
-        "message": "Varie"
     },
     "alert_popup_filter_enabled_title": {
         "message": "Attivazione automatica dei filtri"
@@ -940,6 +922,9 @@
     },
     "filtering_log_tag_tooltip_regular": {
         "message": "Solo richieste processare senza filtraggio"
+    },
+    "filtering_log_tag_tooltip_allowed": {
+        "message": "Solo richieste consentite e sbloccate"
     },
     "filtering_log_tag_tooltip_blocked": {
         "message": "Solo richieste bloccate"
