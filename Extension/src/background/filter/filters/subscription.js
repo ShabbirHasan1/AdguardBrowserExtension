@@ -336,9 +336,11 @@ export const subscriptions = (() => {
      * @private
      */
     const loadLocalScriptRules = async () => {
-        const json = await backend.getLocalScriptRules();
-        localScriptRulesService.setLocalScriptRules(json);
-        log.info('Filters local script rules loaded');
+        if (browserUtils.isFirefoxBrowser()) {
+            const json = await backend.getLocalScriptRules();
+            localScriptRulesService.setLocalScriptRules(json);
+            log.info('Filters local script rules loaded');
+        }
     };
 
     /**
