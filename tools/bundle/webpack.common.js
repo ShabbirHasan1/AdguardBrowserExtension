@@ -49,6 +49,7 @@ export const genCommonConfig = (browserConfig) => {
                             comments: 'all',
                         },
                     },
+                    extractComments: false,
                 }),
             ],
             runtimeChunk: 'single',
