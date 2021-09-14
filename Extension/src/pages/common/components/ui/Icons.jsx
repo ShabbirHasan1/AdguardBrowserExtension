@@ -230,6 +230,11 @@ export const Icons = () => {
                 <rect width="32" height="32" fill="none" />
                 <path d="M13.8958 21.9468L19.9996 16.0524L14.1052 9.9486" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </symbol>
+
+            <symbol id="radio" viewBox="0 0 24 24">
+                <path d="M9.5 12C9.5 10.6196 10.6188 9.50046 11.9991 9.5C13.3795 9.5021 14.4979 10.6206 14.5 12.0009C14.4995 13.3812 13.3804 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12Z" fill="currentColor" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="12.0001" cy="12" r="8.33333" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </symbol>
         </svg>
     );
 };

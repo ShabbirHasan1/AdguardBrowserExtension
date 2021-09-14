@@ -117,28 +117,10 @@
 
 .record {
     position: relative;
-    width: 18px;
-    height: 18px;
-    border-radius: 100%;
-    border: 1px solid var(--gray700);
     box-sizing: border-box;
-
-    &:after {
-        content: "";
-        position: absolute;
-        left: calc(50% - 4px);
-        top: calc(50% - 4px);
-        width: 8px;
-        height: 8px;
-        border-radius: 100%;
-        background-color: var(--gray700);
-    }
+    color: var(--gray700);
 
     &.active {
-        border: 1px solid var(--red400);
-
-        &:after {
-            background-color: var(--red400);
-        }
+        color: var(--red400);
     }
 }
