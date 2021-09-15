@@ -27,10 +27,10 @@
   resolved "https://registry.yarnpkg.com/@adguard/translate/-/translate-0.2.4.tgz#d83d259b29f434499c77afc097762b7121d9e0d6"
   integrity sha512-scnVzevzuw7Y9XmUuASgyz1U2AG7aVk3FiZL0Ekqr8PZP8kfgw+Fl1zlME8dl+7h+K1j+ocJX/4Ie/Wq9q73cA==
 
-"@adguard/tsurlfilter@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@adguard/tsurlfilter/-/tsurlfilter-0.7.1.tgz#42b4903be2a3f3415dea5de308b6c49c42e527d8"
-  integrity sha512-vTgCKMoQWbiQsC3lIUzL3Yx/PL3pyHhUIzLlSWjokqRaI0b0/3nwN+SbPvWS7V0qTJSVMF3+oGjGFFzx6ZMrcA==
+"@adguard/tsurlfilter@^0.7.6":
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/@adguard/tsurlfilter/-/tsurlfilter-0.7.6.tgz#4872d4b1b6ff178d15edacb9f8140dfbfee3b91a"
+  integrity sha512-iPxWpO4fVpX9E9uIQcOcULpu6ohKOoImlL7BLk9siGE+kk9XZ1E9Z2HhdOvJa8d9tu2PfmSFtLDID6y5kaHVNg==
   dependencies:
     "@adguard/scriptlets" "^1.4.4"
     "@types/ip6addr" "^0.2.3"
